@@ -32,7 +32,7 @@ let ratioAciertoFallo = [
   ",",
   ";",
   ".",
-  "!"
+  "!",
 ];
 
 /**
@@ -54,23 +54,20 @@ let jsonLetras = "{";
 //     jsonLetras += ",";
 //   }
 
-
-
-
-
-
 for (let i = 0; i < ratioAciertoFallo.length; i++) {
-  jsonLetras += '"' + ratioAciertoFallo[i] + '": {"aciertos":' + 0 + ',"fallos": ' + 0 + '}';
+  jsonLetras +=
+    '"' +
+    ratioAciertoFallo[i] +
+    '": {"aciertos":' +
+    0 +
+    ',"fallos": ' +
+    0 +
+    "}";
   if (i < ratioAciertoFallo.length - 1) {
     jsonLetras += ",";
   }
-
 }
 jsonLetras += "}";
-
-
-
-
 
 function prepararResolucion() {
   let texto = document.getElementById("texto");
@@ -106,14 +103,11 @@ function empezarResolucion(texto, caracteres) {
   let exitosTotales = 0;
   let spansArray = texto.getElementsByTagName("span");
 
-
-
   /**
    * *INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
    */
   if (!resolucionCompleta) {
     setInterval(() => {
-
       spansArray[cursorPosition].className = "cursorActive";
       setTimeout(() => {
         spansArray[cursorPosition].className = "cursorDesactive";
@@ -124,33 +118,30 @@ function empezarResolucion(texto, caracteres) {
   jsonLetras = JSON.parse(jsonLetras);
   console.log(caracteres);
 
-  console.log(typeof cursorPosition[cursorPosition]);
-
-
   window.addEventListener("keypress", (event) => {
     if (comprobarPulsacion(caracteres[cursorPosition], event.key)) {
       exitosTotales++;
 
-
-
       // * SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
 
-      let caracterEnfocado = caracteres[cursorPosition];
+      // ! Intentar convertir el caracter enfocado a un objeto json para luego poder sumarle el acierto utlizando ese objeto JSON
+      //* HAY QUE PARSEAR EL CARACTER ENFOCADO PARA PODER EMPLEARLO COMO CAMPO JSON
 
-      jsonLetras.a.aciertos++;
-
-      jsonLetras.caracterEnfocado.aciertos++;
-
-      console.log(caracterEnfocado);
-      // console.log(typeof jsonLetras.a);
-
-
-
-
-
-      // console.log(ratioAciertoFallo);
-
-
+      let caracterEnfocado =
+        '{"' +
+        caracteres[cursorPosition] +
+        '": {"aciertos":' +
+        0 +
+        ',"fallos": ' +
+        0 +
+        "}}";
+      let jsonCaracterEnfocado = JSON.parse(caracterEnfocado);
+      console.log(jsonLetras.jsonCaracterEnfocado);
+      // jsonLetras.jsonCaracterEnfocado[0].aciertos++;
+      // console.log(caracterEnfocado);
+      // console.log(jsonCaracterEnfocado);
+      //* COMO DEBERIA SER
+      // jsonLetras.caracterEnfocado.aciertos++;
 
       // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
       spansArray[cursorPosition].style.color = "green";
@@ -159,26 +150,37 @@ function empezarResolucion(texto, caracteres) {
     } else {
       fallosTotales++;
 
+      let caracterEnfocado =
+        '{"' +
+        caracteres[cursorPosition] +
+        '": {"aciertos":' +
+        0 +
+        ',"fallos": ' +
+        0 +
+        "}}";
+
+      let jsonCaracterEnfocado = JSON.parse(caracterEnfocado);
+
+      jsonLetras.jsonCaracterEnfocado.fallos++;
+
       // * SUMAR UN ERROR EN LA LETRA QUE EL CURSOR SEÑALA
       // ratioAciertoFallo[caracteres[cursorPosition].toLowerCase()][1]++;
       // jsonLetras.caracteres[cursorPosition].fallos++;
-      console.log(jsonLetras.caracteres[cursorPosition]);
-      // console.log(ratioAciertoFallo[caracteres]);
 
       // * CAMBIAR EL COLOR DE LA LETRA (ROJO)
       spansArray[cursorPosition].className = "cursorDesactive";
       spansArray[cursorPosition].style.color = "red";
     }
 
-
     if (cursorPosition == caracteres.length - 2) {
       resolucionCompleta = true;
-      mostrarStatsResolucion(exitosTotales, fallosTotales, 0, ratioAciertoFallo);
-
+      mostrarStatsResolucion(
+        exitosTotales,
+        fallosTotales,
+        0,
+        ratioAciertoFallo
+      );
     }
-
-
-
   });
 }
 
@@ -197,20 +199,12 @@ function comprobarPulsacion(teclaPorPulsar, teclaPulsada) {
   }
 }
 
-
 function mostrarStatsResolucion(aciertos, fallos, fallosPorTecla) {
-
-
   console.log("Aciertos: " + (aciertos - fallos));
   console.log("Fallos: " + fallos);
   // console.log("Tiempo de resolución: " + tiempo);
   console.log(fallosPorTecla);
-
-
 }
-
-
-
 
 function pretty(txt, elemento) {
   console.log("//######################################");
