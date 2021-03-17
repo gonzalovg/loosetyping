@@ -31,6 +31,7 @@ let ratioAciertoFallo = [
   " ",
   ",",
   ";",
+  ".",
 ];
 
 /**
@@ -78,17 +79,31 @@ function empezarResolucion(texto, caracteres) {
    * * Si es falso, sumara una fallo
    */
 
-  let fallo = 0;
-  let exito = 0;
+  let fallosTotales = 0;
+  let exitosTotales = 0;
   let spansArray = texto.getElementsByTagName("span");
+
+  // texto[cursorPosition].className = "cursor";
+
+  console.log();
+
+  /**
+   * !INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
+   */
+  setInterval(() => {
+    spansArray[cursorPosition].className = "cursorActive";
+    setTimeout(() => {
+      spansArray[cursorPosition].className = "cursorDesactive";
+    }, 500);
+  }, 1000);
   window.addEventListener("keypress", (event) => {
     if (comprobarPulsacion(caracteres[cursorPosition], event.key)) {
-      exito++;
+      exitosTotales++;
       console.log(
         ratioAciertoFallo[caracteres[cursorPosition].toLowerCase()][0]
       );
 
-      // ? SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
+      // * SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
       ratioAciertoFallo[caracteres[cursorPosition].toLowerCase()][0]++;
       console.log(ratioAciertoFallo);
       // ratioAciertoFallo[caracteres[cursorPosition]][0]++;
@@ -102,15 +117,14 @@ function empezarResolucion(texto, caracteres) {
       //     event.key
       // );
 
-      // ? CAMBIAR EL COLOR DE LA LETRA (VERDE)
-
+      // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
       spansArray[cursorPosition].style.color = "green";
-
+      spansArray[cursorPosition].className = "cursorDesactive";
       cursorPosition++;
     } else {
-      fallo++;
+      fallosTotales++;
 
-      // ? SUMAR UN ERROR EN LA LETRA QUE EL CURSOR SEÑALA
+      // * SUMAR UN ERROR EN LA LETRA QUE EL CURSOR SEÑALA
       ratioAciertoFallo[caracteres[cursorPosition].toLowerCase()][1]++;
 
       console.log(ratioAciertoFallo);
@@ -123,7 +137,8 @@ function empezarResolucion(texto, caracteres) {
       //     " tecla que has pulsado " +
       //     event.key
       // );
-      // ? CAMBIAR EL COLOR DE LA LETRA (ROJO)
+      // * CAMBIAR EL COLOR DE LA LETRA (ROJO)
+      spansArray[cursorPosition].className = "cursorDesactive";
       spansArray[cursorPosition].style.color = "red";
     }
   });
@@ -150,4 +165,8 @@ function pretty(txt, elemento) {
   console.log("//" + txt + "");
   console.log("//--------------------------------------");
   console.log(elemento);
+}
+
+function cursorDecoration(element) {
+  return (element.className = "cursor");
 }
