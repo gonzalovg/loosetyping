@@ -125,6 +125,7 @@ function empezarResolucion(texto, caracteres) {
       // * SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
 
       // ! Intentar convertir el caracter enfocado a un objeto json para luego poder sumarle el acierto utlizando ese objeto JSON
+      // ? VALE LA PENA ALMACENAR LOS DATOS EN UN OBJETO JSON? SI LUEGO LO VAMOS A PASAR A PHP??
       //* HAY QUE PARSEAR EL CARACTER ENFOCADO PARA PODER EMPLEARLO COMO CAMPO JSON
 
       let caracterEnfocado =
