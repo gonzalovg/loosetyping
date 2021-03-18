@@ -1,58 +1,53 @@
 let cursorPosition = 0;
+// let ratioAciertoFallo = [
+//   "a",
+//   "b",
+//   "c",
+//   "d",
+//   "e",
+//   "f",
+//   "g",
+//   "h",
+//   "i",
+//   "j",
+//   "k",
+//   "l",
+//   "m",
+//   "n",
+//   "ñ",
+//   "o",
+//   "p",
+//   "q",
+//   "r",
+//   "s",
+//   "t",
+//   "u",
+//   "v",
+//   "w",
+//   "x",
+//   "y",
+//   "z",
+//   " ",
+//   ",",
+//   ";",
+//   ".",
+//   "!",
+// ];
 
-let ratioAciertoFallo = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "ñ",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-  " ",
-  ",",
-  ";",
-  ".",
-  "!",
-];
+
+let chars = ' !#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNÑOPQRSTUVWXYZ[\]^_`abcdefghijklmnñopqrstuvwxyz{|}~';
+let ratioAciertoFallo = chars.split("");
+
+
+
 
 /**
  * !Generador carácteres
-
-// console.log(ratioAciertoFallo);
-
  */
 
-// let ratioAciertoFallo = [];
-let jsonLetras = "{";
-// for (var i = 32; i <= 255; i++) {
-// console.log(String.fromCharCode(i));
-// ratioAciertoFallo.push(String.fromCharCode(i));
-//   let caracter = String.fromCharCode(i);
 
-//   jsonLetras += '"' + caracter + '": {"aciertos":' + 0 + ',"fallos": ' + 0 + '}';
-//   if (i < 255) {
-//     jsonLetras += ",";
-//   }
+let jsonLetras = "{";
+
 
 for (let i = 0; i < ratioAciertoFallo.length; i++) {
   jsonLetras +=
@@ -68,6 +63,8 @@ for (let i = 0; i < ratioAciertoFallo.length; i++) {
   }
 }
 jsonLetras += "}";
+
+// console.log(jsonLetras);
 
 function prepararResolucion() {
   let texto = document.getElementById("texto");
@@ -92,97 +89,128 @@ function prepararResolucion() {
 function empezarResolucion(texto, caracteres) {
   //Obtener el elemento texto que se va a resolver
 
+  let resolucionCompleta = false;
+  let fallosTotales = 0;
+  let exitosTotales = 0;
+  let spansArray = texto.getElementsByTagName("span");
+
+
+
+
+
+  //* Parsear el String a un JSON
+  console.log(jsonLetras)
+  jsonLetras = JSON.parse(jsonLetras);
+  // console.log(jsonLetras)
+
+
+
+
+  /**
+   * *INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
+   */
+  let intervaloCursor = setInterval(() => {
+    spansArray[cursorPosition].className = "cursorActive";
+    setTimeout(() => {
+      spansArray[cursorPosition].className = "cursorDesactive";
+    }, 500);
+  }, 1000);
+
+
+
+
+
+
+
+
   /**
    * ! REGISTRADOR DE PULSACIONES EXITO/FALLO
    * * Ejecutar la funcion comprobarPulsacion() cada vez que el usuario pulse alguna tecla
    * * Si el resultado es verdadero, sumara un acierto y el cursor avanzara a la proxima posicion
    * * Si es falso, sumara una fallo
    */
-  let resolucionCompleta = false;
-  let fallosTotales = 0;
-  let exitosTotales = 0;
-  let spansArray = texto.getElementsByTagName("span");
-
-  /**
-   * *INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
-   */
-  if (!resolucionCompleta) {
-    setInterval(() => {
-      spansArray[cursorPosition].className = "cursorActive";
-      setTimeout(() => {
-        spansArray[cursorPosition].className = "cursorDesactive";
-      }, 500);
-    }, 1000);
-  }
-  console.log(jsonLetras);
-  jsonLetras = JSON.parse(jsonLetras);
-  console.log(caracteres);
 
   window.addEventListener("keypress", (event) => {
+    var tiempoResolucion = 0;
+
+    if (cursorPosition == 0) {
+      tiempoResolucion = setInterval(() => {
+        let htmlTime = document.getElementById("tiempo");
+
+        htmlTime.innerHTML++;
+
+
+
+      }, 100);;
+    }
+
+
+    // console.log(cursorPosition);
+    // console.log(caracteres.length);
+
+
+    let caracterEnfocado = caracteres[cursorPosition];
+
+
     if (comprobarPulsacion(caracteres[cursorPosition], event.key)) {
       exitosTotales++;
 
       // * SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
 
-      // ! Intentar convertir el caracter enfocado a un objeto json para luego poder sumarle el acierto utlizando ese objeto JSON
-      // ? VALE LA PENA ALMACENAR LOS DATOS EN UN OBJETO JSON? SI LUEGO LO VAMOS A PASAR A PHP??
-      //* HAY QUE PARSEAR EL CARACTER ENFOCADO PARA PODER EMPLEARLO COMO CAMPO JSON
+      jsonLetras[caracterEnfocado].aciertos++;
 
-      let caracterEnfocado =
-        '{"' +
-        caracteres[cursorPosition] +
-        '": {"aciertos":' +
-        0 +
-        ',"fallos": ' +
-        0 +
-        "}}";
-      let jsonCaracterEnfocado = JSON.parse(caracterEnfocado);
-      console.log(jsonLetras.jsonCaracterEnfocado);
-      // jsonLetras.jsonCaracterEnfocado[0].aciertos++;
-      // console.log(caracterEnfocado);
-      // console.log(jsonCaracterEnfocado);
-      //* COMO DEBERIA SER
-      // jsonLetras.caracterEnfocado.aciertos++;
+
+      // console.log("caracter: " + caracterEnfocado);
+      // console.log(jsonLetras[caracterEnfocado]);
+
 
       // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
       spansArray[cursorPosition].style.color = "green";
       spansArray[cursorPosition].className = "cursorDesactive";
       cursorPosition++;
+
+
     } else {
+
       fallosTotales++;
 
-      let caracterEnfocado =
-        '{"' +
-        caracteres[cursorPosition] +
-        '": {"aciertos":' +
-        0 +
-        ',"fallos": ' +
-        0 +
-        "}}";
+      jsonLetras[caracterEnfocado].fallos++;
 
-      let jsonCaracterEnfocado = JSON.parse(caracterEnfocado);
-
-      jsonLetras.jsonCaracterEnfocado.fallos++;
-
-      // * SUMAR UN ERROR EN LA LETRA QUE EL CURSOR SEÑALA
-      // ratioAciertoFallo[caracteres[cursorPosition].toLowerCase()][1]++;
-      // jsonLetras.caracteres[cursorPosition].fallos++;
+      // console.log(jsonLetras[caracterEnfocado]);
 
       // * CAMBIAR EL COLOR DE LA LETRA (ROJO)
       spansArray[cursorPosition].className = "cursorDesactive";
       spansArray[cursorPosition].style.color = "red";
     }
 
-    if (cursorPosition == caracteres.length - 2) {
-      resolucionCompleta = true;
+    if (cursorPosition === caracteres.length) {
+
+      clearInterval(intervaloCursor);
+      clearInterval(tiempoResolucion);
+
       mostrarStatsResolucion(
         exitosTotales,
         fallosTotales,
-        0,
-        ratioAciertoFallo
+        tiempoResolucion,
+        jsonLetras
       );
+
+      finResolucion();
+
+      return true;
+
+
+
+
+
     }
+
+
   });
+
+
+
+
 }
 
 /**
@@ -200,21 +228,57 @@ function comprobarPulsacion(teclaPorPulsar, teclaPulsada) {
   }
 }
 
-function mostrarStatsResolucion(aciertos, fallos, fallosPorTecla) {
-  console.log("Aciertos: " + (aciertos - fallos));
+function mostrarStatsResolucion(aciertos, fallos, tiempo, fallosPorTecla) {
+  console.log("Aciertos: " + (aciertos));
   console.log("Fallos: " + fallos);
-  // console.log("Tiempo de resolución: " + tiempo);
+  // console.log("Tiempo de resolución: " + tiempoResolucion);
   console.log(fallosPorTecla);
 }
 
-function pretty(txt, elemento) {
-  console.log("//######################################");
-  // console.log("//--------------------------------------");
-  console.log("//" + txt + "");
-  console.log("//--------------------------------------");
-  console.log(elemento);
-}
+// function pretty(txt, elemento) {
+//   console.log("//######################################");
+//   // console.log("//--------------------------------------");
+//   console.log("//" + txt + "");
+//   console.log("//--------------------------------------");
+//   console.log(elemento);
+// }
 
-function cursorDecoration(element) {
+function cursorDecoration(json) {
   return (element.className = "cursor");
 }
+
+function finResolucion() {
+
+  enviarRatioResolucion(jsonLetras);
+
+}
+
+
+// ! Envio de datos a PHP, donde se insertara en la tabla ratio
+function enviarRatioResolucion(json) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // alert(json.a)
+      // window.location.replace("prueba.php");
+      // console.log(JSON.stringify(json));
+      document.getElementById("result").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "prueba.php?data=" + JSON.stringify(json), true);
+  xhttp.send();
+}
+
+
+// function cronometro() {
+
+//   setInterval(() => {
+//     let htmlTime = document.getElementById("tiempo");
+
+//     htmlTime.innerHTML++;
+
+//     return htmlTime.innerHTML;
+
+//   }, 100);
+
+// }
