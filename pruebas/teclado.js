@@ -34,20 +34,15 @@ let cursorPosition = 0;
 //   "!",
 // ];
 
-
-let chars = ' !#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNÑOPQRSTUVWXYZ[\]^_`abcdefghijklmnñopqrstuvwxyz{|}~';
+let chars =
+  " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNÑOPQRSTUVWXYZ[]^_`abcdefghijklmnñopqrstuvwxyz{|}~";
 let ratioAciertoFallo = chars.split("");
-
-
-
 
 /**
  * !Generador carácteres
  */
 
-
 let jsonLetras = "{";
-
 
 for (let i = 0; i < ratioAciertoFallo.length; i++) {
   jsonLetras +=
@@ -78,7 +73,10 @@ function prepararResolucion() {
   textoFragmentado.forEach((letra) => {
     // console.log(letra);
     textoEnSpan += "<span>" + letra + "</span>";
+    letra = quitarTildes(letra);
+    console.log(letra);
   });
+  console.log(textoFragmentado);
   // console.log(textoEnSpan);
 
   texto.innerHTML = textoEnSpan;
@@ -94,17 +92,10 @@ function empezarResolucion(texto, caracteres) {
   let exitosTotales = 0;
   let spansArray = texto.getElementsByTagName("span");
 
-
-
-
-
   //* Parsear el String a un JSON
-  console.log(jsonLetras)
+  console.log(jsonLetras);
   jsonLetras = JSON.parse(jsonLetras);
   // console.log(jsonLetras)
-
-
-
 
   /**
    * *INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
@@ -115,13 +106,6 @@ function empezarResolucion(texto, caracteres) {
       spansArray[cursorPosition].className = "cursorDesactive";
     }, 500);
   }, 1000);
-
-
-
-
-
-
-
 
   /**
    * ! REGISTRADOR DE PULSACIONES EXITO/FALLO
@@ -138,19 +122,13 @@ function empezarResolucion(texto, caracteres) {
         let htmlTime = document.getElementById("tiempo");
 
         htmlTime.innerHTML++;
-
-
-
-      }, 100);;
+      }, 100);
     }
-
 
     // console.log(cursorPosition);
     // console.log(caracteres.length);
 
-
     let caracterEnfocado = caracteres[cursorPosition];
-
 
     if (comprobarPulsacion(caracteres[cursorPosition], event.key)) {
       exitosTotales++;
@@ -159,19 +137,14 @@ function empezarResolucion(texto, caracteres) {
 
       jsonLetras[caracterEnfocado].aciertos++;
 
-
       // console.log("caracter: " + caracterEnfocado);
       // console.log(jsonLetras[caracterEnfocado]);
-
 
       // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
       spansArray[cursorPosition].style.color = "green";
       spansArray[cursorPosition].className = "cursorDesactive";
       cursorPosition++;
-
-
     } else {
-
       fallosTotales++;
 
       jsonLetras[caracterEnfocado].fallos++;
@@ -184,7 +157,6 @@ function empezarResolucion(texto, caracteres) {
     }
 
     if (cursorPosition === caracteres.length) {
-
       clearInterval(intervaloCursor);
       clearInterval(tiempoResolucion);
 
@@ -198,19 +170,8 @@ function empezarResolucion(texto, caracteres) {
       finResolucion();
 
       return true;
-
-
-
-
-
     }
-
-
   });
-
-
-
-
 }
 
 /**
@@ -229,7 +190,7 @@ function comprobarPulsacion(teclaPorPulsar, teclaPulsada) {
 }
 
 function mostrarStatsResolucion(aciertos, fallos, tiempo, fallosPorTecla) {
-  console.log("Aciertos: " + (aciertos));
+  console.log("Aciertos: " + aciertos);
   console.log("Fallos: " + fallos);
   // console.log("Tiempo de resolución: " + tiempoResolucion);
   console.log(fallosPorTecla);
@@ -248,11 +209,8 @@ function cursorDecoration(json) {
 }
 
 function finResolucion() {
-
   enviarRatioResolucion(jsonLetras);
-
 }
-
 
 // ! Envio de datos a PHP, donde se insertara en la tabla ratio
 function enviarRatioResolucion(json) {
@@ -269,6 +227,46 @@ function enviarRatioResolucion(json) {
   xhttp.send();
 }
 
+function quitarTildes(caracter) {
+  if (
+    caracter == "á" ||
+    caracter == "à" ||
+    caracter == "ä" ||
+    caracter == "â"
+  ) {
+    return "a";
+  } else if (
+    caracter == "é" ||
+    caracter == "è" ||
+    caracter == "ë" ||
+    caracter == "ê"
+  ) {
+    return "e";
+  } else if (
+    caracter == "í" ||
+    caracter == "ì" ||
+    caracter == "ï" ||
+    caracter == "î"
+  ) {
+    return "i";
+  } else if (
+    caracter == "ó" ||
+    caracter == "ò" ||
+    caracter == "ö" ||
+    caracter == "ô"
+  ) {
+    return "o";
+  } else if (
+    caracter == "ú" ||
+    caracter == "ù" ||
+    caracter == "ü" ||
+    caracter == "û"
+  ) {
+    return "u";
+  }
+
+  return caracter;
+}
 
 // function cronometro() {
 
