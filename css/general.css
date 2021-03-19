@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+* {
+  color: #3c4043;
+}
+
+body {
+  background-color: #fdfefe;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #3c4043;
+}
+
+p,
+span {
+  font-family: "Open Sans", sans-serif;
+}
+
+a:link {
+  color: #1a73e8;
+}
+
+a:visited {
+  color: #1a73e8;
+}
+
+a:hover {
+  color: #066ef6;
+}
+
+a:active {
+  color: #066ef6;
+}
+
+.navLink:link {
+  color: #3c4043;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.navLink:visited {
+  color: #3c4043;
+}
+
+.navLink:hover {
+  color: #3c4043;
+}
+
+.navLink:active {
+  color: #3c4043;
+}
+
+li h1,
+li h2 {
+  margin: 0;
+}
+
+nav {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+nav ul li {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#navHeader {
+  font-size: 1.3em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+section {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+#texto {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.cursorActive {
+  background-color: black;
+  color: white;
+  padding: 1px 0px;
+  border-radius: 2px;
+}
+
+.cursorDesactive {
+  border-bottom: 1px solid black;
+}

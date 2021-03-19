@@ -141,7 +141,7 @@ function empezarResolucion(texto, caracteres) {
       // console.log(jsonLetras[caracterEnfocado]);
 
       // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
-      spansArray[cursorPosition].style.color = "green";
+      spansArray[cursorPosition].style.color = "#35a853";
       spansArray[cursorPosition].className = "cursorDesactive";
       cursorPosition++;
     } else {
@@ -153,7 +153,7 @@ function empezarResolucion(texto, caracteres) {
 
       // * CAMBIAR EL COLOR DE LA LETRA (ROJO)
       spansArray[cursorPosition].className = "cursorDesactive";
-      spansArray[cursorPosition].style.color = "red";
+      spansArray[cursorPosition].style.color = "#ea4335";
     }
 
     if (cursorPosition === caracteres.length) {
