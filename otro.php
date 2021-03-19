@@ -11,10 +11,8 @@
     <link rel='icon' type='image/icon' href='./favicon.ico'>
     <link rel="stylesheet" href="css/reboot.css">
     <script src="pruebas/teclado.js"></script>
-
     <?php include "includes/general-head.php" ?>
-
-
+    <script src="js/general.js"></script>
 
 </head>
 
@@ -24,7 +22,7 @@
         <?php include "includes/nav.php" ?>
 
         <section>
-            <h1>TEXTO: LOREM</h1>
+            <h1>TEXTO: Otro</h1>
             <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, aliquam?</p>
 
             <span id="tiempo"> </span>
@@ -56,7 +54,7 @@
         <?php include "includes/footer.php" ?>
 
     </main>
-    <script src="js/general.js"></script>
+
 </body>
 
 </html>

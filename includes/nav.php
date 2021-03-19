@@ -4,7 +4,7 @@
 
             <h1>
                 <header>
-                    <a class="navLink" id="navHeader" href="#">
+                    <a class="navLink" id="navHeader" href="index.php">
                         LOOSETYPING
                     </a>
                 </header>
@@ -13,7 +13,7 @@
         </li>
         <li>
             <h2>
-                <a class="navLink" href="#">HOME</a>
+                <a class="navLink" href="otro.php">HOME</a>
             </h2>
         </li>
         <li>
@@ -35,7 +35,7 @@
             <h2>
                 <i id="botonTema" onclick="cambiarTema()" class="em em-new_moon" aria-role="presentation"
                     aria-label="NEW MOON SYMBOL"></i>
-                <!-- <i onclick="cambiarTema()" class="em em-sunny" aria-role="presentation" aria-label="light-mode"></i> -->
+
             </h2>
         </li>
 
