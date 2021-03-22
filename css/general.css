@@ -112,3 +112,31 @@ section {
 .cursorDesactive {
   border-bottom: 1px solid #35a853;
 }
+
+.nav-item-small {
+  font-size: 0.7em;
+}
+
+#stats {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-container {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-result {
+  font-size: 2em;
+  text-align: center;
+}
+
+.stat-header {
+  font-size: 1em;
+  text-align: center;
+}

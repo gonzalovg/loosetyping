@@ -1,49 +1,12 @@
 let cursorPosition = 0;
-// let ratioAciertoFallo = [
-//   "a",
-//   "b",
-//   "c",
-//   "d",
-//   "e",
-//   "f",
-//   "g",
-//   "h",
-//   "i",
-//   "j",
-//   "k",
-//   "l",
-//   "m",
-//   "n",
-//   "ñ",
-//   "o",
-//   "p",
-//   "q",
-//   "r",
-//   "s",
-//   "t",
-//   "u",
-//   "v",
-//   "w",
-//   "x",
-//   "y",
-//   "z",
-//   " ",
-//   ",",
-//   ";",
-//   ".",
-//   "!",
-// ];
-
 let chars =
-  " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNÑOPQRSTUVWXYZ[]^_`abcdefghijklmnñopqrstuvwxyz{|}~";
+  " !#$%&'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~";
 let ratioAciertoFallo = chars.split("");
 
 /**
  * !Generador carácteres
  */
-
 let jsonLetras = "{";
-
 for (let i = 0; i < ratioAciertoFallo.length; i++) {
   jsonLetras +=
     '"' +
@@ -59,43 +22,43 @@ for (let i = 0; i < ratioAciertoFallo.length; i++) {
 }
 jsonLetras += "}";
 
-// console.log(jsonLetras);
+// * En la mecanografia una palabra son 5 pulsaciones
+
+let palabrasTotales = 0;
 
 function prepararResolucion() {
   let texto = document.getElementById("texto");
 
   //separar el texto en un array, cada posicion con un carácter
-  let textoFragmentado = texto.innerHTML.split("");
+  let textoFragmentado = texto.innerHTML.trim().split("");
 
   // Cambiar texto plano a conjunto de etiquetas span individuales
   let textoEnSpan = "";
-
-  textoFragmentado.forEach((letra) => {
-    // console.log(letra);
-    textoEnSpan += "<span>" + letra + "</span>";
-    letra = quitarTildes(letra);
-    console.log(letra);
-  });
   console.log(textoFragmentado);
-  // console.log(textoEnSpan);
+  // textoFragmentad0 = textoFragmentado.replace(/\\n/g, " ");
+  textoFragmentado.map((caracter) => {
+    textoEnSpan += "<span>" + caracter + "</span>";
+  });
 
   texto.innerHTML = textoEnSpan;
 
+  // * Tiempo en el que transcurre la resolución
+
   empezarResolucion(texto, textoFragmentado);
+
+  palabrasTotales = textoFragmentado.length / 5;
 }
 
 function empezarResolucion(texto, caracteres) {
   //Obtener el elemento texto que se va a resolver
 
-  let resolucionCompleta = false;
   let fallosTotales = 0;
   let exitosTotales = 0;
   let spansArray = texto.getElementsByTagName("span");
 
   //* Parsear el String a un JSON
-  console.log(jsonLetras);
+
   jsonLetras = JSON.parse(jsonLetras);
-  // console.log(jsonLetras)
 
   /**
    * *INTERVALO DE TIEMPO EN EL QUE EL CURSOR PARPADEA
@@ -105,7 +68,7 @@ function empezarResolucion(texto, caracteres) {
     setTimeout(() => {
       spansArray[cursorPosition].className = "cursorDesactive";
     }, 500);
-  }, 1000);
+  }, 900);
 
   /**
    * ! REGISTRADOR DE PULSACIONES EXITO/FALLO
@@ -114,31 +77,20 @@ function empezarResolucion(texto, caracteres) {
    * * Si es falso, sumara una fallo
    */
 
+  let inicio = 0;
   window.addEventListener("keypress", (event) => {
-    var tiempoResolucion = 0;
-
-    if (cursorPosition == 0) {
-      tiempoResolucion = setInterval(() => {
-        let htmlTime = document.getElementById("tiempo");
-
-        htmlTime.innerHTML++;
-      }, 100);
-    }
-
-    // console.log(cursorPosition);
-    // console.log(caracteres.length);
-
     let caracterEnfocado = caracteres[cursorPosition];
+
+    //* EMPEZAR EL CRONOMETRO
+    if (cursorPosition == 0) {
+      inicio = Date.now();
+    }
 
     if (comprobarPulsacion(caracteres[cursorPosition], event.key)) {
       exitosTotales++;
 
       // * SUMAR UN ACIERTO EN LA LETRA QUE EL CURSOR SEÑALA
-
       jsonLetras[caracterEnfocado].aciertos++;
-
-      // console.log("caracter: " + caracterEnfocado);
-      // console.log(jsonLetras[caracterEnfocado]);
 
       // * CAMBIAR EL COLOR DE LA LETRA (VERDE)
       spansArray[cursorPosition].style.color = "#35a853";
@@ -158,12 +110,18 @@ function empezarResolucion(texto, caracteres) {
 
     if (cursorPosition === caracteres.length) {
       clearInterval(intervaloCursor);
-      clearInterval(tiempoResolucion);
+      // * ACABAR EL CRONOMETRO
+      let final = Date.now();
+      let tiempoResolucionMili = (final - inicio) / 1000;
+      let tiempoResolucionSecs = parseFloat(tiempoResolucionMili);
+
+      let wpm = Math.round((palabrasTotales * 60) / tiempoResolucionSecs);
 
       mostrarStatsResolucion(
         exitosTotales,
         fallosTotales,
-        tiempoResolucion,
+        tiempoResolucionSecs,
+        wpm,
         jsonLetras
       );
 
@@ -189,22 +147,30 @@ function comprobarPulsacion(teclaPorPulsar, teclaPulsada) {
   }
 }
 
-function mostrarStatsResolucion(aciertos, fallos, tiempo, fallosPorTecla) {
+function mostrarStatsResolucion(aciertos, fallos, tiempo, wpm, fallosPorTecla) {
   console.log("Aciertos: " + aciertos);
   console.log("Fallos: " + fallos);
-  // console.log("Tiempo de resolución: " + tiempoResolucion);
+  console.log("WPM: " + wpm + "wpm");
+  console.log("Tiempo de resolución: " + tiempo);
   console.log(fallosPorTecla);
+
+  let statsContainer = document.getElementById("stats");
+
+  let content =
+    '  <div class="stat-container"><div class="stat-result">' +
+    aciertos +
+    '</div><div class="stat-header">ACIERTOS</div></div><div class="stat-container"><div class="stat-result">' +
+    fallos +
+    '</div><div class="stat-header">FALLOS</div></div><div class="stat-container"><div class="stat-result">' +
+    wpm +
+    '</div><div class="stat-header">WPM</div></div><div class="stat-container"><div class="stat-result">' +
+    tiempo +
+    '</div><div class="stat-header">TIEMPO</div></div>';
+
+  statsContainer.innerHTML += content;
 }
 
-// function pretty(txt, elemento) {
-//   console.log("//######################################");
-//   // console.log("//--------------------------------------");
-//   console.log("//" + txt + "");
-//   console.log("//--------------------------------------");
-//   console.log(elemento);
-// }
-
-function cursorDecoration(json) {
+function cursorDecoration() {
   return (element.className = "cursor");
 }
 
@@ -217,9 +183,6 @@ function enviarRatioResolucion(json) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // alert(json.a)
-      // window.location.replace("prueba.php");
-      // console.log(JSON.stringify(json));
       document.getElementById("result").innerHTML = this.responseText;
     }
   };
@@ -227,56 +190,4 @@ function enviarRatioResolucion(json) {
   xhttp.send();
 }
 
-function quitarTildes(caracter) {
-  if (
-    caracter == "á" ||
-    caracter == "à" ||
-    caracter == "ä" ||
-    caracter == "â"
-  ) {
-    return "a";
-  } else if (
-    caracter == "é" ||
-    caracter == "è" ||
-    caracter == "ë" ||
-    caracter == "ê"
-  ) {
-    return "e";
-  } else if (
-    caracter == "í" ||
-    caracter == "ì" ||
-    caracter == "ï" ||
-    caracter == "î"
-  ) {
-    return "i";
-  } else if (
-    caracter == "ó" ||
-    caracter == "ò" ||
-    caracter == "ö" ||
-    caracter == "ô"
-  ) {
-    return "o";
-  } else if (
-    caracter == "ú" ||
-    caracter == "ù" ||
-    caracter == "ü" ||
-    caracter == "û"
-  ) {
-    return "u";
-  }
-
-  return caracter;
-}
-
-// function cronometro() {
-
-//   setInterval(() => {
-//     let htmlTime = document.getElementById("tiempo");
-
-//     htmlTime.innerHTML++;
-
-//     return htmlTime.innerHTML;
-
-//   }, 100);
-
-// }
+function calcularTiempo() {}
