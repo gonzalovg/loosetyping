@@ -1,6 +1,6 @@
 <?php
 // $texto = "From the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.";
-$texto = "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos; con ella no pueden igualarse los tesoros que encierra la tierra ni el mar encubre; por la libertad";
+$texto = "Roma, la capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial.";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $texto = "La libertad, Sancho, es uno de los más preciosos dones que a los homb
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
         integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
         crossorigin="anonymous"></script>
-    <script src="pruebas/teclado.js"></script>
+    <script src="js/teclado.js"></script>
 
 
 
@@ -28,7 +28,7 @@ $texto = "La libertad, Sancho, es uno de los más preciosos dones que a los homb
 
 </head>
 
-<body onload="prepararResolucion()">
+<body onload="inicializarDatos()">
     <!-- <span id="hiddenHeader">LOOSETYPING</span> -->
     <main>
 
@@ -45,11 +45,10 @@ $texto = "La libertad, Sancho, es uno de los más preciosos dones que a los homb
 
             <div id="stats">
 
-
-
-
-
             </div>
+
+
+            <div id="result"></div>
 
             <br>
             <br>

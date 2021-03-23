@@ -10,13 +10,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='./favicon.ico'>
     <link rel="stylesheet" href="css/reboot.css">
-    <script src="pruebas/teclado.js"></script>
     <?php include "includes/general-head.php" ?>
+    <script src="js/teclado.js"></script>
     <script src="js/general.js"></script>
 
 </head>
 
-<body onload="prepararResolucion()">
+<body onload="inicializarDatos()">
     <main>
 
         <?php include "includes/nav.php" ?>
@@ -25,7 +25,7 @@
             <h1>TEXTO: Otro</h1>
             <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, aliquam?</p>
 
-            <span id="tiempo"> </span>
+            <span id="stats"> </span>
 
             <br>
             <br>

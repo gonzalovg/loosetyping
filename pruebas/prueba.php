@@ -14,7 +14,7 @@ $datosJson = json_decode($datos, true);
 // echo gettype($datosJson);
 
 echo "<br>";
-
+header("Content-Type: application/json");
 var_dump($datosJson);
 
 
