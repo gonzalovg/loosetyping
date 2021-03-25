@@ -18,7 +18,7 @@ $texto = "hola";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
         integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
         crossorigin="anonymous"></script>
-    <script src="js/teclado.js"></script>
+
 
 
 
@@ -28,7 +28,7 @@ $texto = "hola";
 
 </head>
 
-<body onload="inicializarDatos()">
+<body>
 
     <main>
 
@@ -39,16 +39,16 @@ $texto = "hola";
 
 
 
-            <h1>TEXTO: LOREM</h1>
-            <p id="texto"><?php echo $texto ?>
-            </p>
-
-            <div id="stats">
+            <div class="custom-text-container">
+                <h3>TEXTO: LOREM</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
+                    magni exercitationem! Eius, quidem provident quibusdam pariatur consequatur illum impedit. Sunt quos
+                    distinctio fugit. Architecto, quaerat nulla!</P>
+                <p class="button-text-container"><button>Resolver</button></p>
 
             </div>
 
 
-            <div id="result"></div>
 
 
 
@@ -58,7 +58,7 @@ $texto = "hola";
 
     </main>
     <script src="js/general.js"></script>
-    <script src="js/typed.js"></script>
+
 
 
 </body>

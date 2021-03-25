@@ -1,7 +1,6 @@
 let posicionCursor = 0;
-
 let caracteres =
-  " !#$%&'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~";
+  " !$#&%'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~";
 let arrayDeCaracteres = caracteres.split("");
 let balanceAciertos = generarRatio(arrayDeCaracteres);
 let fallosTotales = 0;
@@ -85,16 +84,18 @@ function enviarRatioResolucion(json) {
       document.getElementById("result").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "pruebas/prueba.php?data=" + JSON.stringify(json), true);
+  xhttp.open(
+    "GET",
+    "pruebas/prueba.php?data=" + encodeURIComponent(JSON.stringify(json)),
+    true
+  );
   xhttp.send();
 }
 
 function sumarAcierto(caracter) {
   aciertosTotales++;
   balanceAciertos[caracter].aciertos++;
-
   colorearCorrecto();
-
   posicionCursor++;
 }
 
@@ -134,12 +135,9 @@ function comprobarFin() {
     clearInterval(intervaloCursor);
     // * ACABAR EL CRONOMETRO
     finResolucion = Date.now();
-
     let tiempoResolucionMili = (finResolucion - inicioResolucion) / 1000;
     let tiempoResolucionSecs = parseFloat(tiempoResolucionMili);
-
     let wpm = Math.round((palabrasTotales * 60) / tiempoResolucionSecs);
-
     mostrarStatsResolucion(
       aciertosTotales,
       fallosTotales,
