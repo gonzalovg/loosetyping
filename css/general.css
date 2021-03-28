@@ -94,6 +94,7 @@ nav ul li {
 section {
   max-width: 992px;
   margin: 0 auto;
+  padding: 30px 0 0 0;
 }
 
 #texto {
@@ -165,5 +166,75 @@ section {
 
 .button-text-container button {
   border: none;
-  background-color: #707b7c;
+  background-color: #eee;
+}
+
+.nav-item-big {
+  font-size: 2.3em;
+  text-align: center;
+}
+
+#login-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+#login-form form ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#login-form form ul li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #eee;
+  color: #3c4043;
+  background-color: #fdfefe;
+  padding: 3px 7px 3px;
+}
+
+input[type="button"] {
+  background-color: #eee;
+  border: none;
+  padding: 5px 0;
+}
+
+input[type="button"]:hover {
+  background-color: #fdfefe;
+  border: 1px solid #eee;
+}
+
+select {
+  border: 1px solid #eee;
+  background-color: #fdfefe;
+}
+
+#aspectos-ranking {
+  margin: 30px 0 0 0;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.registro-ranking {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.registro-ranking:hover {
+  padding: 10px 0;
+}
+
+.campo-ranking {
+  width: 150px;
 }

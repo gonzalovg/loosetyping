@@ -1,6 +1,7 @@
 <?php
 // $texto = "From the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.";
-$texto = "hola";
+// $texto = "hola";
+$texto = "Katos me come los huevos";
 ?>
 
 <!DOCTYPE html>

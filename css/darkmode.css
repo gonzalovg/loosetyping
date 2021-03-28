@@ -53,3 +53,39 @@ a:active {
   background-color: #fdfefe;
   color: #3c4043;
 }
+
+.button-text-container button {
+  border: none;
+  background-color: #707b7c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #707b7c;
+  color: #fdfefe;
+  background-color: #3c4043;
+}
+
+input[type="button"] {
+  background-color: #707b7c;
+  border: none;
+}
+
+input[type="button"]:hover {
+  background-color: #3c4043;
+  border: 1px solid #707b7c;
+}
+
+select {
+  border: 1px solid #707b7c;
+  background-color: #3c4043;
+}
+
+#aspectos-ranking {
+  border-bottom: 1px solid #707b7c;
+}
+
+.registro-ranking {
+  border-bottom: 1px solid #707b7c;
+}

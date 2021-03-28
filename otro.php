@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/reboot.css">
     <?php include "includes/general-head.php" ?>
     <script src="js/teclado.js"></script>
-    <script src="js/general.js"></script>
+
 
 </head>
 
@@ -54,7 +54,7 @@
         <?php include "includes/footer.php" ?>
 
     </main>
-
+    <script src="js/general.js"></script>
 </body>
 
 </html>

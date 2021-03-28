@@ -1,6 +1,7 @@
 <?php
-// $texto = "From the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.";
-$texto = "hola";
+
+
+// $texto = "hola";
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +40,31 @@ $texto = "hola";
 
 
 
+            <div class="custom-text-container">
+                <h3>TEXTO: LOREM</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
+                    magni exercitationem! Eius, quidem provident quibusdam pariatur consequatur illum impedit. Sunt quos
+                    distinctio fugit. Architecto, quaerat nulla!</P>
+                <p class="button-text-container"><button>Resolver</button></p>
+
+            </div>
+            <div class="custom-text-container">
+                <h3>TEXTO: LOREM</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
+                    magni exercitationem! Eius, quidem provident quibusdam pariatur consequatur illum impedit. Sunt quos
+                    distinctio fugit. Architecto, quaerat nulla!</P>
+                <p class="button-text-container"><button>Resolver</button></p>
+
+            </div>
+            <div class="custom-text-container">
+                <h3>TEXTO: LOREM</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
+                    magni exercitationem! Eius, quidem provident quibusdam pariatur consequatur illum impedit. Sunt quos
+                    distinctio fugit. Architecto, quaerat nulla!</P>
+                <p class="button-text-container"><button><span class="ec ec-keyboard"></span>
+                    </button></p>
+
+            </div>
             <div class="custom-text-container">
                 <h3>TEXTO: LOREM</h3>
                 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
