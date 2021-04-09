@@ -177,7 +177,7 @@ section {
 #login-form {
   width: 50%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 0 0 50px 0;
 }
 
 #login-form form ul {
@@ -237,4 +237,11 @@ select {
 
 .campo-ranking {
   width: 150px;
+}
+
+#login-icon {
+  font-size: 10em;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }

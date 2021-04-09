@@ -37,7 +37,8 @@
 
         <section>
 
-
+            <h2><span class="ec ec-gift-heart"></span>
+                Resoluciones personalizadas</h2>
 
 
             <div class="custom-text-container">

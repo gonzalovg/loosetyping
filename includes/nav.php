@@ -19,7 +19,7 @@
         </li>
         <li>
             <h2>
-                <a class="navLink" href="custom.php">CUSTOM</a>
+                <a class="navLink" href="custom.php">TEXTOS</a>
             </h2>
         </li>
         <li>

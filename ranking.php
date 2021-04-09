@@ -34,7 +34,7 @@
 
             <div id="ranking-options">
                 <select name="texto" id="">
-                    <option value="">Cualquier texto</option>
+                    <option value="hola">Cualquier texto</option>
                     <option value="">Lorem</option>
                     <option value="">Cervantes</option>
                     <option value="">Roma</option>

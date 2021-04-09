@@ -33,6 +33,9 @@
         <section>
 
             <div id="login-form">
+                <span id="login-icon" class="ec ec-robot"></span>
+
+
                 <form
                     action="<?php echo $_SERVER['PHP_SELF'] ?>"
                     method="post">
@@ -40,6 +43,7 @@
                     <ul>
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
                         <li><label for="pass"></label><input type="password" placeholder="Password" name="pass"></li>
+                        <li><a href="">¿No tienes cuenta? Regístrate</a></li>
                         <li><input type="button" value="Log In"></li>
                     </ul>
 
