@@ -1,7 +1,7 @@
 <?php
 // $texto = "From the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.";
 // $texto = "hola";
-$texto = "Es la ciudad con la más alta concentración de bienes históricos y arquitectónicos del mundo";
+$texto = "La cerveza es una bebida alcohólica, no destilada, de sabor amargo, que se fabrica con granos de cebada germinados u otros cereales cuyo almidón se fermenta en agua con levadura y se aromatiza a menudo con lúpulo, entre otras plantas.";
 ?>
 
 <!DOCTYPE html>
