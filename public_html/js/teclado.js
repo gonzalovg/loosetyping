@@ -86,7 +86,7 @@ function enviarRatioResolucion(json) {
   };
   xhttp.open(
     "GET",
-    "pruebas/prueba.php?data=" + encodeURIComponent(JSON.stringify(json)),
+    "../pruebas/prueba.php?data=" + encodeURIComponent(JSON.stringify(json)),
     true
   );
   xhttp.send();

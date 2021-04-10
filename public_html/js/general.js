@@ -1,8 +1,8 @@
-// * MODO OSCURO / MODO CLARO
+//  MODO OSCURO / MODO CLARO
 
 let darkModeCss = document.getElementById("dark-mode-css");
 darkModeCss.disabled = true;
-
+// alert(document.cookie);
 if (document.cookie === "darkmode=on") {
   let iconoTema = document.getElementById("botonTema");
   darkModeCss.disabled = false;

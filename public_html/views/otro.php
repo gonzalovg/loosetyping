@@ -8,10 +8,10 @@
     <meta name='author' content='Gonzalo Verdugo'>
     <meta name='description' content='Sitio de Gonzalo Verdugo'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='icon' type='image/icon' href='./favicon.ico'>
-    <link rel="stylesheet" href="css/reboot.css">
-    <?php include "includes/general-head.php" ?>
-    <script src="js/teclado.js"></script>
+    <link rel='icon' type='image/icon' href='../favicon.ico'>
+    <link rel="stylesheet" href="../css/reboot.css">
+    <?php include "../includes/general-head.php" ?>
+    <script src="../js/teclado.js"></script>
 
 
 </head>
@@ -19,7 +19,7 @@
 <body onload="inicializarDatos()">
     <main>
 
-        <?php include "includes/nav.php" ?>
+        <?php include "../includes/nav.php" ?>
 
         <section>
             <h1>TEXTO: Otro</h1>
@@ -51,10 +51,10 @@
 
         </section>
 
-        <?php include "includes/footer.php" ?>
+        <?php include "../includes/footer.php" ?>
 
     </main>
-    <script src="js/general.js"></script>
+    <script src="../js/general.js"></script>
 </body>
 
 </html>

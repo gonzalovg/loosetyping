@@ -23,7 +23,7 @@ $texto = "La cerveza es una bebida alcohólica, no destilada, de sabor amargo, q
 
 
 
-    <?php include "includes/general-head.php" ?>
+    <?php include "includes/indexHead.php" ?>
 
 
 
@@ -33,7 +33,7 @@ $texto = "La cerveza es una bebida alcohólica, no destilada, de sabor amargo, q
 
     <main>
 
-        <?php include "includes/nav.php" ?>
+        <?php include "includes/indexNav.php" ?>
 
         <section>
 

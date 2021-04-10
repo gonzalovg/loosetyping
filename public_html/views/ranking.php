@@ -8,14 +8,14 @@
     <meta name='author' content='Gonzalo Verdugo'>
     <meta name='description' content='Sitio de Gonzalo Verdugo'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='icon' type='image/icon' href='./favicon.ico'>
-    <link rel="stylesheet" href="css/reboot.css">
+    <link rel='icon' type='image/icon' href='../favicon.ico'>
+    <link rel="stylesheet" href="../css/reboot.css">
 
 
 
 
 
-    <?php include "includes/general-head.php" ?>
+    <?php include "../includes/general-head.php" ?>
 
 
 
@@ -25,7 +25,7 @@
 
     <main>
 
-        <?php include "includes/nav.php" ?>
+        <?php include "../includes/nav.php" ?>
 
         <section>
             <h1><span class="ec ec-trophy"></span>
@@ -122,10 +122,10 @@
 
         </section>
 
-        <?php include "includes/footer.php" ?>
+        <?php include "../includes/footer.php" ?>
 
     </main>
-    <script src="js/general.js"></script>
+    <script src="../js/general.js"></script>
 
 
 </body>

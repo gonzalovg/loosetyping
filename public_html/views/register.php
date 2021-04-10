@@ -1,10 +1,25 @@
+<?php
+include("../private/model/controllers/userController.php");
+
+
+
+// $userController = new UserController();
+
+if (isset($_POST) && !empty($_POST)) {
+    // echo "post lleno";
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang='es' dir='ltr'>
 
 <head>
     <meta charset='utf-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title> Log In </title>
+    <title> Register </title>
     <meta name='author' content='Gonzalo Verdugo'>
     <meta name='description' content='Sitio de Gonzalo Verdugo'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -36,15 +51,17 @@
                 <span id="login-icon" class="ec ec-robot"></span>
 
 
-                <form
-                    action="<?php echo $_SERVER['PHP_SELF'] ?>"
-                    method="post">
+                <form action="c=User&a=save" method="post">
 
                     <ul>
+                        <li><label for="name"></label><input type="text" placeholder="Username" name="name"></li>
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
+
                         <li><label for="pass"></label><input type="password" placeholder="Password" name="pass"></li>
-                        <li><a href="register.php">¿No tienes cuenta? Regístrate</a></li>
-                        <li><input type="button" value="Log In"></li>
+                        <li><label for="passVerification"></label><input type="password"
+                                placeholder="Password Verification" name="passwordVerification"></li>
+                        <li><a href="">¿No tienes cuenta? Regístrate</a></li>
+                        <li><input type="button" value="Registrarse"></li>
                     </ul>
 
                 </form>
