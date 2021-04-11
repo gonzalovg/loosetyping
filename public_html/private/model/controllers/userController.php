@@ -2,8 +2,8 @@
 
 
 
-// include("");
-include "../User.php";
+include("../private/model/user.php");
+// var_dump(scandir("../private/model"));
 
 
 class UserController
