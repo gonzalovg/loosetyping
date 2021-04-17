@@ -2,8 +2,8 @@
 
 let darkModeCss = document.getElementById("dark-mode-css");
 darkModeCss.disabled = true;
-// alert(document.cookie);
-if (document.cookie === "darkmode=on") {
+// alert(localStorage.darkmode);
+if (localStorage.darkmode === "on") {
   let iconoTema = document.getElementById("botonTema");
   darkModeCss.disabled = false;
   iconoTema.setAttribute("class", "ec ec-sun-with-face");
@@ -23,11 +23,11 @@ function cambiarTema() {
     iconoTema.setAttribute("class", "ec ec-sun-with-face");
     iconoTema.setAttribute("aria-label", "BLACK SUN WITH RAYS");
     darkModeCss.disabled = false;
-    document.cookie = "darkmode=on";
+    localStorage.darkmode = "on";
   } else if (claseIcono == "ec ec-sun-with-face") {
     iconoTema.setAttribute("class", "ec ec-new-moon-with-face");
     iconoTema.setAttribute("aria-label", "NEW MOON SYMBOL");
     darkModeCss.disabled = true;
-    document.cookie = "darkmode=off";
+    localStorage.darkmode = "off";
   }
 }

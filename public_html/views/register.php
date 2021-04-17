@@ -7,6 +7,8 @@ include("../private/model/controllers/userController.php");
 
 if (isset($_POST) && !empty($_POST)) {
     // echo "post lleno";
+
+    var_dump($_POST);
 }
 
 
