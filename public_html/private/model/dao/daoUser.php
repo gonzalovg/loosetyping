@@ -30,20 +30,15 @@ class DaoUser
     
         $query="select ema_user from usuarios where ema_user='".$user->getEmail()."';";
 
-        // $commit= $db->prepare($query);
+        
 
         $result=$db->query($query)->fetch();
-        var_dump($result);
+        // var_dump($result);
 
         if ($result["ema_user"]==$user->getEmail()) {
             return true;
         } elseif ($result["ema_user"]=="") {
             return false;
         }
-       
-
-        // if ($result) {
-        //     return true;
-        // }
     }
 }
