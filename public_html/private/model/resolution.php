@@ -1,6 +1,6 @@
 <?php
 
-class Resolve
+class Resolution
 {
     private $id;
     private $idUser;

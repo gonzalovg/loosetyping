@@ -200,13 +200,15 @@ input[type="password"] {
   padding: 3px 7px 3px;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   background-color: #eee;
   border: none;
   padding: 5px 0;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover,
+input[type="submit"]:hover {
   background-color: #fdfefe;
   border: 1px solid #eee;
 }

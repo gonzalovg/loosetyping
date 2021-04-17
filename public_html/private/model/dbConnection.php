@@ -4,7 +4,7 @@ class DbConnection
 {
     private static $instance;
 
-    private function __construct()
+    public function __construct()
     {
         // $this->instance = new PDO('mysql:host=localhost;dbname=loosetyping', 'root', '');
     }

@@ -1,5 +1,6 @@
 <?php
 include("../private/model/controllers/userController.php");
+// include("../private/model/user.php");
 
 
 
@@ -8,7 +9,16 @@ include("../private/model/controllers/userController.php");
 if (isset($_POST) && !empty($_POST)) {
     // echo "post lleno";
 
-    var_dump($_POST);
+    $userController= new UserController("");
+
+
+    $userController->doPost($_POST, "");
+
+    
+
+
+
+    // var_dump($_POST);
 }
 
 
@@ -53,17 +63,19 @@ if (isset($_POST) && !empty($_POST)) {
                 <span id="login-icon" class="ec ec-robot"></span>
 
 
-                <form action="c=User&a=save" method="post">
+                <form
+                    action="<?php echo $_SERVER['PHP_SELF'] ?>"
+                    method="post">
 
                     <ul>
-                        <li><label for="name"></label><input type="text" placeholder="Username" name="name"></li>
+                        <li><label for="name"></label><input type="text" placeholder="Username" name="username"></li>
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
 
                         <li><label for="pass"></label><input type="password" placeholder="Password" name="pass"></li>
                         <li><label for="passVerification"></label><input type="password"
                                 placeholder="Password Verification" name="passwordVerification"></li>
                         <li><a href="">¿No tienes cuenta? Regístrate</a></li>
-                        <li><input type="button" value="Registrarse"></li>
+                        <li><input type="submit" value="Registrarse"></li>
                     </ul>
 
                 </form>

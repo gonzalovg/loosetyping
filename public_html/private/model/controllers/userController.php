@@ -3,6 +3,8 @@
 
 
 include("../private/model/user.php");
+include("../private/model/dbConnection.php");
+include("../private/model/dao/daoUser.php");
 // var_dump(scandir("../private/model"));
 
 
@@ -10,14 +12,32 @@ class UserController
 {
     private $name;
 
-    public function __construct($name)
+    public function __construct()
     {
-        $this->name=$name;
+    }
+
+    public function doGet($request, $reponse)
+    {
     }
 
 
-    public function storeUser($data)
+
+    public function doPost($request, $reponse)
     {
+        $this->storeUser($request);
+    }
+
+
+
+    public function storeUser($request)
+    {
+        $user = new User("", $request["username"], $request["pass"], $request["correo"], "", "");
+
+        if ($user->existingUser()) {
+            return false;
+        } else {
+            $user->insert();
+        }
     }
 
 

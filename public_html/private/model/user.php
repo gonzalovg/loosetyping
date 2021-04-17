@@ -1,5 +1,5 @@
 <?php
-
+// include("dao/daoUser.php");
 
 class User
 {
@@ -149,5 +149,12 @@ class User
 
     public function insert()
     {
+        DaoUser::insert($this);
+    }
+
+
+    public function existingUser()
+    {
+        return DaoUser::existingUser($this);
     }
 }

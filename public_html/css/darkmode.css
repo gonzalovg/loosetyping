@@ -67,12 +67,14 @@ input[type="password"] {
   background-color: #3c4043;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   background-color: #707b7c;
   border: none;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover,
+input[type="submit"]:hover {
   background-color: #3c4043;
   border: 1px solid #707b7c;
 }
