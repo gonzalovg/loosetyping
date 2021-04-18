@@ -68,15 +68,18 @@ input[type="password"] {
 }
 
 input[type="button"],
-input[type="submit"] {
+input[type="submit"],
+button {
   background-color: #707b7c;
   border: none;
 }
 
 input[type="button"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover {
   background-color: #3c4043;
-  border: 1px solid #707b7c;
+  border: none;
+  /* border: 1px solid #707b7c; */
 }
 
 select {

@@ -24,6 +24,19 @@ class DaoUser
         $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword())]);
     }
 
+    public static function delete($user)
+    {
+        $db= DbConnection::getInstance();
+        
+        $query="delete * from usuarios where id={$user->getId()} ;";
+
+        $db->query($query);
+
+        // $commit = $db->prepare($query);
+        // $commit->execute([$user->getId()]);
+    }
+
+
     public static function existingUser($user)
     {
         $db=DbConnection::getInstance();
@@ -40,5 +53,20 @@ class DaoUser
         } elseif ($result["ema_user"]=="") {
             return false;
         }
+    }
+
+
+    public static function getAllUsers()
+    {
+        $db= DbConnection::getInstance();
+
+        $query = "select * from usuarios";
+
+        $commit=$db->prepare($query);
+        $commit->execute();
+        
+        $arr=$commit->fetchAll();
+        
+        return $arr;
     }
 }

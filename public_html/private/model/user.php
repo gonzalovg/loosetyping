@@ -152,9 +152,40 @@ class User
         DaoUser::insert($this);
     }
 
+    public function delete()
+    {
+        DaoUser::delete($this);
+    }
+
 
     public function existingUser()
     {
         return DaoUser::existingUser($this);
+    }
+
+
+    public static function getAllUsers()
+    {
+        return DaoUser::getAllUsers();
+    }
+
+
+    public function imprimir()
+    {
+        $html="";
+        $rand = rand(0, 100000);
+        $html.="<div id='{$rand}' class='user-div'>";
+        $html.="<span >{$this->getId()}</span>";
+        $html.="<span>{$this->getName()}</span>";
+        $html.="<span>{$this->getEmail()}</span>";
+        $html.="<span>{$this->getAvatar()}</span>";
+        $html.="<span class='{$this->getCreatedAt()}'></span>";
+        $html.="<div class='user-div-buttons'>";
+        $html.="<button class='red' onclick='eliminarUsuario($rand)' >Eliminar</button>";
+        $html.="<button  href='actualizarUsuario?id={$this->getId()}'>Actualizar</button>";
+        $html.="</div>";
+        $html.="</div>";
+
+        return $html;
     }
 }

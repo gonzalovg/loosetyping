@@ -27,6 +27,11 @@
                 <a class="navLink" href="views/ranking.php">SCORES</a>
             </h2>
         </li>
+        <li>
+            <h2>
+                <a class="navLink" href="views/settings.php">SETTINGS</a>
+            </h2>
+        </li>
 
         <li>
             <h2>

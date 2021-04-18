@@ -1,3 +1,18 @@
+<?php
+
+
+include("../private/model/controllers/userController.php");
+
+//////////////////////////////////////////////
+//OBTENCIÓN DE TODOS LOS USUARIOS
+$controller = new UserController();
+$allUsers=$controller->doGet($_GET);
+//////////////////////////////////////////////
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang='es' dir='ltr'>
 
@@ -10,6 +25,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='../favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
+    <script src="../js/deletes.js"></script>
 
 
 
@@ -28,14 +44,18 @@
         <?php include "../includes/nav.php" ?>
 
         <section>
-            <h1>LOOSETYPING CONTROL PANEL</h1>
+            <h1>LOOSETYPING (Users) CONTROL PANEL</h1>
 
-            <div id="settings-buttons">
-                <a href="panelUsuarios.php?option=allU">Users</a>
-                <a href="">Resolutions</a>
-                <a href="">Textos</a>
+            <div id="column-div">
 
+                <?php
 
+                    foreach ($allUsers as $user) {
+                        echo $user->imprimir();
+                    }
+                
+                
+                ?>
             </div>
 
 

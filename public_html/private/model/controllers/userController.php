@@ -16,8 +16,35 @@ class UserController
     {
     }
 
-    public function doGet($request, $reponse)
+    public function doGet($request)
     {
+        $option = $request["option"];
+
+
+
+
+        if ($option = "allU") {
+            $allUsersSQL= User::getAllUsers();
+
+            $allUsersArray = array();
+
+            foreach ($allUsersSQL as $user) {
+                # code...
+                $newUser = new User($user["id"], $user["nom_user"], $user["pas_user"], $user["ema_user"], $user["ava_user"], $user["created_at"]);
+
+                array_push($allUsersArray, $newUser);
+            }
+
+            return $allUsersArray;
+        } elseif ($option="delete") {
+            $id=$request['id'];
+            $user = new User($id);
+
+            header("location: ../settings.php");
+
+            echo $user;
+            $user->delete();
+        }
     }
 
 
