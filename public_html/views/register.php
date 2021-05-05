@@ -1,18 +1,20 @@
 <?php
-include("../private/model/controllers/userController.php");
-// include("../private/model/user.php");
+// include("../private/model/controllers/userController.php");
+include_once('../private/model/user.php');
 
-
-
-// $userController = new UserController();
 
 if (isset($_POST) && !empty($_POST)) {
     // echo "post lleno";
 
-    $userController= new UserController("");
+    $user = new User('', $_POST['username'], $_POST['correo'], $_POST['password']);
+    $user->insert();
+    session_start();
+    $_SESSION['user']=$_POST['correo'];
+
+    header("location: ../index.php");
 
 
-    $userController->doPost($_POST, "");
+   
 
     
 
@@ -68,13 +70,15 @@ if (isset($_POST) && !empty($_POST)) {
                     method="post">
 
                     <ul>
-                        <li><label for="name"></label><input type="text" placeholder="Username" name="username"></li>
+                        <li><label for="username"></label><input type="text" placeholder="Username" name="username">
+                        </li>
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
 
-                        <li><label for="pass"></label><input type="password" placeholder="Password" name="pass"></li>
+                        <li><label for="password"></label><input type="password" placeholder="Password" name="password">
+                        </li>
                         <li><label for="passVerification"></label><input type="password"
                                 placeholder="Password Verification" name="passwordVerification"></li>
-                        <li><a href="">¿No tienes cuenta? Regístrate</a></li>
+                        <li><a href="login.php">¿Ya tienes cuenta?</a></li>
                         <li><input type="submit" value="Registrarse"></li>
                     </ul>
 

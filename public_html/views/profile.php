@@ -5,8 +5,11 @@ include("../private/model/user.php");
 
 //////////////////////////////////////////////
 //OBTENCIÓN DE TODOS LOS USUARIOS
+session_start();
+if (isset($_SESSION)&& !empty($_SESSION)) {
+    $user = User::getByEmail($_SESSION['user']);
+}
 
-$allUsers=User::getAllUsers();
 
 //////////////////////////////////////////////
 
@@ -20,14 +23,13 @@ $allUsers=User::getAllUsers();
 <head>
     <meta charset='utf-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title> Ranking </title>
+    <title> Profile </title>
     <meta name='author' content='Gonzalo Verdugo'>
     <meta name='description' content='Sitio de Gonzalo Verdugo'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='../favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
-    <script src="../js/userAJAX.js"></script>
-
+    <script src="../js/deletes.js"></script>
 
 
 
@@ -46,19 +48,11 @@ $allUsers=User::getAllUsers();
         <?php include "../includes/nav.php" ?>
 
         <section>
-            <h1>LOOSETYPING (Users) CONTROL PANEL</h1>
-
-            <div id="column-div">
-
-                <?php
-
-                    foreach ($allUsers as $user) {
-                        echo $user->imprimir();
-                    }
-                
-                
-                ?>
+            <div class="profile-box">
+                <h1><?php echo $user->getName()  ?>
+                </h1>
             </div>
+            <div class="profile-box"></div>
 
 
         </section>

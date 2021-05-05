@@ -1,7 +1,6 @@
 <?php
 
-// include("public_html/private/model/dbConnection.php");
-// include("..\dbConnection.php");
+
 
 class DaoUser
 {
@@ -28,7 +27,7 @@ class DaoUser
     {
         $db= DbConnection::getInstance();
         
-        $query="delete * from usuarios where id={$user->getId()} ;";
+        $query="delete from usuarios where id={$user->getId()} ;";
 
         $db->query($query);
 
@@ -55,6 +54,45 @@ class DaoUser
         }
     }
 
+    public static function logIn($email, $password)
+    {
+        $db = DbConnection::getInstance();
+
+        $query = "select * from usuarios where ema_user='{$email}' and pas_user=md5('$password') ;";
+     
+
+        $result = $db->query($query)->fetch();
+
+        
+        if ($result!="") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function getByEmail($email)
+    {
+        $db=  DbConnection::getInstance();
+
+        $query="select * from usuarios where ema_user='{$email}';";
+
+        $result = $db->query($query)->fetch();
+
+        return $result;
+    }
+
+    public static function getById($id)
+    {
+        $db=  DbConnection::getInstance();
+
+        $query="select * from usuarios where id='{$id}';";
+
+        $result = $db->query($query)->fetch();
+
+        return $result;
+    }
+
 
     public static function getAllUsers()
     {
@@ -66,7 +104,7 @@ class DaoUser
         $commit->execute();
         
         $arr=$commit->fetchAll();
-        
+       
         return $arr;
     }
 }

@@ -35,8 +35,17 @@
 
         <li>
             <h2>
-                <a class="navLink" href="views/login.php"><span class="nav-item-small"> LOG IN</span>
-                </a>
+            <?php
+                session_start();
+                     if (isset($_SESSION) && !empty($_SESSION)) {
+                         echo ' <a class="navLink" href="views/profile.php"><span class="nav-item-small"> Profile</span>
+                         </a>';
+                     } else {
+                         echo ' <a class="navLink" href="views/login.php"><span class="nav-item-small"> LOG IN</span>
+                            </a>';
+                     }
+
+                ?>
 
                 <span id="botonTema" onclick="cambiarTema()" class="ec ec-new-moon-with-face"></span>
 

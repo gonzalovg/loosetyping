@@ -254,3 +254,8 @@ select {
 .user-div-buttons button {
   padding-right: 10px;
 }
+
+.user-div span {
+  display: flex;
+  align-items: center;
+}

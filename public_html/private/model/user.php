@@ -1,5 +1,7 @@
 <?php
-// include("dao/daoUser.php");
+include_once("dao/daoUser.php");
+include_once("dbConnection.php");
+
 
 class User
 {
@@ -11,7 +13,7 @@ class User
     private $createdAt;
 
 
-    public function __construct($id="", $name="", $password="", $email="", $avatar="", $createdAt="")
+    public function __construct($id="", $name="", $email="", $password="", $avatar="", $createdAt="")
     {
         $this->id=$id;
         $this->name=$name;
@@ -157,6 +159,23 @@ class User
         DaoUser::delete($this);
     }
 
+    public static function getByEmail($email)
+    {
+        $daoResult =DaoUser::getByEmail($email);
+
+        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
+
+        return $user ;
+    }
+
+    public static function getById($id)
+    {
+        $daoResult =DaoUser::getById($id);
+
+        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
+
+        return $user ;
+    }
 
     public function existingUser()
     {
@@ -166,7 +185,18 @@ class User
 
     public static function getAllUsers()
     {
-        return DaoUser::getAllUsers();
+        $daoResult = DaoUser::getAllUsers();
+        $users = array();
+        foreach ($daoResult as $daoUser) {
+            array_push($users, new User($daoUser['id'], $daoUser['nom_user'], $daoUser['ema_user'], $daoUser['pas_user'], $daoUser['ava_user'], $daoUser['created_at']));
+        }
+
+        return $users;
+    }
+
+    public function logIn()
+    {
+        return  DaoUser::logIn($this->email, $this->password);
     }
 
 
@@ -178,7 +208,7 @@ class User
         $html.="<span >{$this->getId()}</span>";
         $html.="<span>{$this->getName()}</span>";
         $html.="<span>{$this->getEmail()}</span>";
-        $html.="<span>{$this->getAvatar()}</span>";
+        $html.="<span class='{$this->getAvatar()}'></span>";
         $html.="<span class='{$this->getCreatedAt()}'></span>";
         $html.="<div class='user-div-buttons'>";
         $html.="<button class='red' onclick='eliminarUsuario($rand)' >Eliminar</button>";

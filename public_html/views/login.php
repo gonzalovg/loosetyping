@@ -1,3 +1,22 @@
+<?php
+
+include_once('../private/model/user.php');
+
+session_start();
+if (isset($_POST) && !empty($_POST)) {
+    $user = new User('', '', $_POST['correo'], $_POST['password']);
+    echo "hoal";
+    if ($user->logIn()) {
+        $_SESSION['user']=$_POST['correo'];
+        header("location: ../index.php");
+    }
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang='es' dir='ltr'>
 
@@ -42,9 +61,10 @@
 
                     <ul>
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
-                        <li><label for="pass"></label><input type="password" placeholder="Password" name="pass"></li>
+                        <li><label for="password"></label><input type="password" placeholder="Password" name="password">
+                        </li>
                         <li><a href="register.php">¿No tienes cuenta? Regístrate</a></li>
-                        <li><input type="button" value="Log In"></li>
+                        <li><input type="submit" value="Log In"></li>
                     </ul>
 
                 </form>
