@@ -8,7 +8,6 @@ switch ($option) {
     case 'delete':
         $user = User::getById($id);
         $user->delete();
-
         break;
     
     default:

@@ -16,19 +16,23 @@ span {
 }
 
 a:link {
-  color: #1a73e8;
+  color: #fdfefe;
+  font-weight: 600;
 }
 
 a:visited {
-  color: #1a73e8;
+  color: #fdfefe;
+  font-weight: 600;
 }
 
 a:hover {
-  color: #066ef6;
+  color: #fdfefe;
+  font-weight: 600;
 }
 
 a:active {
-  color: #066ef6;
+  color: #fdfefe;
+  font-weight: 600;
 }
 
 .navLink:link {
@@ -93,4 +97,19 @@ select {
 
 .registro-ranking {
   border-bottom: 1px solid #707b7c;
+}
+
+.high-elem {
+  color: #ea4335;
+}
+
+.button {
+  padding: 5px 10px;
+  color: #fdfefe;
+  border: none;
+  background-color: #707b7c;
+}
+
+.button:hover {
+  background-color: #3c4043;
 }

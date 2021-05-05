@@ -211,8 +211,8 @@ class User
         $html.="<span class='{$this->getAvatar()}'></span>";
         $html.="<span class='{$this->getCreatedAt()}'></span>";
         $html.="<div class='user-div-buttons'>";
-        $html.="<button class='red' onclick='eliminarUsuario($rand)' >Eliminar</button>";
-        $html.="<button  href='actualizarUsuario?id={$this->getId()}'>Actualizar</button>";
+        $html.="<a class='button' onclick='eliminarUsuario($rand)' >Eliminar</a>";
+        $html.="<a class='button'  href='actualizarUsuario.php?userId={$this->getId()}'>Actualizar</a>";
         $html.="</div>";
         $html.="</div>";
 

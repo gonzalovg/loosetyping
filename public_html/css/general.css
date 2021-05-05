@@ -259,3 +259,44 @@ select {
   display: flex;
   align-items: center;
 }
+
+/* 
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////// */
+/* profile */
+
+#user-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-avatar {
+  margin: auto auto;
+  font-size: 6em;
+}
+
+.high-elem {
+  color: #ea4335;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #eee;
+  border: none;
+  color: #3c4043;
+}
+
+.button:hover {
+  background-color: #fdfefe;
+}

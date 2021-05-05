@@ -5,10 +5,8 @@ include("../private/model/user.php");
 
 //////////////////////////////////////////////
 //OBTENCIÓN DE TODOS LOS USUARIOS
-session_start();
-if (isset($_SESSION)&& !empty($_SESSION)) {
-    $user = User::getByEmail($_SESSION['user']);
-}
+
+
 
 
 //////////////////////////////////////////////
@@ -21,19 +19,8 @@ if (isset($_SESSION)&& !empty($_SESSION)) {
 <html lang='es' dir='ltr'>
 
 <head>
-    <meta charset='utf-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
     <title> Profile </title>
-    <meta name='author' content='Gonzalo Verdugo'>
-    <meta name='description' content='Sitio de Gonzalo Verdugo'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='icon' type='image/icon' href='../favicon.ico'>
-    <link rel="stylesheet" href="../css/reboot.css">
-    <script src="../js/deletes.js"></script>
-
-
-
-
 
     <?php include "../includes/general-head.php" ?>
 
@@ -47,12 +34,39 @@ if (isset($_SESSION)&& !empty($_SESSION)) {
 
         <?php include "../includes/nav.php" ?>
 
-        <section>
-            <div class="profile-box">
-                <h1><?php echo $user->getName()  ?>
-                </h1>
+        <section id="profile-sect">
+            <div id="user-data">
+
+                <div class="profile-box">
+                    <h1><?php
+
+                   
+                        $user = User::getByEmail($_SESSION['user']);
+                        echo $user->getName();
+                    
+                    ?>
+                    </h1>
+                    <hr>
+                    <h3><?php echo $user->getEmail()   ?>
+
+                    </h3>
+                    <div>
+                        <a class="high-elem" href="../private/scripts/cerrarSesion.php">Cerrar Sesión</a>
+                    </div>
+
+                </div>
+                <div class="profile-box">
+
+                    <span
+                        class="<?php echo  $user->getAvatar()?> big-avatar "></span>
+                    <i class="fas fa-pencil-alt high-elem"></i>
+                </div>
+
+
             </div>
-            <div class="profile-box"></div>
+            <div id="user-last-reso">
+
+            </div>
 
 
         </section>

@@ -1,3 +1,14 @@
+<?php
+include_once('../private/model/user.php');
+if (isset($_GET) && !empty($_GET)) {
+    $user = User::getById($_GET['userId']);
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang='es' dir='ltr'>
 
@@ -26,10 +37,7 @@
         <section>
             <h1>LOOSETYPING CONTROL PANEL</h1>
 
-            <div id="settings-buttons">
-                <a class="button" href="panelUsuarios.php?option=allU">Users</a>
-                <a class="button" href="">Resolutions</a>
-                <a class="button" href="">Textos</a>
+            <?php echo $user->getName(); ?>
 
 
             </div>
