@@ -139,4 +139,36 @@ class Stats
 
         return $this;
     }
+
+
+    
+    public function insert()
+    {
+        DaoStats::insert($this);
+    }
+
+    public function delete()
+    {
+        DaoStats::delete($this);
+    }
+    
+    public static function getById($id)
+    {
+        $daoResult =DaoStats::getById($id);
+
+        $stat = new Stats($daoResult['id'], $daoResult['id_user'], $daoResult['wpm'], $daoResult['max_wpm'], $daoResult['txt_fav'], $daoResult['tot_res']);
+
+        return $stat ;
+    }
+
+
+    public static function getAllTexts()
+    {
+        $daoResult = DaoStats::getAllStats();
+        $stats = array();
+        foreach ($daoResult as $daoStat) {
+            array_push($stats, new Stats($daoStat['id'], $daoStat['id_user'], $daoStat['wpm'], $daoStat['max_wpm'], $daoStat['txt_fav'], $daoStat['tot_res']));
+        }
+        return $stats;
+    }
 }

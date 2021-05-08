@@ -1,7 +1,12 @@
 <?php
-// $texto = "From the tip of his wand burst the silver doe. She landed on the office floor, bounded once across the office, and soared out of the window. Dumbledore watched her fly away, and as her silvery glow faded he turned back to Snape, and his eyes were full of tears.";
-// $texto = "hola";
-$texto = "La cerveza es una bebida alcohólica, no destilada, de sabor amargo, que se fabrica con granos de cebada germinados u otros cereales cuyo almidón se fermenta en agua con levadura y se aromatiza a menudo con lúpulo, entre otras plantas.";
+
+include_once('./private/model/text.php');
+include_once('./private/model/user.php');
+
+
+
+$textObj =Text::getRandomText();
+$texto= $textObj->getTxtText();
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +37,24 @@ $texto = "La cerveza es una bebida alcohólica, no destilada, de sabor amargo, q
 <body onload="inicializarDatos()">
 
     <main>
-
         <?php include "includes/indexNav.php" ?>
+        <?php
+
+            $user = User::getByEmail($_SESSION['user']);
+            $idUser=$user->getId();
+            $idText = $textObj->getId();
+
+            // echo $idUser;
+            // echo $idText;
+
+?>
+
+
+        <input type="hidden" id="idUser"
+            value="<?php echo $idUser ?>">
+        <input type="hidden" id="idText"
+            value="<?php echo $idText ?>">
+
 
         <section>
 

@@ -158,7 +158,15 @@ class User
     {
         DaoUser::delete($this);
     }
+    
+    public static function getById($id)
+    {
+        $daoResult =DaoUser::getById($id);
 
+        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
+
+        return $user ;
+    }
     public static function getByEmail($email)
     {
         $daoResult =DaoUser::getByEmail($email);
@@ -168,14 +176,6 @@ class User
         return $user ;
     }
 
-    public static function getById($id)
-    {
-        $daoResult =DaoUser::getById($id);
-
-        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
-
-        return $user ;
-    }
 
     public function existingUser()
     {

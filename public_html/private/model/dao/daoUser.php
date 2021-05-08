@@ -4,9 +4,6 @@
 
 class DaoUser
 {
-    private $tabla = "usuarios" ;
-
-
     public function __construct()
     {
         // $this->tabla="usuarios";

@@ -1,9 +1,12 @@
 <?php
 
+include_once('dao/daoText.php');
+include_once('dbConnection.php');
+
 class Text
 {
     private $id;
-    private $idText;
+    private $titText;
     private $txtText;
     private $lang;
     private $idCat;
@@ -12,10 +15,10 @@ class Text
     
 
 
-    public function __construct($id="", $idText="", $txtText="", $lang="", $idCat="", $autorText="", $createdAt="")
+    public function __construct($id="", $titText="", $txtText="", $lang="", $idCat="", $autorText="", $createdAt="")
     {
         $this->id=$id;
-        $this->idText=$idText;
+        $this->titText=$titText;
         $this->txtText=$txtText;
         $this->lang=$lang;
         $this->idCat=$idCat;
@@ -44,21 +47,21 @@ class Text
     }
 
     /**
-     * Get the value of idText
+     * Get the value of titText
      */
     public function getIdText()
     {
-        return $this->idText;
+        return $this->titText;
     }
 
     /**
-     * Set the value of idText
+     * Set the value of titText
      *
      * @return  self
      */
-    public function setIdText($idText)
+    public function setIdText($titText)
     {
-        $this->idText = $idText;
+        $this->titText = $titText;
 
         return $this;
     }
@@ -161,5 +164,47 @@ class Text
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+
+
+    public function insert()
+    {
+        DaoText::insert($this);
+    }
+
+    public function delete()
+    {
+        DaoText::delete($this);
+    }
+    
+    public static function getById($id)
+    {
+        $daoResult =DaoText::getById($id);
+
+        $text = new Text($daoResult['id'], $daoResult['tit_text'], $daoResult['txt_text'], $daoResult['lang_text'], $daoResult['id_cat'], $daoResult['ori_text'], $daoResult['created_at']);
+
+        return $text ;
+    }
+
+
+    public static function getAllTexts()
+    {
+        $daoResult = DaoText::getAllTexts();
+        $texts = array();
+        foreach ($daoResult as $daoText) {
+            array_push($texts, new Text($daoResult['id'], $daoResult['tit_text'], $daoResult['txt_text'], $daoResult['lang_text'], $daoResult['id_cat'], $daoResult['ori_text'], $daoResult['created_at']));
+        }
+
+        return $texts;
+    }
+
+    public static function getRandomText()
+    {
+        $daoResult =DaoText::getRandomText();
+
+        $text = new Text($daoResult['id'], $daoResult['tit_text'], $daoResult['txt_text'], $daoResult['lang_text'], $daoResult['id_cat'], $daoResult['ori_text'], $daoResult['created_at']);
+
+        return $text;
     }
 }

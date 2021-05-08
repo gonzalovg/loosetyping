@@ -77,7 +77,7 @@ function mostrarStatsResolucion(aciertos, fallos, tiempo, wpm, fallosPorTecla) {
   statsContainer.innerHTML += content;
 }
 
-function enviarRatioResolucion(json) {
+function enviarRatioResolucion(json, idText, idUser, wpmRes, timRes) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -86,9 +86,19 @@ function enviarRatioResolucion(json) {
   };
   xhttp.open(
     "GET",
-    "../pruebas/prueba.php?data=" + encodeURIComponent(JSON.stringify(json)),
+    "../public_html/private/scripts/insertarResolucion.php?data=" +
+      encodeURIComponent(JSON.stringify(json)) +
+      "&text=" +
+      idText +
+      "&user=" +
+      idUser +
+      "&wpm=" +
+      wpmRes +
+      "&time=" +
+      timRes,
     true
   );
+  // public_htmlpublic_htmlpublic_htmlpublic_html\privatepublic_htmlpublic_htmlpublic_html\privatepublic_html\privatepublic_htmlpublic_html\privatepublic_html\private\scriptspublic_htmlpublic_htmlpublic_html\privatepublic_html\private\scriptspublic_html\privatepublic_htmlpublic_html\privatepublic_html\private\scriptspublic_html\private\scriptspublic_htmlpublic_html\privatepublic_html\private\scriptspublic_html\private\scripts\insertarResolucion.php;
   xhttp.send();
 }
 
@@ -145,6 +155,16 @@ function comprobarFin() {
       wpm,
       balanceAciertos
     );
-    enviarRatioResolucion(balanceAciertos);
+
+    let idUser = document.getElementById("idUser").value;
+    let idText = document.getElementById("idText").value;
+
+    enviarRatioResolucion(
+      balanceAciertos,
+      idText,
+      idUser,
+      wpm,
+      tiempoResolucionSecs
+    );
   }
 }

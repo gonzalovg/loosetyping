@@ -1,5 +1,6 @@
 <?php
-
+include_once('dao/daoResolution.php');
+include_once('dbConnection.php');
 class Resolution
 {
     private $id;
@@ -137,5 +138,36 @@ class Resolution
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    public function insert()
+    {
+        DaoResolution::insert($this);
+    }
+
+    public function delete()
+    {
+        DaoResolution::delete($this);
+    }
+    
+    public static function getById($id)
+    {
+        $daoResult =DaoResolution::getById($id);
+
+        $text = new Resolution($daoResult['id'], $daoResult['id_user'], $daoResult['id_text'], $daoResult['wpm_res'], $daoResult['tim_res'], $daoResult['created_at']);
+
+        return $text ;
+    }
+
+
+    public static function getAllTexts()
+    {
+        $daoResult = DaoResolution::getAllResolutions();
+        $resolutions = array();
+        foreach ($daoResult as $daoResolution) {
+            array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResult['tim_res'], $daoResult['created_at']));
+        }
+
+        return $resolutions;
     }
 }

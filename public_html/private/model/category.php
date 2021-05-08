@@ -1,5 +1,8 @@
 <?php
 
+include_once("dao/daoCategory.php");
+include_once('dbConnection.php');
+
 class Category
 {
     private $id;
@@ -50,5 +53,24 @@ class Category
         $this->name = $name;
 
         return $this;
+    }
+
+    public function insertar()
+    {
+        DaoCategory::insert($this);
+    }
+
+    public function delete()
+    {
+        DaoCategory::delete($this);
+    }
+
+    public function getById($id)
+    {
+        $daoResult = DaoCategory::getById($id);
+
+        $category= new Category($daoResult['id'], $daoResult['nom_cat']);
+    
+        return $category;
     }
 }
