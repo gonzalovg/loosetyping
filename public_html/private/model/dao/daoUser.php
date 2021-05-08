@@ -40,6 +40,17 @@ class DaoUser
         }
     }
 
+    public static function updataAvatar($user)
+    {
+        $db= DbConnection::getInstance();
+
+        $query="UPDATE usuarios SET ava_user=? ;";
+
+        $commit = $db->prepare($query);
+
+        $commit->execute([$user->getAvatar()]);
+    }
+
 
 
     public static function delete($user)

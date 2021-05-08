@@ -323,3 +323,20 @@ select {
   display: flex;
   justify-content: flex-end;
 }
+
+.small-avatar {
+  font-size: 1.4em;
+}
+
+.small-avatar:hover {
+  background-color: #707b7c;
+}
+/* 
+.icon-pìcker {
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */

@@ -171,6 +171,8 @@ class User
         return $this;
     }
 
+    
+
     public function insert()
     {
         DaoUser::insert($this);
@@ -179,6 +181,11 @@ class User
     public function update()
     {
         DaoUser::update($this);
+    }
+
+    public function updateAvatar()
+    {
+        DaoUser::updataAvatar($this);
     }
 
 

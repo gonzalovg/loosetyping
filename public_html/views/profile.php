@@ -23,6 +23,7 @@ include("../private/model/user.php");
     <title> Profile </title>
 
     <?php include "../includes/general-head.php" ?>
+    <script src="../js/icons.js"></script>
 
 
 
@@ -47,7 +48,7 @@ include("../private/model/user.php");
                     ?>
                     </h1>
                     <hr>
-                    <h3><?php echo $user->getEmail()   ?>
+                    <h3 id="userEmail"><?php echo $user->getEmail()   ?>
 
                     </h3>
                     <div>
@@ -59,7 +60,7 @@ include("../private/model/user.php");
 
                     <span
                         class="<?php echo  $user->getAvatar()?> big-avatar "></span>
-                    <i class="fas fa-pencil-alt high-elem"></i>
+                    <i class="fas fa-pencil-alt high-elem" onclick="openIconWindow()"></i>
                 </div>
 
 
