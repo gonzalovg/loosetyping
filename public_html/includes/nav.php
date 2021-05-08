@@ -14,7 +14,7 @@
         </li>
         <li>
             <h2>
-                <a class="navLink" href="otro.php">HOME</a>
+                <a class="navLink" href="../index.php">HOME</a>
             </h2>
         </li>
         <li>

@@ -65,7 +65,7 @@ function mostrarStatsResolucion(aciertos, fallos, tiempo, wpm, fallosPorTecla) {
 
   let content =
     '  <div class="stat-container"><div class="stat-result">' +
-    aciertos +
+    (aciertos - fallos) +
     '</div><div class="stat-header">ACIERTOS</div></div><div class="stat-container"><div class="stat-result">' +
     fallos +
     '</div><div class="stat-header">FALLOS</div></div><div class="stat-container"><div class="stat-result">' +
@@ -81,7 +81,7 @@ function enviarRatioResolucion(json, idText, idUser, wpmRes, timRes) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("result").innerHTML = this.responseText;
+      // document.getElementById("result").innerHTML = this.responseText;
     }
   };
   xhttp.open(

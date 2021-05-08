@@ -20,6 +20,28 @@ class DaoUser
         $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword())]);
     }
 
+    public static function update($user)
+    {
+        $db= DbConnection::getInstance();
+
+        $query = "";
+
+        if ($user->getPassword()=="") {
+            $query= "UPDATE usuarios SET nom_user=?,ema_user=?,per_user=? where id={$user->getId()} ";
+            $commit = $db->prepare($query);
+        
+            
+            $commit->execute([$user->getName(),$user->getEmail(),$user->getPermisos()]);
+        } elseif ($user->getPassword()!="") {
+            $query= "UPDATE usuarios SET nom_user=?,ema_user=?,pas_user=?, per_user=? where id={$user->getId()} ";
+           
+            $commit = $db->prepare($query);
+            $commit->execute([$user->getName(),$user->getEmail(), md5($user->getPassword()),$user->getPermisos()]);
+        }
+    }
+
+
+
     public static function delete($user)
     {
         $db= DbConnection::getInstance();

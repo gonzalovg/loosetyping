@@ -11,9 +11,10 @@ class User
     private $email;
     private $avatar;
     private $createdAt;
+    private $permisos;
 
 
-    public function __construct($id="", $name="", $email="", $password="", $avatar="", $createdAt="")
+    public function __construct($id="", $name="", $email="", $password="", $avatar="", $createdAt="", $permisos="")
     {
         $this->id=$id;
         $this->name=$name;
@@ -21,6 +22,7 @@ class User
         $this->email=$email;
         $this->avatar=$avatar;
         $this->createdAt=$createdAt;
+        $this->permisos=$permisos;
     }
 
     
@@ -149,10 +151,37 @@ class User
         return $this;
     }
 
+    /**
+     * Get the value of permisos
+     */
+    public function getPermisos()
+    {
+        return $this->permisos;
+    }
+
+    /**
+     * Set the value of permisos
+     *
+     * @return  self
+     */
+    public function setPermisos($permisos)
+    {
+        $this->permisosr = $permisos;
+
+        return $this;
+    }
+
     public function insert()
     {
         DaoUser::insert($this);
     }
+
+    public function update()
+    {
+        DaoUser::update($this);
+    }
+
+
 
     public function delete()
     {
@@ -163,7 +192,7 @@ class User
     {
         $daoResult =DaoUser::getById($id);
 
-        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
+        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at'], $daoResult['per_user']);
 
         return $user ;
     }
@@ -171,7 +200,7 @@ class User
     {
         $daoResult =DaoUser::getByEmail($email);
 
-        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at']);
+        $user = new User($daoResult['id'], $daoResult['nom_user'], $daoResult['ema_user'], $daoResult['pas_user'], $daoResult['ava_user'], $daoResult['created_at'], $daoResult['per_user']);
 
         return $user ;
     }
@@ -188,7 +217,7 @@ class User
         $daoResult = DaoUser::getAllUsers();
         $users = array();
         foreach ($daoResult as $daoUser) {
-            array_push($users, new User($daoUser['id'], $daoUser['nom_user'], $daoUser['ema_user'], $daoUser['pas_user'], $daoUser['ava_user'], $daoUser['created_at']));
+            array_push($users, new User($daoUser['id'], $daoUser['nom_user'], $daoUser['ema_user'], $daoUser['pas_user'], $daoUser['ava_user'], $daoUser['created_at'], $daoUser['per_user']));
         }
 
         return $users;
@@ -209,7 +238,8 @@ class User
         $html.="<span>{$this->getName()}</span>";
         $html.="<span>{$this->getEmail()}</span>";
         $html.="<span class='{$this->getAvatar()}'></span>";
-        $html.="<span class='{$this->getCreatedAt()}'></span>";
+        $html.="<span>{$this->getCreatedAt()}</span>";
+        $html.="<span>{$this->getPermisos()}</span>";
         $html.="<div class='user-div-buttons'>";
         $html.="<a class='button' onclick='eliminarUsuario($rand)' >Eliminar</a>";
         $html.="<a class='button'  href='actualizarUsuario.php?userId={$this->getId()}'>Actualizar</a>";
