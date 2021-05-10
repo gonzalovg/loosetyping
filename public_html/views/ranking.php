@@ -32,7 +32,7 @@
                 RANKING
             </h1>
 
-            <div id="ranking-options">
+            <div class="record-options">
                 <select name="texto" id="">
                     <option value="hola">Cualquier texto</option>
                     <option value="">Lorem</option>
@@ -50,64 +50,53 @@
 
             </div>
 
-            <div id="ranking">
-                <div id="aspectos-ranking">
-                    <div class="campo-ranking"><b>Posición</b></div>
-                    <div class="campo-ranking"><b>Usuario</b></div>
-                    <div class="campo-ranking"><b>Texto</b></div>
-                    <div class="campo-ranking"><b>WPM</b></div>
-                    <div class="campo-ranking"><b>Tiempo</b></div>
+            <!-- <div class="records">
+                <div id="record-row">
+                    <div class="record-data"><b>Posición</b></div>
+                    <div class="record-data"><b>Usuario</b></div>
+                    <div class="record-data"><b>Texto</b></div>
+                    <div class="record-data"><b>WPM</b></div>
+                    <div class="record-data"><b>Tiempo</b></div>
+                </div> -->
+
+            <div class="records">
+                <div class="record-header">
+                    <div class="record-data"><b>Posición</b></div>
+                    <div class="record-data"><b>Usuario</b></div>
+                    <div class="record-data"><b>Texto</b></div>
+                    <div class="record-data"><b>WPM</b></div>
+                    <div class="record-data"><b>Tiempo</b></div>
                 </div>
 
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
+                <div class="record-row">
+                    <div class="record-data">#1</div>
+                    <div class="record-data">Gonzalo Verdugo</div>
+                    <div class="record-data">Lorem</div>
+                    <div class="record-data">200wpm</div>
+                    <div class="record-data">36.67</div>
                 </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
+                <div class="record-row">
+                    <div class="record-data">#1</div>
+                    <div class="record-data">Gonzalo Verdugo</div>
+                    <div class="record-data">Lorem</div>
+                    <div class="record-data">200wpm</div>
+                    <div class="record-data">36.67</div>
                 </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
+                <div class="record-row">
+                    <div class="record-data">#1</div>
+                    <div class="record-data">Gonzalo Verdugo</div>
+                    <div class="record-data">Lorem</div>
+                    <div class="record-data">200wpm</div>
+                    <div class="record-data">36.67</div>
                 </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
+                <div class="record-row">
+                    <div class="record-data">#1</div>
+                    <div class="record-data">Gonzalo Verdugo</div>
+                    <div class="record-data">Lorem</div>
+                    <div class="record-data">200wpm</div>
+                    <div class="record-data">36.67</div>
                 </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
-                </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
-                </div>
-                <div class="registro-ranking">
-                    <div class="campo-ranking">#1</div>
-                    <div class="campo-ranking">Gonzalo Verdugo</div>
-                    <div class="campo-ranking">Lorem</div>
-                    <div class="campo-ranking">200wpm</div>
-                    <div class="campo-ranking">36.67</div>
-                </div>
+
 
 
 

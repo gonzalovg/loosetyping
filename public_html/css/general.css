@@ -220,7 +220,7 @@ select {
   background-color: #fdfefe;
 }
 
-#aspectos-ranking {
+.record-header {
   margin: 30px 0 0 0;
   border-bottom: 1px solid #eee;
   padding: 5px 0;
@@ -228,7 +228,7 @@ select {
   justify-content: space-between;
 }
 
-.registro-ranking,
+.record-row,
 .user-div {
   border-bottom: 1px solid #eee;
   padding: 5px 0;
@@ -236,11 +236,11 @@ select {
   justify-content: space-between;
 }
 
-.registro-ranking:hover {
-  padding: 10px 0;
+.record-data:hover {
+  padding: 1px 0;
 }
 
-.campo-ranking {
+.record-data {
   width: 150px;
 }
 

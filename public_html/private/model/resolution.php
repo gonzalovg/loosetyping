@@ -200,9 +200,26 @@ class Resolution
         $daoResult = DaoResolution::getAllResolutions();
         $resolutions = array();
         foreach ($daoResult as $daoResolution) {
-            array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResult['tim_res'], $daoResult['created_at']));
+            array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResolution['tim_res'], $daoResolution['created_at']));
         }
 
         return $resolutions;
+    }
+
+
+    public function imprimir()
+    {
+        $html="";
+
+        $html.="<div class='record-row'>";
+        $html.=" <div class='record-data'>#".$this->id."    </div>";
+        $html.=" <div class='record-data'><a href='profile.php?id=".$this->idUser." '>".$this->idUser."</a>    </div>";
+        $html.=" <div class='record-data'>".$this->idText."    </div>";
+        $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
+        $html.=" <div class='record-data'>".$this->timeRes."    </div>";
+        $html.=" <div class='record-data'>".$this->createdAt."    </div>";
+        $html.="</div>";
+
+        return $html;
     }
 }

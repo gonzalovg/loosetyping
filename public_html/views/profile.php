@@ -41,8 +41,15 @@ include("../private/model/user.php");
                 <div class="profile-box">
                     <h1><?php
 
+                        if (isset($_SESSION['user']) && !empty($_SESSION['user']) && empty($_GET['id'])) {
+                            $user = User::getByEmail($_SESSION['user']);
+                        } elseif (($_GET['id']) && !empty($_GET['id'])) {
+                            $user = User::getById($_GET['id']);
+                        } else {
+                            header("location: ../index.php");
+                        }
                    
-                        $user = User::getByEmail($_SESSION['user']);
+                       
                         echo $user->getName();
                     
                     ?>

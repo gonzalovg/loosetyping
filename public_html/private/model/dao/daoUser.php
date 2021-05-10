@@ -63,11 +63,11 @@ class DaoUser
     {
         $db= DbConnection::getInstance();
 
-        $query="UPDATE usuarios SET ava_user=? ;";
+        $query="UPDATE usuarios SET ava_user=? where id=?;";
 
         $commit = $db->prepare($query);
 
-        $commit->execute([$user->getAvatar()]);
+        $commit->execute([$user->getAvatar(),$user->getId()]);
     }
 
 

@@ -40,9 +40,22 @@ $texto= $textObj->getTxtText();
         <?php include "includes/indexNav.php" ?>
         <?php
 
-            $user = User::getByEmail($_SESSION['user']);
-            $idUser=$user->getId();
-            $idText = $textObj->getId();
+
+
+
+            if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+                $user = User::getByEmail($_SESSION['user']);
+                $idUser=$user->getId();
+                $idText = $textObj->getId();
+             
+                echo'   <input type="hidden" id="idUser"
+                value="'.  $idUser.'">
+            <input type="hidden" id="idText"
+                value="'.$idText.'">';
+            }
+         
+            
+          
 
             // echo $idUser;
             // echo $idText;
@@ -50,10 +63,6 @@ $texto= $textObj->getTxtText();
 ?>
 
 
-        <input type="hidden" id="idUser"
-            value="<?php echo $idUser ?>">
-        <input type="hidden" id="idText"
-            value="<?php echo $idText ?>">
 
 
         <section>

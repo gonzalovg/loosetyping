@@ -28,7 +28,7 @@
 
             <div id="settings-buttons">
                 <a class="button" href="panelUsuarios.php?option=allU">Users</a>
-                <a class="button" href="">Resolutions</a>
+                <a class="button" href="panelresolutions.php">Resolutions</a>
                 <a class="button" href="">Textos</a>
 
 
