@@ -1,12 +1,22 @@
 <?php
 
+/**
+ * Class DaoCategory
+ */
 class DaoCategory
 {
+    /**
+     * DaoCategory constructor.
+     */
     public function __construct()
     {
     }
 
-
+    /**
+     * Inserta un objeto Category en la base de datos.
+     *
+     * @param $category
+     */
     public static function insert($category)
     {
         $db= DbConnection::getInstance();
@@ -17,7 +27,11 @@ class DaoCategory
         $commit->execute([$category->getName()]);
     }
 
-
+    /**
+     * Elimina un objeto Category en la base de datos.
+     *
+     * @param $category
+     */
     public static function delete($category)
     {
         $db= DbConnection::getInstance();
@@ -27,7 +41,12 @@ class DaoCategory
         $db->query($query);
     }
 
-
+    /**
+     * Obtiene los campos sql de un objeto Category y los devuelve.
+     *
+     * @param $id
+     * @return mixed
+     */
     public static function getById($id)
     {
         $db=  DbConnection::getInstance();

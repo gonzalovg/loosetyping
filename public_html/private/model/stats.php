@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Stats
+ */
 class Stats
 {
     private $id;
@@ -9,7 +12,15 @@ class Stats
     private $txtFav;
     private $totRes;
 
-
+    /**
+     * Stats constructor.
+     * @param string $id
+     * @param string $idUser
+     * @param string $wpm
+     * @param string $maxWpm
+     * @param string $txtFav
+     * @param string $totRes
+     */
     public function __construct($id="", $idUser="", $wpm="", $maxWpm="", $txtFav="", $totRes="")
     {
         $this->id=$id;
@@ -141,17 +152,30 @@ class Stats
     }
 
 
-    
+    /**
+     * Llama a DaoStats e inserta las estadísticas
+     */
     public function insert()
     {
         DaoStats::insert($this);
     }
 
+    /**
+     * Llama a DaoStats y elimina las estadísiticas
+     *
+     */
     public function delete()
     {
         DaoStats::delete($this);
     }
-    
+
+
+    /**
+     * Obtiene estadísticas a través de DaoCategory
+     *
+     * @param $id
+     * @return Stats
+     */
     public static function getById($id)
     {
         $daoResult =DaoStats::getById($id);
@@ -161,8 +185,13 @@ class Stats
         return $stat ;
     }
 
-
-    public static function getAllTexts()
+    /**
+     * Obtiene todas las estadísticas de DaoStats y las devuelve con un array lleno de objetos Stat.
+     *
+     *
+     * @return array
+     */
+    public static function getAllStats()
     {
         $daoResult = DaoStats::getAllStats();
         $stats = array();

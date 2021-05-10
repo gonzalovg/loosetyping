@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['setautortext_115',['setAutorText',['../class_text.html#ab6ac5fc1b3f1b58e564a02ab4cd39f15',1,'Text']]],
+  ['setavatar_116',['setAvatar',['../class_user.html#a844421f74da565923b63bb44f387e495',1,'User']]],
+  ['setcreatedat_117',['setCreatedAt',['../class_comment.html#a865ea9a296e00985d8027b82e89f7864',1,'Comment\setCreatedAt()'],['../class_resolution.html#a3f83ade12b36fd7fd3faa91424f15d99',1,'Resolution\setCreatedAt()'],['../class_text.html#ada62f33dfffd95af8c0bcd7e2b20a16e',1,'Text\setCreatedAt()'],['../class_user.html#a5cc3bcf04f4d9eaa789e2435be93ba22',1,'User\setCreatedAt($createdAt)']]],
+  ['setemail_118',['setEmail',['../class_user.html#a018ae17e436e09134922835cdd3235a7',1,'User']]],
+  ['setid_119',['setId',['../class_category.html#a0bbcefc130a09a5d3aab4ae9d69d876c',1,'Category\setId()'],['../class_comment.html#aca4a79a0d5f2cfb425871eb0793e4b94',1,'Comment\setId()'],['../class_resolution.html#a31d528ab812febc7a10c9a962ae53725',1,'Resolution\setId()'],['../class_stats.html#a0fade832f16119aeb2f3ba769a5870a2',1,'Stats\setId()'],['../class_text.html#a4ddc96686bf0aacf47739439ce728af8',1,'Text\setId()'],['../class_user.html#a5c5a688ef7eb0c1c695a00569250dee1',1,'User\setId()']]],
+  ['setidcat_120',['setIdCat',['../class_text.html#ac5da852a04b176a10f8bfff9af4d5221',1,'Text']]],
+  ['setidtext_121',['setIdText',['../class_resolution.html#a2a665cec43c2b8ea688982893f467207',1,'Resolution\setIdText()'],['../class_text.html#acc92b430db7adc3b20f40b2043c1d13d',1,'Text\setIdText()']]],
+  ['setiduser_122',['setIdUser',['../class_comment.html#a4488b57013fea0b3a0e84a7c46e30df4',1,'Comment\setIdUser()'],['../class_resolution.html#ac16f0b477d75c3a1f0bc8e112601dda6',1,'Resolution\setIdUser()'],['../class_stats.html#a37c2210ea67b59cf22016a6cdacdbc02',1,'Stats\setIdUser()']]],
+  ['setlang_123',['setLang',['../class_text.html#aa0f92bd94a2caec2229fbf385ea7182a',1,'Text']]],
+  ['setmaxwpm_124',['setMaxWpm',['../class_stats.html#a9d696cee492d19ce711ed3cb173608a3',1,'Stats']]],
+  ['setname_125',['setName',['../class_category.html#a615f637f720c280f3ab142e42871cd93',1,'Category\setName()'],['../class_user.html#a854454c24448a1af0a0e347d6f33aa8e',1,'User\setName($name)']]],
+  ['setpassword_126',['setPassword',['../class_user.html#aadc1995517c1e8190006d0dba87b28c4',1,'User']]],
+  ['setpermisos_127',['setPermisos',['../class_user.html#a749217d293ba487827538a6af0ad6b33',1,'User']]],
+  ['settimeres_128',['setTimeRes',['../class_resolution.html#a215bf6f39c1957ccc59aa9ed7f47ddd8',1,'Resolution']]],
+  ['settotres_129',['setTotRes',['../class_stats.html#a37ea668fb2f923db0262787fe8635319',1,'Stats']]],
+  ['settxtcomment_130',['setTxtComment',['../class_comment.html#aa8c13d26bd450ad81f31f4a8389894b9',1,'Comment']]],
+  ['settxtfav_131',['setTxtFav',['../class_stats.html#af68ce7c6f5d17f6c2a22ab309116a177',1,'Stats']]],
+  ['settxttext_132',['setTxtText',['../class_text.html#a385424a34ae1fb28761fcf3b2eecab39',1,'Text']]],
+  ['setwpm_133',['setWpm',['../class_stats.html#add73d52bc68de183a818001fb3e4313b',1,'Stats']]],
+  ['setwpmres_134',['setWpmRes',['../class_resolution.html#a0b53a9e00b422afe08d83312d8197a3c',1,'Resolution']]]
+];

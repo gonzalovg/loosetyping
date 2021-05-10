@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['insert_39',['insert',['../class_category.html#a2c805211e012b85ab713e792cc7636e5',1,'Category\insert()'],['../class_dao_category.html#aa13572851ef12fdb915fea56b5283f95',1,'DaoCategory\insert()'],['../class_dao_resolution.html#aa626daa566841b0a17af8055247d70ff',1,'DaoResolution\insert()'],['../class_dao_stats.html#a269c2a779307451f5e7e84368bd92e51',1,'DaoStats\insert()'],['../class_dao_text.html#ac2505a24ffee8a516eac2a480d8cb2d2',1,'DaoText\insert()'],['../class_dao_user.html#a388f91b93affb30e12f191c01e5ecd99',1,'DaoUser\insert()'],['../class_resolution.html#a4416adcf5a713945d7dbd3bc76660632',1,'Resolution\insert()'],['../class_stats.html#a05cc981d54471e5c9e3ef40b9299b8cf',1,'Stats\insert()'],['../class_text.html#a934fdd6aeddd1d4c8ff141b85466d361',1,'Text\insert()'],['../class_user.html#af8781b4feb8d3d9d50939b1ef6ed8dd5',1,'User\insert()']]]
+];

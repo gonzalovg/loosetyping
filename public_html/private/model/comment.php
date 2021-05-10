@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Comment
+ */
 class Comment
 {
     private $id;
@@ -7,6 +10,13 @@ class Comment
     private $txtComment;
     private $createdAt;
 
+    /**
+     * Comment constructor.
+     * @param string $id
+     * @param string $idUser
+     * @param string $txtComment
+     * @param string $createdAt
+     */
     private function __construct($id="", $idUser="", $txtComment="", $createdAt="")
     {
         $this->id=$id;

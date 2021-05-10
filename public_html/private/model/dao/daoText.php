@@ -1,11 +1,22 @@
 <?php
 
+/**
+ * Class DaoText
+ */
 class DaoText
 {
+    /**
+     * DaoText constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * Inserta un objeto Text en la base de datos.
+     *
+     * @param $texto
+     */
     public static function insert($texto)
     {
         $db= DbConnection::getInstance();
@@ -16,6 +27,11 @@ class DaoText
         $commit->execute([$texto->getTitText(),$texto->getTxtText(),$texto->getLang(),$texto->getIdCat(),$texto->getAutorText()]);
     }
 
+    /**
+     * Elimina un objeto Text de la base de datos.
+     *
+     * @param $texto
+     */
     public static function delete($texto)
     {
         $db= DbConnection::getInstance();
@@ -28,6 +44,13 @@ class DaoText
         // $commit->execute([$texto->getId()]);
     }
 
+    /**
+     *
+     * Obtiene un objeto Text de la base de datos.
+     *
+     * @param $id
+     * @return mixed
+     */
     public static function getById($id)
     {
         $db=  DbConnection::getInstance();
@@ -39,6 +62,11 @@ class DaoText
         return $result;
     }
 
+    /**
+     * Obtiene un array de todos los objetos Text de la base de datos.
+     *
+     * @return array
+     */
     public static function getAllTexts()
     {
         $db= DbConnection::getInstance();
@@ -53,6 +81,11 @@ class DaoText
         return $arr;
     }
 
+    /**
+     * Obtiene el resultado sql de un objeto Text de la base de datos.
+     *
+     * @return mixed
+     */
     public static function getRandomText()
     {
         $db= DbConnection::getInstance();

@@ -1,6 +1,12 @@
 <?php
 include_once('dao/daoResolution.php');
 include_once('dbConnection.php');
+
+/**
+ * Abstracción del resultado de un usuario al realizar una resolución en la aplicación.
+ *
+ * Class Resolution
+ */
 class Resolution
 {
     private $id;
@@ -10,6 +16,15 @@ class Resolution
     private $timeRes;
     private $createdAt;
 
+    /**
+     * Resolution constructor.
+     * @param string $id
+     * @param string $idUser
+     * @param string $idText
+     * @param string $wpmRes
+     * @param string $timeRes
+     * @param string $createdAt
+     */
     public function __construct($id="", $idUser="", $idText="", $wpmRes="", $timeRes="", $createdAt="")
     {
         $this->id=$id;
@@ -140,16 +155,31 @@ class Resolution
         return $this;
     }
 
+    /**
+     * Llama a DaoResolution e inserta la resolucíón
+     *
+     */
     public function insert()
     {
         DaoResolution::insert($this);
     }
 
+
+    /**
+     * Llama da DaoResolución y elimina la resolución.
+     */
     public function delete()
     {
         DaoResolution::delete($this);
     }
-    
+
+    /**
+     *
+     * Obtiene una resolución a través de DaoCategory .
+     *
+     * @param $id
+     * @return Resolution
+     */
     public static function getById($id)
     {
         $daoResult =DaoResolution::getById($id);
@@ -159,8 +189,13 @@ class Resolution
         return $text ;
     }
 
-
-    public static function getAllTexts()
+    /**
+     * Obtiene todas las resoluciones desde DaoResolutions y las devuelve en un array lleno de objetos Resolution.
+     *
+     *
+     * @return array
+     */
+    public static function getAllResolutions()
     {
         $daoResult = DaoResolution::getAllResolutions();
         $resolutions = array();

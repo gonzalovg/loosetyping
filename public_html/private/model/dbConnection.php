@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Empleada para la conexión con la base de datos empleando el patrón singleton.
+ *
+ * Class DbConnection
+ */
 class DbConnection
 {
     private static $instance;
@@ -9,6 +14,11 @@ class DbConnection
         // $this->instance = new PDO('mysql:host=localhost;dbname=loosetyping', 'root', '');
     }
 
+    /**
+     * Devuelve un objeto PDO, con el cual realizaremos las peticiones/instrucciones a la base de datos.
+     *
+     * @return PDO
+     */
     public static function getInstance()
     {
         if (!self::$instance instanceof self) {

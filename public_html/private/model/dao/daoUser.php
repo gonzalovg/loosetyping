@@ -1,15 +1,24 @@
 <?php
 
 
-
+/**
+ * Class DaoUser
+ */
 class DaoUser
 {
+    /**
+     * DaoUser constructor.
+     */
     public function __construct()
     {
         // $this->tabla="usuarios";
     }
 
-
+    /**
+     * Inserta un objeto User en la base de datos.
+     *
+     * @param $user
+     */
     public static function insert($user)
     {
         $db= DbConnection::getInstance();
@@ -20,6 +29,11 @@ class DaoUser
         $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword())]);
     }
 
+    /**
+     * Actualiza los datos de un usario en la base de datos
+     *
+     * @param $user
+     */
     public static function update($user)
     {
         $db= DbConnection::getInstance();
@@ -40,6 +54,11 @@ class DaoUser
         }
     }
 
+    /**
+     * Actualiza el avatar de un usuario en la base de datos.
+     *
+     * @param $user
+     */
     public static function updataAvatar($user)
     {
         $db= DbConnection::getInstance();
@@ -52,7 +71,11 @@ class DaoUser
     }
 
 
-
+    /**
+     * Elimina un usarios de la base de datos.
+     *
+     * @param $user
+     */
     public static function delete($user)
     {
         $db= DbConnection::getInstance();
@@ -65,7 +88,12 @@ class DaoUser
         // $commit->execute([$user->getId()]);
     }
 
-
+    /**
+     * Comprueba si el usuario ya existe.
+     *
+     * @param $user
+     * @return bool
+     */
     public static function existingUser($user)
     {
         $db=DbConnection::getInstance();
@@ -84,6 +112,13 @@ class DaoUser
         }
     }
 
+    /**
+     * True si el usuario aporta los credenciales correctos a los respectivos en la base de datos.
+     *
+     * @param $email
+     * @param $password
+     * @return bool
+     */
     public static function logIn($email, $password)
     {
         $db = DbConnection::getInstance();
@@ -101,6 +136,12 @@ class DaoUser
         }
     }
 
+    /**
+     * Obtiene el resultado sql de un objeto User de la base de datos, por email.
+     *
+     * @param $email
+     * @return mixed
+     */
     public static function getByEmail($email)
     {
         $db=  DbConnection::getInstance();
@@ -112,6 +153,11 @@ class DaoUser
         return $result;
     }
 
+    /**
+     * Obtiene el resultado sql de un objeto User de la base de datos, por id   *
+     * @param $id
+     * @return mixed
+     */
     public static function getById($id)
     {
         $db=  DbConnection::getInstance();
@@ -123,7 +169,11 @@ class DaoUser
         return $result;
     }
 
-
+    /**
+     * Obtiene un array de Users de la base de datos
+     *
+     * @return array
+     */
     public static function getAllUsers()
     {
         $db= DbConnection::getInstance();

@@ -1,11 +1,22 @@
 <?php
 
+/**
+ * Class DaoStats
+ */
 class DaoStats
 {
+    /**
+     * DaoStats constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * Inserta un objeto Stat en la base de datos.
+     *
+     * @param $stat
+     */
     public static function insert($stat)
     {
         $db= DbConnection::getInstance();
@@ -16,6 +27,11 @@ class DaoStats
         $commit->execute([$stat->getIdUser(),$stat->getWpm(),$stat->getMaxWpm(),$stat->getTxtFav(),$stat->getTotRes()]);
     }
 
+    /**
+     * Elimina un objeto Stat de la base de datos.
+     *
+     * @param $stat
+     */
     public static function delete($stat)
     {
         $db= DbConnection::getInstance();
@@ -28,6 +44,13 @@ class DaoStats
         // $commit->execute([$stat->getId()]);
     }
 
+
+    /**
+     * Obtiene un objeto Stat de la base de datos.
+     *
+     * @param $id
+     * @return mixed
+     */
     public static function getById($id)
     {
         $db=  DbConnection::getInstance();
@@ -39,6 +62,11 @@ class DaoStats
         return $result;
     }
 
+    /**
+     * Obtiene un array lleno de todos los objetos Stat desde la base de datos.
+     *
+     * @return array
+     */
     public static function getAllStats()
     {
         $db= DbConnection::getInstance();

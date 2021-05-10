@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['_5f_5fconstruct_82',['__construct',['../class_category.html#a75d52bfeb11fc158339a1fc9b4f30ef9',1,'Category\__construct()'],['../class_dao_category.html#a66d7dd5df7bb23ebfbc841bead9588ca',1,'DaoCategory\__construct()'],['../class_dao_resolution.html#ac2c896f250789373e3e5f5327817d81f',1,'DaoResolution\__construct()'],['../class_dao_stats.html#ad3482431dd91f530700348da3c848616',1,'DaoStats\__construct()'],['../class_dao_text.html#a4ce4b5115f83ee4761d8b3e5ab126eab',1,'DaoText\__construct()'],['../class_dao_user.html#a64638b375b8f39a79ede5f6bd342c7b9',1,'DaoUser\__construct()'],['../class_resolution.html#a772c0a334477dabf9ab858cd2ddcfe1f',1,'Resolution\__construct()'],['../class_stats.html#a68cbdd4d41c12bd8206ac9ead734fd69',1,'Stats\__construct()'],['../class_text.html#a4bde1f87f38ee631791898824e801ccb',1,'Text\__construct()'],['../class_user.html#ac8399ca28f3a60891add37271f7cbca7',1,'User\__construct()']]]
+];

@@ -1037,7 +1037,9 @@ function openIconWindow() {
 
   //   console.log(iconsHTML);
   windowLocation.style.width = "50%";
-  windowLocation.style.height = "200px";
+  // windowLocation.style.height = "200px";
+  // windowLocation.style.height = "100%";
+
   windowLocation.style.display = "flex";
   windowLocation.style.justifyContent = "center";
   windowLocation.style.flexDirection = "row";

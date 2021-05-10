@@ -3,6 +3,9 @@
 include_once('dao/daoText.php');
 include_once('dbConnection.php');
 
+/**
+ * Class Text
+ */
 class Text
 {
     private $id;
@@ -12,9 +15,18 @@ class Text
     private $idCat;
     private $autorText;
     private $createdAt;
-    
 
 
+    /**
+     * Text constructor.
+     * @param string $id
+     * @param string $titText
+     * @param string $txtText
+     * @param string $lang
+     * @param string $idCat
+     * @param string $autorText
+     * @param string $createdAt
+     */
     public function __construct($id="", $titText="", $txtText="", $lang="", $idCat="", $autorText="", $createdAt="")
     {
         $this->id=$id;
@@ -167,17 +179,29 @@ class Text
     }
 
 
-
+    /**
+     * Llama a DaoText e inserta el texto.
+     */
     public function insert()
     {
         DaoText::insert($this);
     }
 
+    /**
+     * Llama a DaoText y elimina el texto
+     */
     public function delete()
     {
         DaoText::delete($this);
     }
-    
+
+
+    /**
+     * Obtiene un texto a través de DaoText
+     *
+     * @param $id
+     * @return Text
+     */
     public static function getById($id)
     {
         $daoResult =DaoText::getById($id);
@@ -187,7 +211,12 @@ class Text
         return $text ;
     }
 
-
+    /**
+     * Obtiene todos los textos a través de DaoText y los devuelve en un array lleno de objetos Text
+     *
+     *
+     * @return array
+     */
     public static function getAllTexts()
     {
         $daoResult = DaoText::getAllTexts();
@@ -199,6 +228,11 @@ class Text
         return $texts;
     }
 
+    /**
+     * Obtiene un texto aleatorio desde la base de datos.
+     *
+     * @return Text
+     */
     public static function getRandomText()
     {
         $daoResult =DaoText::getRandomText();

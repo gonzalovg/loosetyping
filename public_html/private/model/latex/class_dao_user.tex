@@ -1,0 +1,175 @@
+\hypertarget{class_dao_user}{}\doxysection{Referencia de la Clase Dao\+User}
+\label{class_dao_user}\index{DaoUser@{DaoUser}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dao_user_a64638b375b8f39a79ede5f6bd342c7b9}{\+\_\+\+\_\+construct}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_dao_user_a388f91b93affb30e12f191c01e5ecd99}{insert}} (\$user)
+\item 
+static \mbox{\hyperlink{class_dao_user_abfa45f6aee1a2d9d0785f76dcfcd98bc}{update}} (\$user)
+\item 
+static \mbox{\hyperlink{class_dao_user_a9899e395bdd0886dab567d3faabd768f}{updata\+Avatar}} (\$user)
+\item 
+static \mbox{\hyperlink{class_dao_user_a019f553c48aeef9371d220f82a4608d6}{delete}} (\$user)
+\item 
+static \mbox{\hyperlink{class_dao_user_a43cb37490e41e14209cc82722c997a92}{existing\+User}} (\$user)
+\item 
+static \mbox{\hyperlink{class_dao_user_a6ecf7f20996ef89d602784123ec023dd}{log\+In}} (\$email, \$password)
+\item 
+static \mbox{\hyperlink{class_dao_user_a2167a74b4ac95cac3baa9afade491232}{get\+By\+Email}} (\$email)
+\item 
+static \mbox{\hyperlink{class_dao_user_a2bc4cfa4db752662aedfd9f83d6d069c}{get\+By\+Id}} (\$id)
+\item 
+static \mbox{\hyperlink{class_dao_user_a6147f544e214a913a8bfc06956608a8a}{get\+All\+Users}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Class \mbox{\hyperlink{class_dao_user}{Dao\+User}} 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_dao_user_a64638b375b8f39a79ede5f6bd342c7b9}\label{class_dao_user_a64638b375b8f39a79ede5f6bd342c7b9}} 
+\index{DaoUser@{DaoUser}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dao\+User\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_dao_user}{Dao\+User}} constructor. 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_dao_user_a019f553c48aeef9371d220f82a4608d6}\label{class_dao_user_a019f553c48aeef9371d220f82a4608d6}} 
+\index{DaoUser@{DaoUser}!delete@{delete}}
+\index{delete@{delete}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily static Dao\+User\+::delete (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Elimina un usarios de la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$user} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dao_user_a43cb37490e41e14209cc82722c997a92}\label{class_dao_user_a43cb37490e41e14209cc82722c997a92}} 
+\index{DaoUser@{DaoUser}!existingUser@{existingUser}}
+\index{existingUser@{existingUser}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{existingUser()}{existingUser()}}
+{\footnotesize\ttfamily static Dao\+User\+::existing\+User (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Comprueba si el usuario ya existe.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dao_user_a6147f544e214a913a8bfc06956608a8a}\label{class_dao_user_a6147f544e214a913a8bfc06956608a8a}} 
+\index{DaoUser@{DaoUser}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily static Dao\+User\+::get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene un array de Users de la base de datos
+
+\begin{DoxyReturn}{Devuelve}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dao_user_a2167a74b4ac95cac3baa9afade491232}\label{class_dao_user_a2167a74b4ac95cac3baa9afade491232}} 
+\index{DaoUser@{DaoUser}!getByEmail@{getByEmail}}
+\index{getByEmail@{getByEmail}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{getByEmail()}{getByEmail()}}
+{\footnotesize\ttfamily static Dao\+User\+::get\+By\+Email (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene el resultado sql de un objeto \mbox{\hyperlink{class_user}{User}} de la base de datos, por email.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dao_user_a2bc4cfa4db752662aedfd9f83d6d069c}\label{class_dao_user_a2bc4cfa4db752662aedfd9f83d6d069c}} 
+\index{DaoUser@{DaoUser}!getById@{getById}}
+\index{getById@{getById}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{getById()}{getById()}}
+{\footnotesize\ttfamily static Dao\+User\+::get\+By\+Id (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene el resultado sql de un objeto \mbox{\hyperlink{class_user}{User}} de la base de datos, por id $\ast$ 
+\begin{DoxyParams}{Parámetros}
+{\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dao_user_a388f91b93affb30e12f191c01e5ecd99}\label{class_dao_user_a388f91b93affb30e12f191c01e5ecd99}} 
+\index{DaoUser@{DaoUser}!insert@{insert}}
+\index{insert@{insert}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily static Dao\+User\+::insert (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Inserta un objeto \mbox{\hyperlink{class_user}{User}} en la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$user} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dao_user_a6ecf7f20996ef89d602784123ec023dd}\label{class_dao_user_a6ecf7f20996ef89d602784123ec023dd}} 
+\index{DaoUser@{DaoUser}!logIn@{logIn}}
+\index{logIn@{logIn}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{logIn()}{logIn()}}
+{\footnotesize\ttfamily static Dao\+User\+::log\+In (\begin{DoxyParamCaption}\item[{}]{\$email,  }\item[{}]{\$password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+True si el usuario aporta los credenciales correctos a los respectivos en la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$email} & \\
+\hline
+{\em \$password} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dao_user_a9899e395bdd0886dab567d3faabd768f}\label{class_dao_user_a9899e395bdd0886dab567d3faabd768f}} 
+\index{DaoUser@{DaoUser}!updataAvatar@{updataAvatar}}
+\index{updataAvatar@{updataAvatar}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{updataAvatar()}{updataAvatar()}}
+{\footnotesize\ttfamily static Dao\+User\+::updata\+Avatar (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Actualiza el avatar de un usuario en la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$user} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dao_user_abfa45f6aee1a2d9d0785f76dcfcd98bc}\label{class_dao_user_abfa45f6aee1a2d9d0785f76dcfcd98bc}} 
+\index{DaoUser@{DaoUser}!update@{update}}
+\index{update@{update}!DaoUser@{DaoUser}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily static Dao\+User\+::update (\begin{DoxyParamCaption}\item[{}]{\$user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Actualiza los datos de un usario en la base de datos
+
+
+\begin{DoxyParams}{Parámetros}
+{\em \$user} & \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+dao/dao\+User.\+php\end{DoxyCompactItemize}

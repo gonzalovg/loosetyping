@@ -2,7 +2,9 @@
 include_once("dao/daoUser.php");
 include_once("dbConnection.php");
 
-
+/**
+ * Class User
+ */
 class User
 {
     private $id;
@@ -13,7 +15,16 @@ class User
     private $createdAt;
     private $permisos;
 
-
+    /**
+     * User constructor.
+     * @param string $id
+     * @param string $name
+     * @param string $email
+     * @param string $password
+     * @param string $avatar
+     * @param string $createdAt
+     * @param string $permisos
+     */
     public function __construct($id="", $name="", $email="", $password="", $avatar="", $createdAt="", $permisos="")
     {
         $this->id=$id;
@@ -171,30 +182,48 @@ class User
         return $this;
     }
 
-    
 
+    /**
+     * Llama a DaoUser e inserta el usuario.
+     */
     public function insert()
     {
         DaoUser::insert($this);
     }
 
+
+    /**
+     * Actualiza los datos del objeto usuario a través de DaoUser.
+     */
     public function update()
     {
         DaoUser::update($this);
     }
 
+    /**
+     * Actualiza el avatar del usuario a través de DaoUser.
+     */
     public function updateAvatar()
     {
         DaoUser::updataAvatar($this);
     }
 
 
-
+    /**
+     * Elimina el usuario a través de DaoUser.
+     */
     public function delete()
     {
         DaoUser::delete($this);
     }
-    
+
+
+    /**
+     * Obtiene un usuario a través de DaoUser, por el Id.
+     *
+     * @param $id
+     * @return User
+     */
     public static function getById($id)
     {
         $daoResult =DaoUser::getById($id);
@@ -203,6 +232,13 @@ class User
 
         return $user ;
     }
+
+    /**
+     * Obtiene un usuario a través de DaoUser, por el Correo.
+     *
+     * @param $email
+     * @return User
+     */
     public static function getByEmail($email)
     {
         $daoResult =DaoUser::getByEmail($email);
@@ -212,13 +248,23 @@ class User
         return $user ;
     }
 
-
+    /**
+     * Comprueba si el usuario ya existe a través de DaoUser.
+     *
+     *
+     * @return bool
+     */
     public function existingUser()
     {
         return DaoUser::existingUser($this);
     }
 
-
+    /**
+     * Obtiene todos los usuarios a través de DaoUser y los devuelve en un array lleno de Usuarios.
+     *
+     *
+     * @return array
+     */
     public static function getAllUsers()
     {
         $daoResult = DaoUser::getAllUsers();
