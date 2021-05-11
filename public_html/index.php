@@ -55,11 +55,6 @@ $texto= $textObj->getTxtText();
             }
          
             
-          
-
-            // echo $idUser;
-            // echo $idText;
-
 ?>
 
 
@@ -73,7 +68,10 @@ $texto= $textObj->getTxtText();
             <h1><span class="ec ec-game-die"></span>
 
 
-                TEXTO: LOREM</h1>
+                TEXTO: <?php echo $textObj->getTitText()  ?>
+            </h1>
+            <p>Autor: <i><?php echo $textObj->getAutorText() ?></i>
+            </p>
             <p id="texto"><?php echo $texto ?>
             </p>
 

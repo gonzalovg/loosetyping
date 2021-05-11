@@ -218,7 +218,7 @@ class Resolution
         $html.=" <div class='record-data'>".$this->idText."    </div>";
         $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
         $html.=" <div class='record-data'>".$this->timeRes."    </div>";
-        $html.=" <div class='record-data'>".$this->createdAt."    </div>";
+        $html.=" <div class='record-data small'>".$this->createdAt."    </div>";
         $html.=" <div class='record-data'><span onclick='eliminarResolution({$this->id},{$rand})' class='ec ec-negative-squared-cross-mark'></span></div>";
         $html.="</div>";
 

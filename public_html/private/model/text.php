@@ -137,6 +137,26 @@ class Text
 
         return $this;
     }
+    
+    /**
+     * Get the value of titText
+     */
+    public function getTitText()
+    {
+        return $this->titText;
+    }
+
+    /**
+     * Set the value of titText
+     *
+     * @return  self
+     */
+    public function setTitText($titText)
+    {
+        $this->titText = $titText;
+
+        return $this;
+    }
 
     /**
      * Get the value of autorText
@@ -222,7 +242,7 @@ class Text
         $daoResult = DaoText::getAllTexts();
         $texts = array();
         foreach ($daoResult as $daoText) {
-            array_push($texts, new Text($daoResult['id'], $daoResult['tit_text'], $daoResult['txt_text'], $daoResult['lang_text'], $daoResult['id_cat'], $daoResult['ori_text'], $daoResult['created_at']));
+            array_push($texts, new Text($daoText['id'], $daoText['tit_text'], $daoText['txt_text'], $daoText['lang_text'], $daoText['id_cat'], $daoText['ori_text'], $daoText['created_at']));
         }
 
         return $texts;

@@ -3,7 +3,7 @@
 
 <head>
 
-    <title> Ranking </title>
+    <title> Settings </title>
     <meta name='author' content='Gonzalo Verdugo'>
 
 
@@ -29,7 +29,7 @@
             <div id="settings-buttons">
                 <a class="button" href="panelUsuarios.php?option=allU">Users</a>
                 <a class="button" href="panelresolutions.php">Resolutions</a>
-                <a class="button" href="">Textos</a>
+                <a class="button" href="paneltextos.php">Textos</a>
 
 
             </div>

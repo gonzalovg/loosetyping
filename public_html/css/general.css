@@ -341,3 +341,7 @@ select {
   flex-direction: row;
   justify-content: center;
 } */
+
+.small {
+  font-size: 0.8em;
+}
