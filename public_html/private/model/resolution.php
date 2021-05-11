@@ -209,15 +209,17 @@ class Resolution
 
     public function imprimir()
     {
+        $rand=rand(0, 10000000);
         $html="";
 
-        $html.="<div class='record-row'>";
+        $html.="<div id='{$rand}' class='record-row'>";
         $html.=" <div class='record-data'>#".$this->id."    </div>";
         $html.=" <div class='record-data'><a href='profile.php?id=".$this->idUser." '>".$this->idUser."</a>    </div>";
         $html.=" <div class='record-data'>".$this->idText."    </div>";
         $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
         $html.=" <div class='record-data'>".$this->timeRes."    </div>";
         $html.=" <div class='record-data'>".$this->createdAt."    </div>";
+        $html.=" <div class='record-data'><span onclick='eliminarResolution({$this->id},{$rand})' class='ec ec-negative-squared-cross-mark'></span></div>";
         $html.="</div>";
 
         return $html;

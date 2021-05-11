@@ -1,7 +1,7 @@
 <?php
 
 
-include "../includes/nav.php";
+
 include("../private/model/resolution.php");
 
 
@@ -30,7 +30,7 @@ $resolutions = Resolution::getAllResolutions();
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='../favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
-    <script src="../js/userAJAX.js"></script>
+    <script src="../js/resolution.js"></script>
 
 
 
@@ -46,6 +46,7 @@ $resolutions = Resolution::getAllResolutions();
 <body>
 
     <main>
+        <?php include "../includes/nav.php";?>
 
         <section>
             <h1>LOOSETYPING (Resolutions) CONTROL PANEL</h1>
@@ -59,6 +60,7 @@ $resolutions = Resolution::getAllResolutions();
                     <div class="record-data"><b>WPM</b></div>
                     <div class="record-data"><b>TIEMPO</b></div>
                     <div class="record-data"><b>CREATED_AT</b></div>
+                    <div class="record-data"><b>ACCIONES</b></div>
                 </div>
 
                 <?php
