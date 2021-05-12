@@ -2,7 +2,6 @@ function processCategory() {
   const categoryInput = document.getElementsByName("category")[0];
   if (categoryInput.value != "") {
     insertCategory(categoryInput.value);
-    alert(categoryInput.value);
   }
 }
 

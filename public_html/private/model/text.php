@@ -261,4 +261,23 @@ class Text
 
         return $text;
     }
+
+
+    public function imprimir()
+    {
+        $rand = rand(0, 1000000);
+       
+
+        $html="";
+        $html.=" <div id='{$rand}' class='custom-text-container'>";
+        $html.=" <h3>#{$this->id}  {$this->titText}</h3>";
+        $html.="<p>{$this->txtText}</p>";
+        $html.="<p class='button-text-container'><span onclick='deleteText({$rand},{$this->id})' class='ec ec-negative-squared-cross-mark'></span><span class='ec ec-currency-exchange'></span>
+
+        </p>";
+        $html.="</div>";
+     
+
+        return $html;
+    }
 }

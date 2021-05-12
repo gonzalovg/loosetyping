@@ -144,7 +144,7 @@ section {
 
 .custom-text-container {
   width: 100%;
-  height: 150px;
+
   padding: 5px;
   /* border-left: 1px solid #707b7c;
   border-right: 1px solid #707b7c; */
@@ -345,4 +345,8 @@ select {
 
 .small {
   font-size: 0.8em;
+}
+
+#all-text {
+  margin-top: 20px;
 }
