@@ -280,4 +280,18 @@ class Text
 
         return $html;
     }
+
+
+    public function imprimirParaResolver()
+    {
+        $html="";
+        $html.=" <div  class='custom-text-container'>";
+        $html.=" <h3>{$this->titText}</h3>";
+        $html.="<p>{$this->txtText}</p>";
+        $html.="<p class='button-text-container'><a class='button' href='../index.php?text={$this->id}'>Resolver</a></p>";
+        $html.="</div>";
+     
+
+        return $html;
+    }
 }

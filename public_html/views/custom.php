@@ -1,7 +1,11 @@
 <?php
+include_once('../private/model/text.php');
 
 
-// $texto = "hola";
+$texts = Text::getAllTexts();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +45,17 @@
                 Resoluciones personalizadas</h2>
 
 
-            <div class="custom-text-container">
+            <?php
+            
+            foreach ($texts as $text) {
+                echo $text->imprimirParaResolver();
+            }
+            
+            
+            
+            ?>
+
+            <!-- <div class="custom-text-container">
                 <h3>TEXTO: LOREM</h3>
                 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quaerat reprehenderit fugit suscipit
                     magni exercitationem! Eius, quidem provident quibusdam pariatur consequatur illum impedit. Sunt quos
@@ -74,7 +88,7 @@
                 <p class="button-text-container"><button>Resolver</button></p>
 
             </div>
-
+ -->
 
 
 

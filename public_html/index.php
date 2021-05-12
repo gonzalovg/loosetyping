@@ -4,9 +4,17 @@ include_once('./private/model/text.php');
 include_once('./private/model/user.php');
 
 
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $textObj=Text::getById($_GET['id']);
+    $text=$textObj->getTxtText();
+} else {
+    $textObj =Text::getRandomText();
+    $texto= $textObj->getTxtText();
+}
 
-$textObj =Text::getRandomText();
-$texto= $textObj->getTxtText();
+
+
+
 ?>
 
 <!DOCTYPE html>
