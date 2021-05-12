@@ -57,4 +57,19 @@ class DaoCategory
 
         return $result;
     }
+
+
+    public static function getAllCategorys()
+    {
+        $db= DbConnection::getInstance();
+
+        $query = "SELECT * from categorias";
+
+        $commit=$db->prepare($query);
+        $commit->execute();
+        
+        $arr=$commit->fetchAll();
+       
+        return $arr;
+    }
 }

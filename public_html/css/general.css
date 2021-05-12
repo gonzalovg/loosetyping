@@ -312,6 +312,7 @@ select {
 
 .tb-no-decor {
   list-style-type: none;
+  padding: 0;
 }
 
 .li-label-input {

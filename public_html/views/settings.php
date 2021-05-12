@@ -30,6 +30,7 @@
                 <a class="button" href="panelUsuarios.php?option=allU">Users</a>
                 <a class="button" href="panelresolutions.php">Resolutions</a>
                 <a class="button" href="paneltextos.php">Textos</a>
+                <a class="button" href="panelcategorias.php">Categorías</a>
 
 
             </div>

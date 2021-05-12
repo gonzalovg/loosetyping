@@ -7,6 +7,7 @@ if (isset($_POST) && !empty($_POST)) {
     // echo "post lleno";
 
     $user = new User('', $_POST['username'], $_POST['correo'], $_POST['password']);
+    $user->setPermisos(1);
     $user->insert();
     session_start();
     $_SESSION['user']=$_POST['correo'];

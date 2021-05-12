@@ -1,7 +1,5 @@
-function eliminarUsuario(rand) {
+function eliminarUsuario(rand, id) {
   const userDiv = document.getElementById(rand);
-
-  const userId = userDiv.firstChild.innerHTML;
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -11,7 +9,7 @@ function eliminarUsuario(rand) {
   };
   xhttp.open(
     "GET",
-    "../private/scripts/userScripts.php?id=" + userId + "&option=delete ",
+    "../private/scripts/userScripts.php?id=" + id + "&option=delete",
     true
   );
   xhttp.send();

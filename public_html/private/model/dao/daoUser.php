@@ -23,10 +23,10 @@ class DaoUser
     {
         $db= DbConnection::getInstance();
         
-        $query="insert into usuarios(nom_user,ema_user,pas_user) values (?,?,?)";
+        $query="insert into usuarios(nom_user,ema_user,pas_user,per_user) values (?,?,?,?)";
        
         $commit = $db->prepare($query);
-        $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword())]);
+        $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword()), $user->getPermisos()]);
     }
 
     /**

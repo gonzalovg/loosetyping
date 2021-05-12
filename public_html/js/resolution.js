@@ -11,7 +11,7 @@ function eliminarResolution(resolutionId, rand) {
     "GET",
     "../private/scripts/resolutionScripts.php?id=" +
       resolutionId +
-      "&option=delete ",
+      "&option=delete",
     true
   );
   xhttp.send();

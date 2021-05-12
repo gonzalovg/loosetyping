@@ -51,6 +51,25 @@ $texts = Text::getAllTexts();
         <section>
             <h1>LOOSETYPING (Text) CONTROL PANEL</h1>
 
+            <div id="ins-text">
+                <form action="">
+                    <ul class="tb-no-decor">
+
+                        <li class="li-label-input"><label for="titulo">Título</label><input name="titulo" type="text">
+                        </li>
+                        <li class="li-label-input"><label for="autor">Autor</label><input name="autor" type="text"></li>
+                        <li class="li-label-input"><label for="contenido">Contenido</label><input name="contenido"
+                                type="text">
+                        </li>
+                        <li class="li-label-input"><label for="lang">Idioma</label><input name="lang" type="text"></li>
+                        <li class="li-label-input"><label for="categoria">Categoría</label><select name="categoria"
+                                id=""></select>
+                        <li><input class="button" type="submit" value="Insertar"></li>
+
+                    </ul>
+                </form>
+
+            </div>
 
 
             </div>

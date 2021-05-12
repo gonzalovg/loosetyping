@@ -86,12 +86,39 @@ class Category
      * @return Category
      *
      */
-    public function getById($id)
+    public static function getById($id)
     {
         $daoResult = DaoCategory::getById($id);
 
         $category= new Category($daoResult['id'], $daoResult['nom_cat']);
     
         return $category;
+    }
+    /**
+     * Obtiene todas las categorias a traves de DaoCategory y la devuelve en un array.
+     */
+    public static function getAllCategorys()
+    {
+        $daoResult = DaoCategory::getAllCategorys();
+        $categorys = array();
+        foreach ($daoResult as $daoCategory) {
+            array_push($categorys, new Category($daoCategory['id'], $daoCategory['nom_cat']));
+        }
+
+        return $categorys;
+    }
+
+    public function imprimir()
+    {
+        $rand=rand(0, 100000);
+        $html="";
+        $html.="<div id='{$rand}' class='record-row'>";
+        $html.="<div class='record-data'>#".$this->id."</div>";
+        $html.="<div class='record-data'>".$this->name."</div>";
+        $html.="<div class='record-data'><span onclick='deleteCategory({$rand}, {$this->id})'  class='ec ec-negative-squared-cross-mark'></span>
+        </div>";
+        $html.="</div>";
+
+        return $html;
     }
 }
