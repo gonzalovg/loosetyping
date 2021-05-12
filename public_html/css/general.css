@@ -350,3 +350,25 @@ select {
 #all-text {
   margin-top: 20px;
 }
+
+textarea {
+  background-color: #3c4043;
+  border: 1px solid #707b7c;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdfefe;
+  min-width: 160px;
+  border-top: 1px solid #707b7c;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

@@ -77,8 +77,8 @@ if (isset($_POST) && !empty($_POST)) {
                         <li class="li-label-input"><label for="titulo">Título</label><input name="titulo" type="text">
                         </li>
                         <li class="li-label-input"><label for="autor">Autor</label><input name="autor" type="text"></li>
-                        <li class="li-label-input"><label for="contenido">Contenido</label><input name="contenido"
-                                type="text">
+                        <li class="li-label-input"><label for="contenido">Contenido</label><textarea name="contenido"
+                                rows="7"></textarea>
                         </li>
                         <li class="li-label-input"><label for="lang">Idioma</label><input name="lang" type="text"></li>
                         <li class="li-label-input"><label for="categoria">Categoría</label><select name="categoria">

@@ -2,11 +2,12 @@
 
 include_once('./private/model/text.php');
 include_once('./private/model/user.php');
+$custom= false;
 
-
-if (isset($_GET['id']) && !empty($_GET['id'])) {
-    $textObj=Text::getById($_GET['id']);
-    $text=$textObj->getTxtText();
+if (isset($_GET['text']) && !empty($_GET['text'])) {
+    $textObj=Text::getById($_GET['text']);
+    $texto=$textObj->getTxtText();
+    $custom=true;
 } else {
     $textObj =Text::getRandomText();
     $texto= $textObj->getTxtText();
@@ -73,10 +74,23 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 
 
-            <h1><span class="ec ec-game-die"></span>
+            <h1>
+
+                <?php
+                 if ($custom) {
+                     echo '<span class="ec ec-top"></span>
+                     ';
+                 } else {
+                     echo ' <span class="ec ec-game-die">';
+                 }
+                 ?>
 
 
-                TEXTO: <?php echo $textObj->getTitText()  ?>
+
+                </span>
+
+
+                <?php echo $textObj->getTitText()  ?>
             </h1>
             <p>Autor: <i><?php echo $textObj->getAutorText() ?></i>
             </p>

@@ -76,4 +76,18 @@ class DaoResolution
        
         return $arr;
     }
+
+    public static function getUserLastsResolutions($id)
+    {
+        $db= DbConnection::getInstance();
+
+        $query = "select * from resoluciones where id_user={$id} order by created_at DESC";
+
+        $commit=$db->prepare($query);
+        $commit->execute();
+        
+        $arr=$commit->fetchAll();
+       
+        return $arr;
+    }
 }

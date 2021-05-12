@@ -2,14 +2,11 @@
 
 
 include("../private/model/user.php");
-
-//////////////////////////////////////////////
-//OBTENCIÓN DE TODOS LOS USUARIOS
-
+include("../private/model/resolution.php");
+include("../private/model/text.php");
 
 
 
-//////////////////////////////////////////////
 
 
 ?>
@@ -40,7 +37,7 @@ include("../private/model/user.php");
 
                 <div class="profile-box">
                     <h1><?php
-
+                        $user = "";
                         if (isset($_SESSION['user']) && !empty($_SESSION['user']) && empty($_GET['id'])) {
                             $user = User::getByEmail($_SESSION['user']);
                         } elseif (($_GET['id']) && !empty($_GET['id'])) {
@@ -49,8 +46,7 @@ include("../private/model/user.php");
                             header("location: ../index.php");
                         }
                    
-                       
-                        echo $user->getName();
+                       echo $user->getName();
                     
                     ?>
                     </h1>
@@ -73,7 +69,28 @@ include("../private/model/user.php");
 
             </div>
             <div id="user-last-reso">
+                <h1>Últimas resoluciones de <?php echo $user->getName() ?>
+                </h1>
 
+                <div class="record-header">
+                    <div class="record-data"><b>TEXTO</b></div>
+                    <div class="record-data"><b>WPM</b></div>
+                    <div class="record-data"><b>TIEMPO</b></div>
+
+
+                </div>
+                <?php
+                    
+                    
+                    $lastResolutions=Resolution::getUserLastsResolutions($user->getId());
+
+                    foreach ($lastResolutions as $resolution) {
+                        $texto = Text::getById($resolution->getIdText());
+                        echo $resolution->imprimirSinFuncion($texto->getTitText());
+                    }
+                    
+                    
+                    ?>
             </div>
 
 

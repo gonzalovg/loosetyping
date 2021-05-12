@@ -113,3 +113,7 @@ select {
 .button:hover {
   background-color: #3c4043;
 }
+
+.dropdown-content {
+  background-color: #3c4043;
+}

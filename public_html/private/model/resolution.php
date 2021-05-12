@@ -207,6 +207,18 @@ class Resolution
     }
 
 
+    public static function getUserLastsResolutions($id)
+    {
+        $daoResult = DaoResolution::getUserLastsResolutions($id);
+        $resolutions = array();
+        foreach ($daoResult as $daoResolution) {
+            array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResolution['tim_res'], $daoResolution['created_at']));
+        }
+
+        return $resolutions;
+    }
+
+
     public function imprimir()
     {
         $rand=rand(0, 10000000);
@@ -220,6 +232,22 @@ class Resolution
         $html.=" <div class='record-data'>".$this->timeRes."    </div>";
         $html.=" <div class='record-data small'>".$this->createdAt."    </div>";
         $html.=" <div class='record-data'><span onclick='eliminarResolution({$this->id},{$rand})' class='ec ec-negative-squared-cross-mark'></span></div>";
+        $html.="</div>";
+
+        return $html;
+    }
+
+
+    public function imprimirSinFuncion($titText)
+    {
+        $html="";
+
+        $html.="<div  class='record-row'>";
+        $html.=" <div class='record-data'>".$titText."    </div>";
+        $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
+        $html.=" <div class='record-data'>".$this->timeRes."    </div>";
+
+
         $html.="</div>";
 
         return $html;

@@ -1,6 +1,6 @@
 let posicionCursor = 0;
 let caracteres =
-  " !$#&%'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~";
+  " !$#&%'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~­";
 let arrayDeCaracteres = caracteres.split("");
 let balanceAciertos = generarRatio(arrayDeCaracteres);
 let fallosTotales = 0;

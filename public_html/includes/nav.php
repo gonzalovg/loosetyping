@@ -28,29 +28,32 @@
             </h2>
         </li>
         <li>
-            <h2>
-                <a class="navLink" href="settings.php">SETTINGS</a>
+            <h2><?php
+            session_start();
+            include_once('../private/model/user.php');
+            if (isset($_SESSION) && !empty($_SESSION)) {
+                $user=User::getByEmail($_SESSION['user']);
+
+                if ($user->getPermisos()>1) {
+                    echo '<div class="dropdown">
+                        <a class="navLink" href="profile.php">PROFILE</a>
+                        <div class="dropdown-content">
+                         <a class="navLink" href="settings.php">SETTINGS</a>
+                        </div>
+                      </div>' ;
+                }
+            } else {
+                echo ' <a class="navLink" href="login.php">LOGIN</a>';
+            }
+                 
+                 
+                 ?>
             </h2>
         </li>
 
         <li>
             <h2>
-                
 
-                <?php
-
-                session_start();
-                     if (isset($_SESSION) && !empty($_SESSION)) {
-                         echo ' <a class="navLink" href="profile.php"><span class="nav-item-small"> Profile</span>
-                         </a>';
-                     } else {
-                         echo ' <a class="navLink" href="login.php"><span class="nav-item-small"> LOG IN</span>
-                            </a>';
-                     }
-
-                ?>
-
-               
 
                 <span id="botonTema" onclick="cambiarTema()" class="ec ec-new-moon-with-face"></span>
 

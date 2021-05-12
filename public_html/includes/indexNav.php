@@ -29,21 +29,40 @@
         </li>
         <li>
             <h2>
-                <a class="navLink" href="views/settings.php">SETTINGS</a>
+                <?php
+                 session_start();
+                 
+                 if (isset($_SESSION) && !empty($_SESSION)) {
+                     $user=User::getByEmail($_SESSION['user']);
+
+                     if ($user->getPermisos()>1) {
+                         echo '<div class="dropdown">
+                        <a class="navLink" href="views/profile.php">PROFILE</a>
+                        <div class="dropdown-content">
+                         <a class="navLink" href="views/settings.php">SETTINGS</a>
+                        </div>
+                      </div>' ;
+                     }
+                 } else {
+                     echo ' <a class="navLink" href="views/login.php">LOGIN</a>';
+                 }
+                 
+                 
+                 ?>
+
+                <!-- <a class="navLink" href="views/settings.php">SETTINGS</a> -->
             </h2>
         </li>
 
         <li>
             <h2>
-            <?php
-                session_start();
-                     if (isset($_SESSION) && !empty($_SESSION)) {
-                         echo ' <a class="navLink" href="views/profile.php"><span class="nav-item-small"> Profile</span>
-                         </a>';
-                     } else {
-                         echo ' <a class="navLink" href="views/login.php"><span class="nav-item-small"> LOG IN</span>
-                            </a>';
-                     }
+
+                <?php
+               
+                    //  if (isset($_SESSION)) {
+                    //      echo ' <a class="navLink" href="views/login.php"><span class="nav-item-small"> LOG IN</span>
+                    //     </a>';
+                    //  }
 
                 ?>
 
