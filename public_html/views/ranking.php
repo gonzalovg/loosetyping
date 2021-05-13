@@ -1,3 +1,18 @@
+<?php
+
+include_once('../private/model/resolution.php');
+include_once('../private/model/text.php');
+include_once('../private/model/user.php');
+
+
+
+$maxWpmResolutions = Resolution::getRankedResolutions('any', 'all time');
+
+$texts = Text::getAllTexts();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang='es' dir='ltr'>
 
@@ -10,6 +25,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='../favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
+    <script src="../js/resolution.js"></script>
 
 
 
@@ -33,19 +49,24 @@
             </h1>
 
             <div class="record-options">
-                <select name="texto" id="">
-                    <option value="hola">Cualquier texto</option>
-                    <option value="">Lorem</option>
-                    <option value="">Cervantes</option>
-                    <option value="">Roma</option>
-                    <option value="">Madrid</option>
+                <select onchange="getRanks()" name="texto">
+                    <option value="any">...</option>
+                    <?php
+                
+                foreach ($texts as $text) {
+                    echo "<option value='{$text->getId()}'>{$text->getTitText()}</option>";
+                }
+                
+                
+                ?>
+
                 </select>
 
-                <select name="tiempo" id="">
-                    <option value="">24h</option>
-                    <option value="">Último mes</option>
-                    <option value="">Último año</option>
-                    <option value="">Historico</option>
+                <select onchange="getRanks()" name="tiempo">
+                    <option value="day">24h</option>
+                    <option value="month">Último mes</option>
+                    <option value="year">Último año</option>
+                    <option value="all">Historico</option>
                 </select>
 
             </div>
@@ -67,36 +88,19 @@
                     <div class="record-data"><b>WPM</b></div>
                     <div class="record-data"><b>Tiempo</b></div>
                 </div>
+                <div id='ranked-res'>
 
-                <div class="record-row">
-                    <div class="record-data">#1</div>
-                    <div class="record-data">Gonzalo Verdugo</div>
-                    <div class="record-data">Lorem</div>
-                    <div class="record-data">200wpm</div>
-                    <div class="record-data">36.67</div>
-                </div>
-                <div class="record-row">
-                    <div class="record-data">#1</div>
-                    <div class="record-data">Gonzalo Verdugo</div>
-                    <div class="record-data">Lorem</div>
-                    <div class="record-data">200wpm</div>
-                    <div class="record-data">36.67</div>
-                </div>
-                <div class="record-row">
-                    <div class="record-data">#1</div>
-                    <div class="record-data">Gonzalo Verdugo</div>
-                    <div class="record-data">Lorem</div>
-                    <div class="record-data">200wpm</div>
-                    <div class="record-data">36.67</div>
-                </div>
-                <div class="record-row">
-                    <div class="record-data">#1</div>
-                    <div class="record-data">Gonzalo Verdugo</div>
-                    <div class="record-data">Lorem</div>
-                    <div class="record-data">200wpm</div>
-                    <div class="record-data">36.67</div>
-                </div>
+                    <?php
+                    $counter=1;
+                     foreach ($maxWpmResolutions as $resolution) {
+                         $text=Text::getById($resolution->getIdText());
+                         $user=User::getById($resolution->getIdUser());
+                         echo $resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $counter);
+                         $counter++;
+                     }
+ ?>
 
+                </div>
 
 
 

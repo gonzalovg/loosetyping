@@ -207,9 +207,21 @@ class Resolution
     }
 
 
-    public static function getUserLastsResolutions($id)
+    public static function getRankedResolutions($text, $time)
     {
-        $daoResult = DaoResolution::getUserLastsResolutions($id);
+        $daoResult = DaoResolution::getRankedResolutions($text, $time);
+        $resolutions = array();
+        foreach ($daoResult as $daoResolution) {
+            array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResolution['tim_res'], $daoResolution['created_at']));
+        }
+
+        return $resolutions;
+    }
+
+
+    public static function getUserLastsResolutions($id, $limit)
+    {
+        $daoResult = DaoResolution::getUserLastsResolutions($id, $limit);
         $resolutions = array();
         foreach ($daoResult as $daoResolution) {
             array_push($resolutions, new Resolution($daoResolution['id'], $daoResolution['id_user'], $daoResolution['id_text'], $daoResolution['wpm_res'], $daoResolution['tim_res'], $daoResolution['created_at']));
@@ -243,6 +255,24 @@ class Resolution
         $html="";
 
         $html.="<div  class='record-row'>";
+        $html.=" <div class='record-data'>".$titText."    </div>";
+        $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
+        $html.=" <div class='record-data'>".$this->timeRes."    </div>";
+
+
+        $html.="</div>";
+
+        return $html;
+    }
+
+
+    public function imprimirRank($titText, $userName, $userId, $position)
+    {
+        $html="";
+
+        $html.="<div  class='record-row'>";
+        $html.=" <div class='record-data'>#".$position .'  <a href="profile.php?id={$userId}">'.$userName." </a>   </div>";
+        $html.=" <div class='record-data'>".$userName."    </div>";
         $html.=" <div class='record-data'>".$titText."    </div>";
         $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
         $html.=" <div class='record-data'>".$this->timeRes."    </div>";

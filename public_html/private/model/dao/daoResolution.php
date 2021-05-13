@@ -77,12 +77,59 @@ class DaoResolution
         return $arr;
     }
 
-    public static function getUserLastsResolutions($id)
+    public static function getUserLastsResolutions($id, $limit)
     {
         $db= DbConnection::getInstance();
 
-        $query = "select * from resoluciones where id_user={$id} order by created_at DESC";
+        $query = "select * from resoluciones where id_user={$id} order by created_at DESC limit {$limit}";
 
+        $commit=$db->prepare($query);
+        $commit->execute();
+        
+        $arr=$commit->fetchAll();
+       
+        return $arr;
+    }
+
+    public static function getRankedResolutions($text, $time)
+    {
+        $db = DbConnection::getInstance();
+
+        $query = "select * from resoluciones ";
+
+        if ($text!='any') {
+            $query.=" where id_text={$text} ";
+        }
+
+        if ($time!='all') {
+            if ($text!='any') {
+                $query.=" and ";
+            }
+
+           
+
+
+            if ($time=='day') {
+                if ($text=="any") {
+                    $query.=' where ';
+                }
+                $query.=" DATEDIFF(created_at, CURDATE())<1 ";
+            } elseif ($time == 'month') {
+                if ($text=="any") {
+                    $query.=' where ';
+                }
+                $query.=" DATEDIFF(created_at, CURDATE())<31 ";
+            } elseif ($time=='year') {
+                if ($text=="any") {
+                    $query.=' where ';
+                }
+                $query.=" DATEDIFF(created_at, CURDATE())<365 ";
+            }
+        }
+
+        $query.=" order by wpm_res desc limit 100;";
+      
+      
         $commit=$db->prepare($query);
         $commit->execute();
         

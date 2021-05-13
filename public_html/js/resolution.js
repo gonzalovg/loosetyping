@@ -16,3 +16,25 @@ function eliminarResolution(resolutionId, rand) {
   );
   xhttp.send();
 }
+
+function getRanks() {
+  const text = document.getElementsByName("texto")[0].value;
+  const time = document.getElementsByName("tiempo")[0].value;
+
+  const rankDiv = document.getElementById("ranked-res");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      rankDiv.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(
+    "GET",
+    "../private/scripts/resolutionScripts.php?option=rank&time=" +
+      time +
+      "&text=" +
+      text,
+    true
+  );
+  xhttp.send();
+}

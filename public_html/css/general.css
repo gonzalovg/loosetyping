@@ -236,9 +236,9 @@ select {
   justify-content: space-between;
 }
 
-.record-data:hover {
+/* .record-data:hover {
   padding: 1px 0;
-}
+} */
 
 .record-data {
   width: 150px;
@@ -371,4 +371,8 @@ textarea {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+#user-last-reso {
+  margin-top: 100px;
 }

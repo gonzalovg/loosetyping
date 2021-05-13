@@ -63,7 +63,14 @@ include("../private/model/text.php");
 
                     <span
                         class="<?php echo  $user->getAvatar()?> big-avatar "></span>
-                    <i class="fas fa-pencil-alt high-elem" onclick="openIconWindow()"></i>
+                    <?php
+                        
+                            if ($user->getEmail()==$_SESSION['user']) {
+                                echo ' <i class="fas fa-pencil-alt high-elem" onclick="openIconWindow()"></i>';
+                            }
+                        
+                        ?>
+
                 </div>
 
 
@@ -82,7 +89,7 @@ include("../private/model/text.php");
                 <?php
                     
                     
-                    $lastResolutions=Resolution::getUserLastsResolutions($user->getId());
+                    $lastResolutions=Resolution::getUserLastsResolutions($user->getId(), 10);
 
                     foreach ($lastResolutions as $resolution) {
                         $texto = Text::getById($resolution->getIdText());

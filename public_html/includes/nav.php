@@ -41,6 +41,8 @@
                          <a class="navLink" href="settings.php">SETTINGS</a>
                         </div>
                       </div>' ;
+                } else {
+                    echo ' <a class="navLink" href="profile.php">PROFILE</a>';
                 }
             } else {
                 echo ' <a class="navLink" href="login.php">LOGIN</a>';

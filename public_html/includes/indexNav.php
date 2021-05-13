@@ -42,6 +42,8 @@
                          <a class="navLink" href="views/settings.php">SETTINGS</a>
                         </div>
                       </div>' ;
+                     } else {
+                         echo ' <a class="navLink" href="views/profile.php">PROFILE</a>';
                      }
                  } else {
                      echo ' <a class="navLink" href="views/login.php">LOGIN</a>';
