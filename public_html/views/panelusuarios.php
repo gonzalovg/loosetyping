@@ -48,6 +48,17 @@ $allUsers=User::getAllUsers();
         <section>
             <h1>LOOSETYPING (Users) CONTROL PANEL</h1>
 
+            <div class="record-header">
+                <div class="record-data"><b>ID</b></div>
+                <div class="record-data"><b>NOMBRE</b></div>
+                <div class="record-data"><b>CORREO</b></div>
+                <div class="record-data"><b>AVATAR</b></div>
+                <div class="record-data"><b>CREATED_AT</b></div>
+                <div class="record-data"><b>PERMMISOS</b></div>
+                <div class="record-data"><b>ACCIONES</b></div>
+
+            </div>
+
             <div id="column-div">
 
                 <?php

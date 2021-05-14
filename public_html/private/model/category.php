@@ -78,6 +78,11 @@ class Category
         DaoCategory::delete($this);
     }
 
+    public function update()
+    {
+        DaoCategory::update($this);
+    }
+
     /**
      * Obtiene la categoría a través de DaoCategory y la devuelve.
      *
@@ -94,6 +99,9 @@ class Category
     
         return $category;
     }
+
+
+
     /**
      * Obtiene todas las categorias a traves de DaoCategory y la devuelve en un array.
      */
@@ -115,7 +123,8 @@ class Category
         $html.="<div id='{$rand}' class='record-row'>";
         $html.="<div class='record-data'>#".$this->id."</div>";
         $html.="<div class='record-data'>".$this->name."</div>";
-        $html.="<div class='record-data'><span onclick='deleteCategory({$rand}, {$this->id})'  class='ec ec-negative-squared-cross-mark'></span>
+        $html.="<div class='record-data'><span onclick='deleteCategory({$rand}, {$this->id})'  class='ec ec-negative-squared-cross-mark'></span><a class='no-decor' href='actualizarcategoria.php?category={$this->id}'><span class='ec ec-currency-exchange'></span>
+        </a>
         </div>";
         $html.="</div>";
 

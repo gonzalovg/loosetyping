@@ -40,6 +40,15 @@ class DaoCategory
 
         $db->query($query);
     }
+    
+    
+    public static function update($category)
+    {
+        $db = DbConnection::getInstance();
+        
+        $query = "update categorias set nom_cat='{$category->getName()}' where id={$category->getId()} ;";
+        $db->query($query);
+    }
 
     /**
      * Obtiene los campos sql de un objeto Category y los devuelve.

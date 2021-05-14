@@ -242,6 +242,7 @@ select {
 
 .record-data {
   width: 150px;
+  /* text-align: center; */
 }
 
 #login-icon {
@@ -258,6 +259,10 @@ select {
 .user-div span {
   display: flex;
   align-items: center;
+}
+
+.center {
+  text-align: center;
 }
 
 /* 
@@ -375,4 +380,12 @@ textarea {
 
 #user-last-reso {
   margin-top: 100px;
+}
+
+.no-decor {
+  text-decoration: none;
+  border: none;
+}
+.no-decor::before {
+  text-decoration: none;
 }

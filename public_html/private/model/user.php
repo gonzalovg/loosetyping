@@ -286,16 +286,16 @@ class User
     {
         $html="";
         $rand = rand(0, 100000);
-        $html.="<div id='{$rand}' class='user-div'>";
-        $html.="<span ><a href='profile.php?id=".$this->id."'>#{$this->getId()}</a></span>";
-        $html.="<span>{$this->getName()}</span>";
-        $html.="<span>{$this->getEmail()}</span>";
-        $html.="<span class='{$this->getAvatar()}'></span>";
-        $html.="<span>{$this->getCreatedAt()}</span>";
-        $html.="<span>{$this->getPermisos()}</span>";
-        $html.="<div class='user-div-buttons'>";
+        $html.="<div id='{$rand}' class='user-div record-row'>";
+        $html.="<div class='record-data' ><a href='profile.php?id=".$this->id."'>#{$this->getId()}</a></div>";
+        $html.="<div class='record-data'>{$this->getName()}</div>";
+        $html.="<div class='record-data small'>{$this->getEmail()}</div>";
+        $html.="<div class='{$this->getAvatar()} record-data center'></div>";
+        $html.="<div class='record-data small center'>{$this->getCreatedAt()}</div>";
+        $html.="<div class='record-data center'>{$this->getPermisos()}</div>";
+        $html.="<div class='user-div-buttons' record-data>";
         $html.="<a class='button' onclick='eliminarUsuario({$rand},{$this->id})' >Eliminar</a>";
-        $html.="<a class='button'  href='actualizarUsuario.php?userId={$this->getId()}'>Actualizar</a>";
+        $html.="<a class='button'  href='actualizarUsuario.php?userId={$this->id}'>Actualizar</a>";
         $html.="</div>";
         $html.="</div>";
 
