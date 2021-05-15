@@ -4,6 +4,7 @@ include_once('../private/model/category.php');
 if (isset($_POST['id']) && !empty($_POST)) {
     $updCategory= new Category($_POST['id'], $_POST['name']);
     $updCategory->update();
+    header("location: panelcategorias.php");
 }
 if (isset($_GET) && !empty($_GET)) {
     $updCategory = Category::getById($_GET['category']);

@@ -83,7 +83,7 @@ $texts = Text::getAllTexts();
             <div class="records">
                 <div class="record-header">
                     <div class="record-data"><b>Posición</b></div>
-                    <div class="record-data"><b>Usuario</b></div>
+
                     <div class="record-data"><b>Texto</b></div>
                     <div class="record-data"><b>WPM</b></div>
                     <div class="record-data"><b>Tiempo</b></div>

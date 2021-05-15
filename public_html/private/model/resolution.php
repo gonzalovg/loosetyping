@@ -272,7 +272,7 @@ class Resolution
 
         $html.="<div  class='record-row'>";
         $html.=" <div class='record-data'>#".$position .'  <a href="profile.php?id={$userId}">'.$userName." </a>   </div>";
-        $html.=" <div class='record-data'>".$userName."    </div>";
+
         $html.=" <div class='record-data'>".$titText."    </div>";
         $html.=" <div class='record-data'>".$this->wpmRes."    </div>";
         $html.=" <div class='record-data'>".$this->timeRes."    </div>";

@@ -7,6 +7,7 @@ if (isset($_POST['id']) && !empty($_POST)) {
     $updUser = new User($_POST['id'], $_POST['name'], $_POST['email'], $_POST['password'], "", "", $_POST['permisos']);
     
     $updUser->update();
+    header("location: panelusuarios.php");
 }
 if (isset($_GET) && !empty($_GET)) {
     $updUser = User::getById($_GET['userId']);
