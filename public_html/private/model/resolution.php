@@ -266,12 +266,12 @@ class Resolution
     }
 
 
-    public function imprimirRank($titText, $userName, $userId, $position)
+    public function imprimirRank($titText, $userName, $userId, $avatar, $position)
     {
         $html="";
 
         $html.="<div  class='record-row'>";
-        $html.=" <div class='record-data'>#".$position .'  <a href="profile.php?id={$userId}">'.$userName." </a>   </div>";
+        $html.=" <div class='record-data'>#".$position .'  <a href="profile.php?id='.$userId.'">'.$userName. "<span class='".$avatar."'></span> </a>   </div>";
 
         $html.=" <div class='record-data'>".$titText."    </div>";
         $html.=" <div class='record-data'>".$this->wpmRes."    </div>";

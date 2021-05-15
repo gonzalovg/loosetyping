@@ -95,7 +95,7 @@ $texts = Text::getAllTexts();
                      foreach ($maxWpmResolutions as $resolution) {
                          $text=Text::getById($resolution->getIdText());
                          $user=User::getById($resolution->getIdUser());
-                         echo $resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $counter);
+                         echo $resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $user->getAvatar(), $counter);
                          $counter++;
                      }
  ?>

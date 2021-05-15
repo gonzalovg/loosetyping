@@ -36,7 +36,7 @@ include_once('../model/text.php');
 
 
 
-            $resolutionsHTML.=$resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $position);
+            $resolutionsHTML.=$resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $user->getAvatar(), $position);
             $position++;
         }
 

@@ -1,6 +1,6 @@
 let posicionCursor = 0;
 let caracteres =
-  " !$#&%'()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~­";
+  " !$#&%()*+,-./0123456789:;<=>?@AÁÀÄÂBCDEÉÈËÊFGHIÍÌÏÎJKLMNÑOÓÒÖÔPQRSTUÚÙÜÛVWXYZ[]^_`aáàäâbcdeéèëêfghiíìïîjklmnñoóòöôpqrstuúùüûvwxyz{|}~­";
 let arrayDeCaracteres = caracteres.split("");
 let balanceAciertos = generarRatio(arrayDeCaracteres);
 let fallosTotales = 0;
@@ -81,7 +81,8 @@ function enviarRatioResolucion(json, idText, idUser, wpmRes, timRes) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // document.getElementById("result").innerHTML = this.responseText;
+      document.getElementById("result").innerHTML = this.responseText;
+      console.log(json);
     }
   };
   xhttp.open(
