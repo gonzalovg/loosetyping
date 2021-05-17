@@ -40,7 +40,7 @@ include_once('../model/text.php');
             $position++;
         }
 
-        echo $resolutionsHTML;
+        // echo $resolutionsHTML;
 
     
         // no break

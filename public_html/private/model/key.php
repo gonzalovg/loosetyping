@@ -157,23 +157,24 @@ class Key
         // echo "</pre>";
         $keysLength =sizeof(self::convertirJsonTyped($user, $keysInfo));
 
-        $query = "update teclas set  ";
+        $query = " ";
         $index=0;
         foreach ($keysInfo as $key => $keyRatio) {
             if ($keyRatio->aciertos!=0 || $keyRatio->fallos!=0) {
-                $query.="aciertos=(" . $keyRatio->aciertos."+ teclas.aciertos), fallos=(".$keyRatio->fallos."+ teclas.fallos) where tecla='".$key."' && id_user=".$user."";
-                
-                if ($index!=$keysLength-1) {
-                    $query.=",";
-                }
+                // $query.="aciertos=(" . $keyRatio->aciertos."+ teclas.aciertos), fallos=(".$keyRatio->fallos."+ teclas.fallos) where tecla='".$key."' && id_user=".$user."";
+                // $query.= "update teclas set  aciertos=(( select aciertos from teclas where id_user=".$user." && tecla='".$key."' collate utf8_spanish_ci )+ ".$keyRatio->aciertos." )  , fallos=(( select fallos from teclas where id_user=".$user." && tecla='".$key."' collate utf8_spanish_ci )+ ".$keyRatio->fallos."  ) where id_user=".$user." && tecla='".$key."' collate utf8_spanish_ci ;";
+                $query.= "update teclas set  aciertos=(( select aciertos from teclas where id_user=".$user." && BINARY  tecla='".$key."'  )+ ".$keyRatio->aciertos." )  , fallos=(( select fallos from teclas where id_user=".$user." && BINARY tecla='".$key."'  )+ ".$keyRatio->fallos."  ) where id_user=".$user." && BINARY tecla='".$key."'  ;";
+                // if ($index!=$keysLength-1) {
+                //     $query.=",";
+                // }
     
                 $index++;
             }
         }
 
-        // $db->query($query);
+        $db->query($query);
 
-        return $query;
+        // return $query;
     }
 
 

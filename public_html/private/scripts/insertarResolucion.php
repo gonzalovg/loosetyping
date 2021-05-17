@@ -27,11 +27,11 @@ $typedKeys = array();
 
 
 
-// if (!Key::registrosDB($user)) {
-//     echo  Key::inicializarDB($user, $keyInfo);
-// } else {
-//     echo   Key::actualizarDB($user, $keyInfo);
-// }
+if (!Key::registrosDB($user)) {
+    echo  Key::inicializarDB($user, $keyInfo);
+} else {
+    echo   Key::actualizarDB($user, $keyInfo);
+}
 
 
 
