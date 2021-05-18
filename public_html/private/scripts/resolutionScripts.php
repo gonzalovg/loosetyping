@@ -1,5 +1,6 @@
 <?php
 include_once('../model/resolution.php');
+include_once('../model/key.php');
 
 
 
@@ -41,9 +42,23 @@ include_once('../model/text.php');
         }
 
         // echo $resolutionsHTML;
-
-    
         // no break
+        case 'obtenerRatio':
+
+            $id = $_GET['id'];
+
+            $json = Key::obtenerKeysJson($id);
+            echo $json;
+            // $ratio = Key::
+
+            //obtener todas las teclas del usuario
+            //convertirlo a json
+            //cojerlo desde el js
+            //imprimir circulos
+
+
+            break;
+    
     default:
         # code...
         break;

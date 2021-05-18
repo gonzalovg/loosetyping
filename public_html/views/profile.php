@@ -21,6 +21,7 @@ include("../private/model/text.php");
 
     <?php include "../includes/general-head.php" ?>
     <script src="../js/icons.js"></script>
+    <script src="../js/chart.js"></script>
 
 
 
@@ -98,6 +99,13 @@ include("../private/model/text.php");
                     
                     
                     ?>
+            </div>
+
+            <div>
+                <button class="button"
+                    onclick="obtenerRatios(<?php echo $user->getId() ?>)">
+                    Ratio
+                </button>
             </div>
 
 

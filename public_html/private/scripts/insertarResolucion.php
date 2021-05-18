@@ -20,11 +20,6 @@ $keyInfo=json_decode($keyInfo);
 
 
 
-$typedKeys = array();
-
-
-
-
 
 
 if (!Key::registrosDB($user)) {
@@ -35,24 +30,9 @@ if (!Key::registrosDB($user)) {
 
 
 
-// foreach ($keyInfo as $keyChar =>$keyRatio) {
-//     // print_r($keyChar);
-   
-//     // print_r($keyRatio->aciertos);
-//     if ($keyRatio->aciertos!=0 || $keyRatio->fallos!=0) {
-//         $key = new Key("", $user, $keyChar, $keyRatio->aciertos, $keyRatio->fallos);
-//         array_push($typedKeys, $key);
-//     }
-// }
-
-// var_dump(Key::registrosDB($user));
-
-// echo "<pre>";
-// print_r($typedKeys);
-// echo "</pre>";
 
 $resolucion = new Resolution("", $user, $text, $wpm, $time, "");
 
-// print_r($resolucion);
+
 
 $resolucion->insert();

@@ -218,4 +218,25 @@ class Key
 
         return $typedKeys;
     }
+
+
+    public static function obtenerKeysDb($idUser)
+    {
+        $db= DbConnection::getInstance();
+        $query = "select tecla,aciertos,fallos from teclas where id_user=". $idUser . ";" ;
+        echo $query;
+
+        $commit=$db->prepare($query);
+        $commit->execute();
+        
+        $arr=$commit->fetchAll();
+       
+        return $arr;
+    }
+
+
+    public static function obtenerKeysJson($idUser)
+    {
+        return json_encode(self::obtenerKeysDb($idUser));
+    }
 }

@@ -33,7 +33,11 @@ if (isset($_GET['text']) && !empty($_GET['text'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
         integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"
+        integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/teclado.js"></script>
+
 
 
 
@@ -104,7 +108,7 @@ if (isset($_GET['text']) && !empty($_GET['text'])) {
 
             <div id="result"></div>
 
-
+            <canvas width="400" height="400" id="myChart"></canvas>
 
         </section>
 
@@ -113,6 +117,7 @@ if (isset($_GET['text']) && !empty($_GET['text'])) {
     </main>
     <script src="js/general.js"></script>
     <script src="js/typed.js"></script>
+    <script src="js/chart.js"></script>
 
 
 </body>
