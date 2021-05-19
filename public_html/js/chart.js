@@ -43,7 +43,7 @@ const config = {
 };
 
 // const donut = new Chart(ctx, config);
-
+window.onload = obtenerRatios(document.getElementById("id_u"));
 function obtenerRatios(id) {
   console.log("hola");
   var xhttp = new XMLHttpRequest();
@@ -61,21 +61,29 @@ function obtenerRatios(id) {
           let fallos = parseInt(element.fallos);
           let canvasDiv = document.createElement("div");
           let canvasLetter = document.createElement("p");
+          let totalPulsaciones = aciertos + fallos;
+          let porcentajeAciertos = (aciertos * 100) / totalPulsaciones;
+          let porcentajeFallos = (fallos * 100) / totalPulsaciones;
           ////////////////////////////////////////////////////////
           canvasDiv.classList.add("single-key-chart");
           canvasDiv.appendChild(canvasLetter);
           canvasLetter.classList.add("canvas-letter");
           canvasLetter.innerHTML = tecla;
+          canvasDiv.setAttribute(
+            "title",
+            "Pulsaciones totales: " +
+              totalPulsaciones +
+              "\nAciertos: " +
+              aciertos +
+              "\nFallos: " +
+              fallos
+          );
           canvasDiv.appendChild(canvas);
           canvas.id = id;
           canvas.classList.add("single-key-chart");
           container.appendChild(canvasDiv);
 
           /////////////////////////////////////////////////
-          let totalPulsaciones = aciertos + fallos;
-
-          let porcentajeAciertos = (aciertos * 100) / totalPulsaciones;
-          let porcentajeFallos = (fallos * 100) / totalPulsaciones;
           console.log(typeof porcentajeAciertos);
           data.datasets[0].data[0] = porcentajeAciertos;
           data.datasets[0].data[1] = porcentajeFallos;
@@ -97,5 +105,3 @@ function obtenerRatios(id) {
   );
   xhttp.send();
 }
-
-window.onload = obtenerRatios(document.getElementById("di_u"));
