@@ -117,7 +117,7 @@ if (isset($_GET['text']) && !empty($_GET['text'])) {
     </main>
     <script src="js/general.js"></script>
     <script src="js/typed.js"></script>
-    <script src="js/chart.js"></script>
+
 
 
 </body>

@@ -21,7 +21,10 @@ include("../private/model/text.php");
 
     <?php include "../includes/general-head.php" ?>
     <script src="../js/icons.js"></script>
-    <script src="../js/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"
+        integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 
 
@@ -33,9 +36,9 @@ include("../private/model/text.php");
 
         <?php include "../includes/nav.php" ?>
 
-        <section id="profile-sect">
+        <section id="profile-sect mg-20">
             <div id="user-data">
-
+                <input type="hidden" value=<?php echo $user->getId()?> id="data">
                 <div class="profile-box">
                     <h1><?php
                         $user = "";
@@ -60,7 +63,7 @@ include("../private/model/text.php");
                     </div>
 
                 </div>
-                <div class="profile-box">
+                <div class="profile-box ">
 
                     <span
                         class="<?php echo  $user->getAvatar()?> big-avatar "></span>
@@ -76,7 +79,7 @@ include("../private/model/text.php");
 
 
             </div>
-            <div id="user-last-reso">
+            <div id="user-last-reso mg-20">
                 <h1>Últimas resoluciones de <?php echo $user->getName() ?>
                 </h1>
 
@@ -101,12 +104,11 @@ include("../private/model/text.php");
                     ?>
             </div>
 
-            <div>
-                <button class="button"
-                    onclick="obtenerRatios(<?php echo $user->getId() ?>)">
-                    Ratio
-                </button>
+            <div class="mg-20">
+                <h1>Ratio de Aciertos/Fallos</h1>
+                <div id="keys-ratio"></div>
             </div>
+
 
 
         </section>
@@ -115,6 +117,7 @@ include("../private/model/text.php");
 
     </main>
     <script src="../js/general.js"></script>
+    <script src="../js/chart.js" type="module"></script>
 
 
 </body>

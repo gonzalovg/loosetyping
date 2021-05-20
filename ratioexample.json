@@ -1,1075 +1,137 @@
 [
-  {
-    "tecla": "0",
-    "0": "0",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "1",
-    "0": "1",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "2",
-    "0": "2",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "3",
-    "0": "3",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "4",
-    "0": "4",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "5",
-    "0": "5",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "6",
-    "0": "6",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "7",
-    "0": "7",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "8",
-    "0": "8",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "9",
-    "0": "9",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  { "tecla": "", "0": "", "aciertos": "7", "1": "7", "fallos": "1", "2": "1" },
-  {
-    "tecla": "!",
-    "0": "!",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "$",
-    "0": "$",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "#",
-    "0": "#",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "&",
-    "0": "&",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "%",
-    "0": "%",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "(",
-    "0": "(",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ")",
-    "0": ")",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "*",
-    "0": "*",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "+",
-    "0": "+",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ",",
-    "0": ",",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "-",
-    "0": "-",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ".",
-    "0": ".",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "/",
-    "0": "/",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ":",
-    "0": ":",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ";",
-    "0": ";",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "<",
-    "0": "<",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "=",
-    "0": "=",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": ">",
-    "0": ">",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "?",
-    "0": "?",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "@",
-    "0": "@",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "A",
-    "0": "A",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c1",
-    "0": "\u00c1",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c0",
-    "0": "\u00c0",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c4",
-    "0": "\u00c4",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c2",
-    "0": "\u00c2",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "B",
-    "0": "B",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "C",
-    "0": "C",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "D",
-    "0": "D",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "E",
-    "0": "E",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c9",
-    "0": "\u00c9",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00c8",
-    "0": "\u00c8",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00cb",
-    "0": "\u00cb",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ca",
-    "0": "\u00ca",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "F",
-    "0": "F",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "G",
-    "0": "G",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "H",
-    "0": "H",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "I",
-    "0": "I",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00cd",
-    "0": "\u00cd",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00cc",
-    "0": "\u00cc",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00cf",
-    "0": "\u00cf",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ce",
-    "0": "\u00ce",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "J",
-    "0": "J",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "K",
-    "0": "K",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "L",
-    "0": "L",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "M",
-    "0": "M",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "N",
-    "0": "N",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d1",
-    "0": "\u00d1",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "O",
-    "0": "O",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d3",
-    "0": "\u00d3",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d2",
-    "0": "\u00d2",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d6",
-    "0": "\u00d6",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d4",
-    "0": "\u00d4",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "P",
-    "0": "P",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "Q",
-    "0": "Q",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "R",
-    "0": "R",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "S",
-    "0": "S",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "T",
-    "0": "T",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "U",
-    "0": "U",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00da",
-    "0": "\u00da",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00d9",
-    "0": "\u00d9",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00dc",
-    "0": "\u00dc",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00db",
-    "0": "\u00db",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "V",
-    "0": "V",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "W",
-    "0": "W",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "X",
-    "0": "X",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "Y",
-    "0": "Y",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "Z",
-    "0": "Z",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "[",
-    "0": "[",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "]",
-    "0": "]",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "^",
-    "0": "^",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "_",
-    "0": "_",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "`",
-    "0": "`",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "a",
-    "0": "a",
-    "aciertos": "10",
-    "1": "10",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00e1",
-    "0": "\u00e1",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00e0",
-    "0": "\u00e0",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00e4",
-    "0": "\u00e4",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00e2",
-    "0": "\u00e2",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "b",
-    "0": "b",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "c",
-    "0": "c",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "d",
-    "0": "d",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "e",
-    "0": "e",
-    "aciertos": "8",
-    "1": "8",
-    "fallos": "3",
-    "2": "3"
-  },
-  {
-    "tecla": "\u00e9",
-    "0": "\u00e9",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "1",
-    "2": "1"
-  },
-  {
-    "tecla": "\u00e8",
-    "0": "\u00e8",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00eb",
-    "0": "\u00eb",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ea",
-    "0": "\u00ea",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "f",
-    "0": "f",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "g",
-    "0": "g",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "h",
-    "0": "h",
-    "aciertos": "4",
-    "1": "4",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "i",
-    "0": "i",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "1",
-    "2": "1"
-  },
-  {
-    "tecla": "\u00ed",
-    "0": "\u00ed",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ec",
-    "0": "\u00ec",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ef",
-    "0": "\u00ef",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ee",
-    "0": "\u00ee",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "j",
-    "0": "j",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "k",
-    "0": "k",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "l",
-    "0": "l",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "m",
-    "0": "m",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "n",
-    "0": "n",
-    "aciertos": "4",
-    "1": "4",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f1",
-    "0": "\u00f1",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "o",
-    "0": "o",
-    "aciertos": "6",
-    "1": "6",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f3",
-    "0": "\u00f3",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f2",
-    "0": "\u00f2",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f6",
-    "0": "\u00f6",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f4",
-    "0": "\u00f4",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "p",
-    "0": "p",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "q",
-    "0": "q",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "r",
-    "0": "r",
-    "aciertos": "10",
-    "1": "10",
-    "fallos": "1",
-    "2": "1"
-  },
-  {
-    "tecla": "s",
-    "0": "s",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "t",
-    "0": "t",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "u",
-    "0": "u",
-    "aciertos": "4",
-    "1": "4",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00fa",
-    "0": "\u00fa",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00f9",
-    "0": "\u00f9",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00fc",
-    "0": "\u00fc",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00fb",
-    "0": "\u00fb",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "v",
-    "0": "v",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "w",
-    "0": "w",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "x",
-    "0": "x",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "y",
-    "0": "y",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "1",
-    "2": "1"
-  },
-  {
-    "tecla": "z",
-    "0": "z",
-    "aciertos": "2",
-    "1": "2",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "{",
-    "0": "{",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "|",
-    "0": "|",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "}",
-    "0": "}",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "~",
-    "0": "~",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  },
-  {
-    "tecla": "\u00ad",
-    "0": "\u00ad",
-    "aciertos": "0",
-    "1": "0",
-    "fallos": "0",
-    "2": "0"
-  }
+  { "tecla": "0", "aciertos": "0", "fallos": "0" },
+  { "tecla": "1", "aciertos": "0", "fallos": "0" },
+  { "tecla": "2", "aciertos": "0", "fallos": "0" },
+  { "tecla": "3", "aciertos": "0", "fallos": "0" },
+  { "tecla": "4", "aciertos": "0", "fallos": "0" },
+  { "tecla": "5", "aciertos": "0", "fallos": "0" },
+  { "tecla": "6", "aciertos": "0", "fallos": "0" },
+  { "tecla": "7", "aciertos": "0", "fallos": "0" },
+  { "tecla": "8", "aciertos": "0", "fallos": "0" },
+  { "tecla": "9", "aciertos": "0", "fallos": "0" },
+  { "tecla": "", "aciertos": "7", "fallos": "1" },
+  { "tecla": "!", "aciertos": "0", "fallos": "0" },
+  { "tecla": "$", "aciertos": "0", "fallos": "0" },
+  { "tecla": "#", "aciertos": "0", "fallos": "0" },
+  { "tecla": "&", "aciertos": "0", "fallos": "0" },
+  { "tecla": "%", "aciertos": "0", "fallos": "0" },
+  { "tecla": "(", "aciertos": "0", "fallos": "0" },
+  { "tecla": ")", "aciertos": "0", "fallos": "0" },
+  { "tecla": "*", "aciertos": "0", "fallos": "0" },
+  { "tecla": "+", "aciertos": "0", "fallos": "0" },
+  { "tecla": ",", "aciertos": "0", "fallos": "0" },
+  { "tecla": "-", "aciertos": "0", "fallos": "0" },
+  { "tecla": ".", "aciertos": "2", "fallos": "0" },
+  { "tecla": "/", "aciertos": "0", "fallos": "0" },
+  { "tecla": ":", "aciertos": "0", "fallos": "0" },
+  { "tecla": ";", "aciertos": "0", "fallos": "0" },
+  { "tecla": "<", "aciertos": "0", "fallos": "0" },
+  { "tecla": "=", "aciertos": "0", "fallos": "0" },
+  { "tecla": ">", "aciertos": "0", "fallos": "0" },
+  { "tecla": "?", "aciertos": "0", "fallos": "0" },
+  { "tecla": "@", "aciertos": "0", "fallos": "0" },
+  { "tecla": "A", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Á", "aciertos": "0", "fallos": "0" },
+  { "tecla": "À", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ä", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Â", "aciertos": "0", "fallos": "0" },
+  { "tecla": "B", "aciertos": "0", "fallos": "0" },
+  { "tecla": "C", "aciertos": "0", "fallos": "0" },
+  { "tecla": "D", "aciertos": "0", "fallos": "0" },
+  { "tecla": "E", "aciertos": "0", "fallos": "0" },
+  { "tecla": "É", "aciertos": "0", "fallos": "0" },
+  { "tecla": "È", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ë", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ê", "aciertos": "0", "fallos": "0" },
+  { "tecla": "F", "aciertos": "0", "fallos": "0" },
+  { "tecla": "G", "aciertos": "0", "fallos": "0" },
+  { "tecla": "H", "aciertos": "0", "fallos": "0" },
+  { "tecla": "I", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Í", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ì", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ï", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Î", "aciertos": "0", "fallos": "0" },
+  { "tecla": "J", "aciertos": "0", "fallos": "0" },
+  { "tecla": "K", "aciertos": "0", "fallos": "0" },
+  { "tecla": "L", "aciertos": "2", "fallos": "0" },
+  { "tecla": "M", "aciertos": "0", "fallos": "0" },
+  { "tecla": "N", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ñ", "aciertos": "0", "fallos": "0" },
+  { "tecla": "O", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ó", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ò", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ö", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ô", "aciertos": "0", "fallos": "0" },
+  { "tecla": "P", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Q", "aciertos": "0", "fallos": "0" },
+  { "tecla": "R", "aciertos": "0", "fallos": "0" },
+  { "tecla": "S", "aciertos": "0", "fallos": "0" },
+  { "tecla": "T", "aciertos": "0", "fallos": "0" },
+  { "tecla": "U", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ú", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ù", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Ü", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Û", "aciertos": "0", "fallos": "0" },
+  { "tecla": "V", "aciertos": "0", "fallos": "0" },
+  { "tecla": "W", "aciertos": "0", "fallos": "0" },
+  { "tecla": "X", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Y", "aciertos": "0", "fallos": "0" },
+  { "tecla": "Z", "aciertos": "0", "fallos": "0" },
+  { "tecla": "[", "aciertos": "0", "fallos": "0" },
+  { "tecla": "]", "aciertos": "0", "fallos": "0" },
+  { "tecla": "^", "aciertos": "0", "fallos": "0" },
+  { "tecla": "_", "aciertos": "0", "fallos": "0" },
+  { "tecla": "`", "aciertos": "0", "fallos": "0" },
+  { "tecla": "a", "aciertos": "10", "fallos": "0" },
+  { "tecla": "á", "aciertos": "2", "fallos": "0" },
+  { "tecla": "à", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ä", "aciertos": "0", "fallos": "0" },
+  { "tecla": "â", "aciertos": "0", "fallos": "0" },
+  { "tecla": "b", "aciertos": "0", "fallos": "0" },
+  { "tecla": "c", "aciertos": "2", "fallos": "0" },
+  { "tecla": "d", "aciertos": "2", "fallos": "0" },
+  { "tecla": "e", "aciertos": "8", "fallos": "3" },
+  { "tecla": "é", "aciertos": "2", "fallos": "1" },
+  { "tecla": "è", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ë", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ê", "aciertos": "0", "fallos": "0" },
+  { "tecla": "f", "aciertos": "2", "fallos": "0" },
+  { "tecla": "g", "aciertos": "0", "fallos": "0" },
+  { "tecla": "h", "aciertos": "4", "fallos": "0" },
+  { "tecla": "i", "aciertos": "0", "fallos": "1" },
+  { "tecla": "í", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ì", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ï", "aciertos": "0", "fallos": "0" },
+  { "tecla": "î", "aciertos": "0", "fallos": "0" },
+  { "tecla": "j", "aciertos": "0", "fallos": "0" },
+  { "tecla": "k", "aciertos": "0", "fallos": "0" },
+  { "tecla": "l", "aciertos": "0", "fallos": "0" },
+  { "tecla": "m", "aciertos": "0", "fallos": "0" },
+  { "tecla": "n", "aciertos": "4", "fallos": "0" },
+  { "tecla": "ñ", "aciertos": "0", "fallos": "0" },
+  { "tecla": "o", "aciertos": "6", "fallos": "0" },
+  { "tecla": "ó", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ò", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ö", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ô", "aciertos": "0", "fallos": "0" },
+  { "tecla": "p", "aciertos": "2", "fallos": "0" },
+  { "tecla": "q", "aciertos": "2", "fallos": "0" },
+  { "tecla": "r", "aciertos": "10", "fallos": "1" },
+  { "tecla": "s", "aciertos": "0", "fallos": "0" },
+  { "tecla": "t", "aciertos": "2", "fallos": "0" },
+  { "tecla": "u", "aciertos": "4", "fallos": "0" },
+  { "tecla": "ú", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ù", "aciertos": "0", "fallos": "0" },
+  { "tecla": "ü", "aciertos": "0", "fallos": "0" },
+  { "tecla": "û", "aciertos": "0", "fallos": "0" },
+  { "tecla": "v", "aciertos": "0", "fallos": "0" },
+  { "tecla": "w", "aciertos": "0", "fallos": "0" },
+  { "tecla": "x", "aciertos": "0", "fallos": "0" },
+  { "tecla": "y", "aciertos": "0", "fallos": "1" },
+  { "tecla": "z", "aciertos": "2", "fallos": "0" },
+  { "tecla": "{", "aciertos": "0", "fallos": "0" },
+  { "tecla": "|", "aciertos": "0", "fallos": "0" },
+  { "tecla": "}", "aciertos": "0", "fallos": "0" },
+  { "tecla": "~", "aciertos": "0", "fallos": "0" },
+  { "tecla": "­", "aciertos": "0", "fallos": "0" }
 ]

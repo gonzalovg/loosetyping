@@ -26,6 +26,7 @@ function getRanks() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       rankDiv.innerHTML = this.responseText;
+      // console.log(this.responseText);
     }
   };
   xhttp.open(

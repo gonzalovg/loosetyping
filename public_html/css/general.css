@@ -393,3 +393,27 @@ textarea {
 .no-decor::before {
   text-decoration: none;
 }
+
+.single-key-chart {
+  display: inline-block;
+  width: 130px;
+  position: relative;
+  margin: 5px 5px;
+}
+#keys-ratio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.canvas-letter {
+  position: absolute;
+
+  top: 50px;
+  left: 58px;
+  font-size: 1.4em;
+}
+
+.mg-20 {
+  margin-top: 50px;
+}

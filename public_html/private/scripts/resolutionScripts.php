@@ -33,16 +33,12 @@ include_once('../model/text.php');
         foreach ($resolutions as $resolution) {
             $user = User::getById($resolution->getIdUser());
             $text= Text::getById($resolution->getIdText());
-
-
-
-
             $resolutionsHTML.=$resolution->imprimirRank($text->getTitText(), $user->getName(), $user->getId(), $user->getAvatar(), $position);
             $position++;
         }
 
-        // echo $resolutionsHTML;
-        // no break
+        echo $resolutionsHTML;
+        break;
         case 'obtenerRatio':
 
             $id = $_GET['id'];

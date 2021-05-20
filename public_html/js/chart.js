@@ -7,9 +7,9 @@ let data = {
       backgroundColor: ["#3380FF", "#ea4335"],
       borderWidth: 0,
       weigth: 1,
-      hoverOffset: 2,
-      borderWidth: 1,
-      borderColor: "#707b7c",
+      hoverOffset: 1,
+      // borderWidth: 1,
+      borderColor: "black",
     },
   ],
 };
@@ -23,18 +23,8 @@ const config = {
       legend: {
         display: false,
       },
-
-      beforeDraw: function (chart) {
-        if (
-          chart.config.centerText.display !== null &&
-          typeof chart.config.centerText.display !== "undefined" &&
-          chart.config.centerText.display
-        ) {
-          drawTotals(chart);
-        }
-      },
     },
-    cutout: 50,
+    cutout: 40,
   },
   centerText: {
     display: true,
@@ -42,14 +32,11 @@ const config = {
   },
 };
 
-// const donut = new Chart(ctx, config);
-window.onload = obtenerRatios(document.getElementById("id_u"));
+var xhttp = new XMLHttpRequest();
+
 function obtenerRatios(id) {
-  console.log("hola");
-  var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
       const jsonKeys = JSON.parse(this.responseText);
       let container = document.getElementById("keys-ratio");
       jsonKeys.forEach((element) => {
@@ -84,10 +71,9 @@ function obtenerRatios(id) {
           container.appendChild(canvasDiv);
 
           /////////////////////////////////////////////////
-          console.log(typeof porcentajeAciertos);
+
           data.datasets[0].data[0] = porcentajeAciertos;
           data.datasets[0].data[1] = porcentajeFallos;
-          console.log(porcentajeAciertos);
 
           let ctx = document.getElementById(id).getContext("2d");
           ctx.fillText(tecla + "%", 75, 75);
@@ -96,12 +82,13 @@ function obtenerRatios(id) {
       });
     }
   };
-  xhttp.open(
-    "GET",
-    "../private/scripts/resolutionScripts.php?id=" +
-      id +
-      "&option=obtenerRatio",
-    true
-  );
-  xhttp.send();
 }
+const id = document.getElementById("data").value;
+
+xhttp.addEventListener("load", obtenerRatios(id));
+xhttp.open(
+  "GET",
+  "../private/scripts/resolutionScripts.php?id=" + id + "&option=obtenerRatio",
+  true
+);
+xhttp.send();

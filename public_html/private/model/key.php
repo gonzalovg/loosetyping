@@ -224,19 +224,21 @@ class Key
     {
         $db= DbConnection::getInstance();
         $query = "select tecla,aciertos,fallos from teclas where id_user=". $idUser . ";" ;
-        echo $query;
+        // echo $query;
 
         $commit=$db->prepare($query);
         $commit->execute();
         
-        $arr=$commit->fetchAll();
-       
+        $arr=$commit->fetchAll(PDO::FETCH_ASSOC);
+        // echo "<pre>";
+        // print_r($arr);
+        // echo "</pre>";
         return $arr;
     }
 
 
     public static function obtenerKeysJson($idUser)
     {
-        return json_encode(self::obtenerKeysDb($idUser));
+        return json_encode(self::obtenerKeysDb($idUser), JSON_UNESCAPED_UNICODE);
     }
 }
