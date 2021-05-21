@@ -27,6 +27,21 @@ class DaoText
         $commit->execute([$texto->getTitText(),$texto->getTxtText(),$texto->getLang(),$texto->getIdCat(),$texto->getAutorText()]);
     }
 
+
+    /**
+     * Actualiza un texto en la bd
+     */
+    public static function update($texto)
+    {
+        $db = DbConnection::getInstance();
+
+        $query = "UPDATE textos set tit_text=?,txt_text=?,lang_text=?,ori_text=? where id=? ;";
+        $commit=$db->prepare($query);
+        print_r($texto);
+        $commit->execute([$texto->getTitText(),$texto->getTxtText(),$texto->getLang(),$texto->getAutorText(),$texto->getId()]);
+    }
+
+
     /**
      * Elimina un objeto Text de la base de datos.
      *

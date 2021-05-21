@@ -208,6 +208,16 @@ class Text
     }
 
     /**
+     * Actualiza el valor de un texto en la base de datos.
+     */
+    public function update()
+    {
+        DaoText::update($this);
+    }
+
+
+
+    /**
      * Llama a DaoText y elimina el texto
      */
     public function delete()
@@ -272,7 +282,7 @@ class Text
         $html.=" <div id='{$rand}' class='custom-text-container'>";
         $html.=" <h3>#{$this->id}  {$this->titText}</h3>";
         $html.="<p>{$this->txtText}</p>";
-        $html.="<p class='button-text-container'><span onclick='deleteText({$rand},{$this->id})' class='ec ec-negative-squared-cross-mark'></span><span class='ec ec-currency-exchange'></span>
+        $html.="<p class='button-text-container'><span onclick='deleteText({$rand},{$this->id})' class='ec ec-negative-squared-cross-mark'></span><a href='actualizarTexto.php?text=".$this->id."'><span class='ec ec-currency-exchange'></span></a>
 
         </p>";
         $html.="</div>";
