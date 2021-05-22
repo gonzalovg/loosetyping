@@ -24,6 +24,8 @@ class DaoUser
         $db= DbConnection::getInstance();
         
         $query="insert into usuarios(nom_user,ema_user,pas_user,per_user) values (?,?,?,?)";
+
+
        
         $commit = $db->prepare($query);
         $commit->execute([$user->getName(),$user->getEmail(),md5($user->getPassword()), $user->getPermisos()]);
@@ -52,6 +54,14 @@ class DaoUser
             $commit = $db->prepare($query);
             $commit->execute([$user->getName(),$user->getEmail(), md5($user->getPassword()),$user->getPermisos()]);
         }
+    }
+
+
+    public function getStats($user)
+    {
+        $db = DbConnection::getInstance();
+
+        $maxWpmQuery = "select max(wpm_res) as `maxWpm`,avg(wpm_res) as `avgWpm`,max(id_text) as `txtFav`,count(*) as `totRes` from resoluciones where id_user=".$user->id." ;";
     }
 
     /**

@@ -24,7 +24,7 @@
         </li>
         <li>
             <h2>
-                <a class="navLink" href="ranking.php">SCORES</a>
+                <a class="navLink" href="ranking.php">RANKING</a>
             </h2>
         </li>
         <li>
@@ -36,13 +36,13 @@
 
                 if ($user->getPermisos()>1) {
                     echo '<div class="dropdown">
-                        <a class="navLink" href="profile.php">PROFILE</a>
+                        <a class="navLink" href="profile.php">PERFIL</a>
                         <div class="dropdown-content">
-                         <a class="navLink" href="settings.php">SETTINGS</a>
+                         <a class="navLink" href="settings.php">AJUSTES</a>
                         </div>
                       </div>' ;
                 } else {
-                    echo ' <a class="navLink" href="profile.php">PROFILE</a>';
+                    echo ' <a class="navLink" href="profile.php">PERFIL</a>';
                 }
             } else {
                 echo ' <a class="navLink" href="login.php">LOGIN</a>';

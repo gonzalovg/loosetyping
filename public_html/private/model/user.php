@@ -276,6 +276,11 @@ class User
         return $users;
     }
 
+    public function getStats()
+    {
+        return DaoUser::getStats($this);
+    }
+
     public function logIn()
     {
         return  DaoUser::logIn($this->email, $this->password);
