@@ -11,7 +11,6 @@ class DbConnection
 
     public function __construct()
     {
-        // $this->instance = new PDO('mysql:host=localhost;dbname=loosetyping', 'root', '');
     }
 
     /**
@@ -27,12 +26,4 @@ class DbConnection
 
         return self::$instance;
     }
-
-
-    // public function queryAll()
-    // {
-    //     $query="select * from usuarios;";
-
-    //     return self::getInstance()->query($query);
-    // }
 }

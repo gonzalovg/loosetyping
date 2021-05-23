@@ -57,11 +57,24 @@ class DaoUser
     }
 
 
-    public function getStats($user)
+    public static function getStats($user)
     {
         $db = DbConnection::getInstance();
 
-        $maxWpmQuery = "select max(wpm_res) as `maxWpm`,avg(wpm_res) as `avgWpm`,max(id_text) as `txtFav`,count(*) as `totRes` from resoluciones where id_user=".$user->id." ;";
+        $maxWpmQuery = "select max(wpm_res) as `maxWpm`,avg(wpm_res) as `avgWpm`,max(id_text) as `txtFav`,count(*) as `totRes` from resoluciones where id_user=".$user->getId()." ;";
+
+        
+        $result=$db->query($maxWpmQuery)->fetch();
+
+
+        $stats = array(
+            "maxWpm"=>$result['maxWpm'],
+            "avgWpm"=>$result['avgWpm'],
+            "txtFav"=>$result['txtFav'],
+            "totRes"=>$result['totRes']
+        );
+        
+        return $stats;
     }
 
     /**

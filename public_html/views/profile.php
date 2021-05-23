@@ -109,6 +109,17 @@ include("../private/model/text.php");
                 <div id="keys-ratio"></div>
             </div>
 
+            <div class="profile-box">
+                <?php
+            
+            $stats = $user->getStats();
+
+            print_r($stats);
+            
+            ?>
+
+            </div>
+
 
 
         </section>
