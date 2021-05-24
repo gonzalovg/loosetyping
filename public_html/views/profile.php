@@ -104,21 +104,26 @@ include("../private/model/text.php");
                     ?>
             </div>
 
+            <div class="profile-box" id="user-stats">
+                <?php
+            
+            $stats = $user->imprimirStats();
+
+                    echo $stats;
+
+            
+
+            
+
+            
+            ?>
+
+            </div>
             <div class="mg-20">
                 <h1>Ratio de Aciertos/Fallos</h1>
                 <div id="keys-ratio"></div>
             </div>
 
-            <div class="profile-box">
-                <?php
-            
-            $stats = $user->getStats();
-
-            print_r($stats);
-            
-            ?>
-
-            </div>
 
 
 

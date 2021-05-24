@@ -111,25 +111,25 @@ class DaoResolution
 
             if ($time=='day') {
                 if ($text=="any") {
-                    $query.=' where ';
+                    $query.=' where created_at between ';
                 }
-                $query.=" DATEDIFF(created_at, CURDATE())<1 ";
+                $query.=" DATE(now()) and  now() ";
             } elseif ($time == 'month') {
                 if ($text=="any") {
-                    $query.=' where ';
+                    $query.=' where created_at between ';
                 }
-                $query.=" DATEDIFF(created_at, CURDATE())<31 ";
+                $query.="makedate(year(curdate()), month(curdate())) and curdate()";
             } elseif ($time=='year') {
                 if ($text=="any") {
-                    $query.=' where ';
+                    $query.=' where created_at between';
                 }
-                $query.=" DATEDIFF(created_at, CURDATE())<365 ";
+                $query.=" makedate(year(curdate()),1) and curdate() ";
             }
         }
 
         $query.=" order by wpm_res desc limit 100;";
       
-      
+   
         $commit=$db->prepare($query);
         $commit->execute();
         

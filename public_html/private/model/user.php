@@ -281,6 +281,22 @@ class User
         return DaoUser::getStats($this);
     }
 
+    public function imprimirStats()
+    {
+        $stats = $this->getStats();
+
+
+        $html='';
+        if ($stats[0][0]!=null) {
+            for ($i=0; $i <sizeof($stats[0]) ; $i++) {
+                $html.='<div class="stat"><p class="stat-value">'.$stats[0][$i].'</p><p>'.$stats[1][$i].'</p></div>';
+            }
+        }
+        
+
+        return $html;
+    }
+
     public function logIn()
     {
         return  DaoUser::logIn($this->email, $this->password);

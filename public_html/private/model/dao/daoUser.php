@@ -61,20 +61,30 @@ class DaoUser
     {
         $db = DbConnection::getInstance();
 
-        $maxWpmQuery = "select max(wpm_res) as `maxWpm`,avg(wpm_res) as `avgWpm`,max(id_text) as `txtFav`,count(*) as `totRes` from resoluciones where id_user=".$user->getId()." ;";
-
+        $statsQuery = "select max(wpm_res) as `maxWpm`,avg(wpm_res) as `avgWpm`,count(*) as `totRes` from resoluciones where id_user=".$user->getId()." ;";
+        $resToday='SELECT count(*) as `resToday` from resoluciones where created_at between date(now()) and now() and id_user='.$user->getId().';';
         
-        $result=$db->query($maxWpmQuery)->fetch();
+        
 
+        $result=$db->query($statsQuery)->fetch();
+        $result2 = $db->query($resToday)->fetch();
+        // print_r($result2);
 
         $stats = array(
-            "maxWpm"=>$result['maxWpm'],
-            "avgWpm"=>$result['avgWpm'],
-            "txtFav"=>$result['txtFav'],
-            "totRes"=>$result['totRes']
+            $result['maxWpm'],
+           round($result['avgWpm']),
+            $result2['resToday'],
+            $result['totRes']
+        );
+
+        $headers= array(
+            'MAX WPM',
+            'AVG WPM',
+            'RESOLUCIONES DE HOY',
+            'RESULUCIONES TOTALES'
         );
         
-        return $stats;
+        return [$stats,$headers];
     }
 
     /**
