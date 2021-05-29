@@ -83,7 +83,7 @@ if (isset($_POST) && !empty($_POST)) {
                         <p id="form-info"></p>
                         <li><a href="login.php">¿Ya tienes cuenta?</a></li>
 
-                        <li><button type="button" onclick="validarReg()">Registrarse</button></li>
+                        <li><button type="button" class="button" onclick="validarReg()">Registrarse</button></li>
 
                     </ul>
 

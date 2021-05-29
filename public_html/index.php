@@ -108,7 +108,7 @@ if (isset($_GET['text']) && !empty($_GET['text'])) {
 
             <div id="result"></div>
 
-            <canvas width="400" height="400" id="myChart"></canvas>
+
 
         </section>
 

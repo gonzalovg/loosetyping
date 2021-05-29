@@ -93,7 +93,8 @@ nav ul li {
 section {
     max-width: 992px;
     margin: 0 auto;
-    padding: 30px 0 0 0;
+    padding: 30px 3 3 3;
+    min-height: 85vh;
 }
 
 #texto {
@@ -430,7 +431,7 @@ textarea {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .stat {
@@ -453,4 +454,61 @@ button {
 #form-info {
     font-size: 13px;
     color: #f85d4fcc;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+
+/* Links inside the navbar */
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.arrow {
+    display: none;
+}
+
+footer p {
+    color: #707b7c;
+    margin: 0;
+}
+
+footer {
+    padding: 10px;
+    border-top: 1px solid #707b7c;
+    position: relative;
+    bottom: 0;
+    margin-top: 30px;
+}
+
+@media(max-width:992px) {
+    .dropdown-2 {
+        overflow: hidden;
+    }
+    .arrow {
+        display: inline;
+    }
+    .nav-elem {
+        display: none;
+    }
+    .dropdown-2:hover .nav-elem {
+        display: block;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    #div-ratio {
+        margin-top: 150px;
+    }
 }

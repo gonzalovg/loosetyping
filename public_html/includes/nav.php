@@ -1,4 +1,4 @@
-<nav>
+<nav class="dropdown-2">
     <ul>
         <li>
 
@@ -8,26 +8,27 @@
                         LOOSETYPING
 
                     </a>
+                    <span class="arrow">▼</span>
                 </header>
             </h1>
 
         </li>
-        <li>
+        <li class="nav-elem">
             <h2>
                 <a class="navLink" href="../index.php">HOME</a>
             </h2>
         </li>
-        <li>
+        <li class="nav-elem">
             <h2>
                 <a class="navLink" href="custom.php">TEXTOS</a>
             </h2>
         </li>
-        <li>
+        <li class="nav-elem">
             <h2>
                 <a class="navLink" href="ranking.php">RANKING</a>
             </h2>
         </li>
-        <li>
+        <li class="nav-elem">
             <h2><?php
             session_start();
             include_once('../private/model/user.php');
@@ -37,6 +38,7 @@
                 if ($user->getPermisos()>1) {
                     echo '<div class="dropdown">
                         <a class="navLink" href="profile.php">PERFIL</a>
+                        <span class="arrow">▼</span>
                         <div class="dropdown-content">
                          <a class="navLink" href="settings.php">AJUSTES</a>
                         </div>
@@ -53,7 +55,7 @@
             </h2>
         </li>
 
-        <li>
+        <li class="nav-elem">
             <h2>
 
 

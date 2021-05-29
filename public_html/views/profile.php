@@ -104,7 +104,8 @@ include("../private/model/text.php");
                     ?>
             </div>
 
-            <div class="profile-box" id="user-stats">
+            <div class="profile-box" id="user-stats">`
+
                 <?php
             
             $stats = $user->imprimirStats();
@@ -119,7 +120,7 @@ include("../private/model/text.php");
             ?>
 
             </div>
-            <div class="mg-20">
+            <div id="div-ratio" class="mg-20">
                 <h1>Ratio de Aciertos/Fallos</h1>
                 <div id="keys-ratio"></div>
             </div>
