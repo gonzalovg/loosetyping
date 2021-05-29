@@ -97,39 +97,41 @@ class DaoResolution
 
         $query = "select * from resoluciones ";
 
+        if ($time=='all time') {
+            $time="all";
+        }
         if ($text!='any') {
             $query.=" where id_text={$text} ";
         }
 
-        if ($time!='all') {
-            if ($text!='any') {
-                $query.=" and ";
-            }
+        if ($time!='all' && $text!='any') {
+            $query.=" and  ";
+        } elseif ($time!='all' && $text=='any') {
+            $query.=' where ';
+        }
 
+        
+       
+        
+        
+        
+        if ($time!="all") {
+            if ($time=='day') {
+                $query.="created_at > curdate() ";
+            } elseif ($time == 'month') {
+                $query.="created_at between subdate(curdate(),interval 1 month) and curdate()";
+            } elseif ($time=='year') {
+                $query.="created_at between subdate(curdate(), interval 1 year) and curdate() ";
+            }
+        }
            
 
 
-            if ($time=='day') {
-                if ($text=="any") {
-                    $query.=' where created_at between ';
-                }
-                $query.=" DATE(now()) and  now() ";
-            } elseif ($time == 'month') {
-                if ($text=="any") {
-                    $query.=' where created_at between ';
-                }
-                $query.="makedate(year(curdate()), month(curdate())) and curdate()";
-            } elseif ($time=='year') {
-                if ($text=="any") {
-                    $query.=' where created_at between';
-                }
-                $query.=" makedate(year(curdate()),1) and curdate() ";
-            }
-        }
+     
+        
 
         $query.=" order by wpm_res desc limit 100;";
       
-   
         $commit=$db->prepare($query);
         $commit->execute();
         

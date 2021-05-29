@@ -37,6 +37,7 @@ $categorys = Category::getAllCategorys();
 
 
 
+
     <?php include "../includes/general-head.php" ?>
 
 
@@ -56,9 +57,10 @@ $categorys = Category::getAllCategorys();
                     <ul class="tb-no-decor">
 
                         <li class="li-label-input"><label for="category">Insertar Categoría</label><input
-                                name="category" type="text"></li>
-                        <li><input type="button" onclick='processCategory()' value="Insertar" class="button"></li>
+                                name="category" type="text" placeholder="Category"></li>
+                        <li><input type="button" onclick='validar()' value="Insertar" class="button"></li>
                         <li id="requestResult"></li>
+                        <li id="form-info"></li>
 
 
                     </ul>

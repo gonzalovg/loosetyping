@@ -40,6 +40,7 @@ if (isset($_POST) && !empty($_POST)) {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='./favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
+    <script src="../js/validate.js"></script>
 
 
     <?php include "../includes/general-head.php" ?>
@@ -79,8 +80,11 @@ if (isset($_POST) && !empty($_POST)) {
                         </li>
                         <li><label for="passVerification"></label><input type="password"
                                 placeholder="Password Verification" name="passwordVerification"></li>
+                        <p id="form-info"></p>
                         <li><a href="login.php">¿Ya tienes cuenta?</a></li>
-                        <li><input type="submit" value="Registrarse"></li>
+
+                        <li><button type="button" onclick="validarReg()">Registrarse</button></li>
+
                     </ul>
 
                 </form>

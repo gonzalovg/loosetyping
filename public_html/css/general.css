@@ -366,8 +366,8 @@ select {
 }
 
 textarea {
-    background-color: #3c4043;
-    border: 1px solid #707b7c;
+    background-color: #fdfefe;
+    border: 1px solid #eee;
 }
 
 .dropdown {
@@ -444,4 +444,13 @@ textarea {
 .stat-value {
     font-size: 5em;
     font-weight: 600;
+}
+
+button {
+    padding: 0;
+}
+
+#form-info {
+    font-size: 13px;
+    color: #f85d4fcc;
 }

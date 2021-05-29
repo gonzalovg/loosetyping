@@ -50,7 +50,7 @@ $texts = Text::getAllTexts();
 
             <div class="record-options">
                 <select onchange="getRanks()" name="texto">
-                    <option value="any">...</option>
+                    <option value="any">Texto</option>
                     <?php
                 
                 foreach ($texts as $text) {
@@ -63,10 +63,12 @@ $texts = Text::getAllTexts();
                 </select>
 
                 <select onchange="getRanks()" name="tiempo">
+
+
+                    <option value="all">Historico</option>
                     <option value="day">24h</option>
                     <option value="month">Último mes</option>
                     <option value="year">Último año</option>
-                    <option value="all">Historico</option>
                 </select>
 
             </div>

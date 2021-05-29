@@ -5,7 +5,7 @@ include_once('../private/model/user.php');
 session_start();
 if (isset($_POST) && !empty($_POST)) {
     $user = new User('', '', $_POST['correo'], $_POST['password']);
-    echo "hoal";
+ 
     if ($user->logIn()) {
         $_SESSION['user']=$_POST['correo'];
         header("location: ../index.php");
@@ -29,6 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='./favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
+    <script src="../js/validate.js" type="module"></script>
 
 
     <?php include "../includes/general-head.php" ?>
@@ -63,8 +64,12 @@ if (isset($_POST) && !empty($_POST)) {
                         <li><label for="correo"></label><input type="email" placeholder="Email" name="correo"></li>
                         <li><label for="password"></label><input type="password" placeholder="Password" name="password">
                         </li>
-                        <li><a href="register.php">¿No tienes cuenta? Regístrate</a></li>
-                        <li><input type="submit" value="Log In"></li>
+                        <li>
+
+                            <p id='form-info'></p>
+                            <a href="register.php">¿No tienes cuenta? Regístrate</a>
+                        </li>
+                        <li><button type="button" class="button" onclick='validar()'>Log In<button></li>
                     </ul>
 
                 </form>

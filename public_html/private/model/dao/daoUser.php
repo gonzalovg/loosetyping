@@ -81,7 +81,7 @@ class DaoUser
             'MAX WPM',
             'AVG WPM',
             'RESOLUCIONES DE HOY',
-            'RESULUCIONES TOTALES'
+            'RESOLUCIONES TOTALES'
         );
         
         return [$stats,$headers];

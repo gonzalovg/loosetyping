@@ -1,9 +1,9 @@
 * {
-  color: #fdfefe;
+    color: #fdfefe;
 }
 
 body {
-  background-color: #3c4043;
+    background-color: #3c4043;
 }
 
 h1,
@@ -12,108 +12,113 @@ h3,
 h4,
 p,
 span {
-  color: #fdfefe;
+    color: #fdfefe;
 }
 
 a:link {
-  color: #fdfefe;
-  font-weight: 600;
+    color: #fdfefe;
+    font-weight: 600;
 }
 
 a:visited {
-  color: #fdfefe;
-  font-weight: 600;
+    color: #fdfefe;
+    font-weight: 600;
 }
 
 a:hover {
-  color: #fdfefe;
-  font-weight: 600;
+    color: #fdfefe;
+    font-weight: 600;
 }
 
 a:active {
-  color: #fdfefe;
-  font-weight: 600;
+    color: #fdfefe;
+    font-weight: 600;
 }
 
 .navLink:link {
-  color: #fdfefe;
-  text-decoration: none;
-  padding: 5px;
+    color: #fdfefe;
+    text-decoration: none;
+    padding: 5px;
 }
 
 .navLink:visited {
-  color: #fdfefe;
+    color: #fdfefe;
 }
 
 .navLink:hover {
-  color: #fdfefe;
+    color: #fdfefe;
 }
 
 .navLink:active {
-  color: #fdfefe;
+    color: #fdfefe;
 }
 
 .cursorActive {
-  background-color: #fdfefe;
-  color: #3c4043;
+    background-color: #fdfefe;
+    color: #3c4043;
 }
 
 .button-text-container button {
-  border: none;
-  background-color: #707b7c;
+    border: none;
+    background-color: #707b7c;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  border: 1px solid #707b7c;
-  color: #fdfefe;
-  background-color: #3c4043;
+    border: 1px solid #707b7c;
+    color: #fdfefe;
+    background-color: #3c4043;
 }
 
 input[type="button"],
 input[type="submit"],
 button {
-  background-color: #707b7c;
-  border: none;
+    background-color: #707b7c;
+    border: none;
 }
 
 input[type="button"]:hover,
 input[type="submit"]:hover,
 button:hover {
-  background-color: #3c4043;
-  border: none;
-  /* border: 1px solid #707b7c; */
+    background-color: #3c4043;
+    border: none;
+    /* border: 1px solid #707b7c; */
 }
 
 select {
-  border: 1px solid #707b7c;
-  background-color: #3c4043;
+    border: 1px solid #707b7c;
+    background-color: #3c4043;
 }
 
 #aspectos-ranking {
-  border-bottom: 1px solid #707b7c;
+    border-bottom: 1px solid #707b7c;
 }
 
 .registro-ranking {
-  border-bottom: 1px solid #707b7c;
+    border-bottom: 1px solid #707b7c;
 }
 
 .high-elem {
-  color: #ea4335;
+    color: #ea4335;
 }
 
 .button {
-  padding: 5px 10px;
-  color: #fdfefe;
-  border: none;
-  background-color: #707b7c;
+    padding: 5px 10px;
+    color: #fdfefe;
+    border: none;
+    background-color: #707b7c;
 }
 
 .button:hover {
-  background-color: #3c4043;
+    background-color: #3c4043;
 }
 
 .dropdown-content {
-  background-color: #3c4043;
+    background-color: #3c4043;
+}
+
+textarea {
+    background-color: #3c4043;
+    border: 1px solid #707b7c
 }
