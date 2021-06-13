@@ -38,9 +38,23 @@ function inicializarDatos() {
 
 function registrarPulsacion() {
   window.addEventListener("keypress", (event) => {
+    event.preventDefault();
     if (posicionCursor == 0) {
       inicioResolucion = Date.now();
     }
+
+    const keyCode = event.which || event.keyCode;
+
+    if (keyCode == 32) {
+      event.preventDefault();
+    }
+
+    if (keyCode == 9) {
+      event.preventDefault();
+      location.reload();
+    }
+
+    console.log(event);
 
     let teclaAPulsar = arrayDeTexto[posicionCursor];
     let teclaPulsada = event.key;
@@ -55,12 +69,6 @@ function registrarPulsacion() {
 }
 
 function mostrarStatsResolucion(aciertos, fallos, tiempo, wpm, fallosPorTecla) {
-  console.log("Aciertos: " + aciertos);
-  console.log("Fallos: " + fallos);
-  console.log("WPM: " + wpm + "wpm");
-  console.log("Tiempo de resolución: " + tiempo);
-  console.log(fallosPorTecla);
-
   let statsContainer = document.getElementById("stats");
 
   let content =
@@ -82,7 +90,6 @@ function enviarRatioResolucion(json, idText, idUser, wpmRes, timRes) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("result").innerHTML = this.responseText;
-      console.log(json);
     }
   };
   xhttp.open(

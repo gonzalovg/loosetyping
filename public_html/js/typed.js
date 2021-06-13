@@ -1,5 +1,3 @@
-console.log(sessionStorage);
-
 // localStorage.firstTime = "true";
 
 if (typeof sessionStorage.firstTime == "undefined") {

@@ -104,7 +104,7 @@ include("../private/model/text.php");
                     ?>
             </div>
 
-            <div class="profile-box" id="user-stats">`
+            <div class="profile-box" id="user-stats">
 
                 <?php
             

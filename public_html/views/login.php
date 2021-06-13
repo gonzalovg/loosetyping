@@ -29,7 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='icon' type='image/icon' href='./favicon.ico'>
     <link rel="stylesheet" href="../css/reboot.css">
-    <script src="../js/validate.js" type="module"></script>
+    <script src="../js/validate.js"></script>
 
 
     <?php include "../includes/general-head.php" ?>

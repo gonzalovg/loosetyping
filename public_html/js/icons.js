@@ -1035,7 +1035,6 @@ function openIconWindow() {
 
   window.innerHTML = iconsHTML;
 
-  //   console.log(iconsHTML);
   windowLocation.style.width = "50%";
   windowLocation.style.display = "flex";
   windowLocation.style.justifyContent = "center";
